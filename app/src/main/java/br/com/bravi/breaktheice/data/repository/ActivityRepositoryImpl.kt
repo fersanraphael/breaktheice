@@ -1,9 +1,9 @@
 package br.com.bravi.breaktheice.data.repository
 
-import br.com.bravi.breaktheice.data.local.model.LocalActivityModel
-import br.com.bravi.breaktheice.data.local.source.ILocalActivityDataSource
-import br.com.bravi.breaktheice.data.remote.model.RemoteActivityModel
-import br.com.bravi.breaktheice.data.remote.source.IRemoteActivityDataSource
+import br.com.bravi.breaktheice.data.source.local.LocalActivityDataSource
+import br.com.bravi.breaktheice.data.source.remote.RemoteActivityDataSource
+import br.com.bravi.breaktheice.domain.entity.ActivityModel
+import br.com.bravi.breaktheice.domain.repository.IActivityRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -12,43 +12,43 @@ import retrofit2.Response
 /**
  * @author Raphael Santos
  */
-class ActivityRepository constructor(
-    private val localActivityDataSource: ILocalActivityDataSource,
-    private val remoteActivityDataSource: IRemoteActivityDataSource,
+class ActivityRepositoryImpl constructor(
+    private val localActivityDataSource: LocalActivityDataSource,
+    private val remoteActivityDataSource: RemoteActivityDataSource,
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
-) {
+) : IActivityRepository {
 
-    suspend fun doActivity(): Response<RemoteActivityModel> {
+    override suspend fun doActivity(): Response<ActivityModel> {
         return withContext(coroutineDispatcher) {
             remoteActivityDataSource.doActivity()
         }
     }
 
-    suspend fun doActivityFiltered(options: MutableMap<String, String>): Response<RemoteActivityModel> {
+    override suspend fun doActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel> {
         return withContext(coroutineDispatcher) {
             remoteActivityDataSource.doActivityFiltered(options)
         }
     }
 
-    suspend fun getActivity(id: Int): LocalActivityModel? {
+    override suspend fun getActivity(id: Int): ActivityModel? {
         return withContext(coroutineDispatcher) {
             localActivityDataSource.getActivity(id)
         }
     }
 
-    suspend fun getActivities(): MutableList<LocalActivityModel>? {
+    override suspend fun getActivities(): MutableList<ActivityModel>? {
         return withContext(coroutineDispatcher) {
             localActivityDataSource.getActivities()
         }
     }
 
-    suspend fun insertActivity(activityModel: LocalActivityModel) {
+    override suspend fun insertActivity(activityModel: ActivityModel) {
         withContext(coroutineDispatcher) {
             localActivityDataSource.insertActivity(activityModel)
         }
     }
 
-    suspend fun deleteActivity(activityModel: LocalActivityModel) {
+    override suspend fun deleteActivity(activityModel: ActivityModel) {
         withContext(coroutineDispatcher) {
             localActivityDataSource.deleteActivity(activityModel)
         }

@@ -1,9 +1,9 @@
-package br.com.bravi.breaktheice.framework.local
+package br.com.bravi.breaktheice.data.source
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import br.com.bravi.breaktheice.data.dao.IActivityDao
 import br.com.bravi.breaktheice.domain.entity.ActivityModel
-import br.com.bravi.breaktheice.framework.local.dao.IActivityDao
 
 /**
  * @author Raphael Santos
