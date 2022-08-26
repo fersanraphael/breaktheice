@@ -21,7 +21,7 @@ object AndroidBinding {
     }
 
     @JvmStatic
-    @BindingAdapter("app:accessibilityText")
+    @BindingAdapter("accessibilityText")
     fun TextView.setAccessibilityText(accessibility: Float) {
         text = context.getAccessibilityText(accessibility)
     }
