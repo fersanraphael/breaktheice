@@ -20,7 +20,8 @@
             android:id="@+id/app_bar"
             style="@style/Widget.Toolbar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_56dp" />
+            android:layout_height="@dimen/dimen_56dp"
+            app:navigationIconTint="@color/white" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_nav_host"
@@ -35,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/whiteTransparent"
-            android:visibility="@{viewModel.uiState instanceof MainUiState.Loading}">
+            android:visibility="@{viewModel.uiState instanceof MainUiState.Loading, default=gone}">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="@dimen/dimen_160dp"

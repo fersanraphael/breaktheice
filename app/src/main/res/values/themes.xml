@@ -8,6 +8,7 @@
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorSecondaryVariant">@color/secondaryVariant</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
+        <item name="colorControlNormal">@color/white</item>
         <item name="android:statusBarColor">@color/primaryVariant</item>
     </style>
 
@@ -22,11 +23,13 @@
 
     <!-- Widget -->
     <style name="Widget.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/primary</item>
         <item name="contentInsetStartWithNavigation">@dimen/dimen_0dp</item>
         <item name="popupTheme">@style/Theme.PopupOverlay</item>
         <item name="title">@string/label_app_bar</item>
         <item name="titleCentered">true</item>
         <item name="titleTextAppearance">@style/FontTitle.XL</item>
+        <item name="titleTextColor">@color/white</item>
     </style>
 
     <style name="Widget.ExposedDropdownMenu.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
@@ -42,8 +45,8 @@
         <item name="boxBackgroundColor">@color/onPrimary</item>
         <item name="boxStrokeColor">@color/primary_stated</item>
         <item name="boxStrokeErrorColor">@color/red</item>
-        <item name="boxStrokeWidth">@dimen/dimen_2dp</item>
-        <item name="boxStrokeWidthFocused">@dimen/dimen_2dp</item>
+        <item name="boxStrokeWidth">@dimen/dimen_3dp</item>
+        <item name="boxStrokeWidthFocused">@dimen/dimen_3dp</item>
     </style>
 
     <style name="Widget.TextInputLayout.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
@@ -59,8 +62,8 @@
         <item name="boxBackgroundColor">@color/onPrimary</item>
         <item name="boxStrokeColor">@color/primary_stated</item>
         <item name="boxStrokeErrorColor">@color/red</item>
-        <item name="boxStrokeWidth">@dimen/dimen_2dp</item>
-        <item name="boxStrokeWidthFocused">@dimen/dimen_2dp</item>
+        <item name="boxStrokeWidth">@dimen/dimen_3dp</item>
+        <item name="boxStrokeWidthFocused">@dimen/dimen_3dp</item>
     </style>
 
     <style name="Widget.Button" parent="Widget.Material3.Button">
@@ -78,19 +81,21 @@
         <item name="cornerRadius">@dimen/dimen_12dp</item>
         <item name="backgroundTint">@color/onPrimary</item>
         <item name="strokeColor">@color/primary_stated</item>
+        <item name="strokeWidth">@dimen/dimen_3dp</item>
     </style>
 
     <style name="Widget.FloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
         <item name="android:textAppearance">@style/FontLabel.MD</item>
-        <item name="android:textColor">@color/onSecondary</item>
-        <item name="backgroundTint">@color/secondary_stated</item>
+        <item name="android:textColor">@color/onPrimary</item>
+        <item name="backgroundTint">@color/primary_stated</item>
+        <item name="cornerRadius">@dimen/dimen_12dp</item>
         <item name="fabSize">normal</item>
         <item name="layout_behavior">
             com.google.android.material.behavior.HideBottomViewOnScrollBehavior
         </item>
         <item name="maxImageSize">@dimen/dimen_32dp</item>
         <item name="tint">@color/red</item>
-        <item name="iconTint">@color/onSecondary</item>
+        <item name="iconTint">@color/onPrimary</item>
         <item name="useCompatPadding">true</item>
     </style>
 
@@ -113,7 +118,7 @@
     </style>
 
     <style name="FontText">
-        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
     </style>
 
     <style name="FontText.XS" parent="FontText">
