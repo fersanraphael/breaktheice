@@ -1,4 +1,4 @@
-package br.com.bravi.breaktheice.data.source.remote
+package br.com.bravi.breaktheice.data.source
 
 import br.com.bravi.breaktheice.data.service.IActivityService
 import br.com.bravi.breaktheice.domain.entity.ActivityModel

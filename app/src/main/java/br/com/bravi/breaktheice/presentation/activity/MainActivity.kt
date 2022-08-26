@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.bravi.breaktheice.R
@@ -21,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel by viewModel<MainViewModel>()
 
+    private lateinit var navHostFragment: NavHostFragment
+
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
 
@@ -34,9 +35,13 @@ class MainActivity : AppCompatActivity() {
 
         fetchUiState()
 
-        val navHostFragment: NavHostFragment = supportFragmentManager.findFragmentById(R.id.main_nav_host) as NavHostFragment? ?: return
-        val navController: NavController = navHostFragment.navController
-        setupActionBarWithNavController(navController)
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.main_nav_host) as NavHostFragment? ?: return
+
+        setupActionBarWithNavController(navHostFragment.navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navHostFragment.navController.navigateUp() || super.onSupportNavigateUp()
     }
 
     private fun fetchUiState() {

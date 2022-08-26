@@ -5,12 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.bravi.breaktheice.databinding.FragmentActivityDetailBinding
 import br.com.bravi.breaktheice.presentation.fragment.base.BaseFragment
-import br.com.bravi.breaktheice.presentation.popBack
 import br.com.bravi.breaktheice.presentation.state.MainUiState
 import kotlinx.coroutines.launch
 
@@ -29,14 +27,6 @@ class ActivityDetailFragment : BaseFragment() {
         val binding: FragmentActivityDetailBinding = FragmentActivityDetailBinding.inflate(layoutInflater)
         binding.lifecycleOwner = fragmentActivity
         binding.viewModel = viewModel
-
-        fragmentActivity.onBackPressedDispatcher.addCallback(
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    popBack()
-                }
-            }
-        )
 
         fetchResult()
 

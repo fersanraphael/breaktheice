@@ -31,17 +31,16 @@ class ActivityFilterFragment : BaseDialogFragment() {
         binding.viewModel = viewModel
         binding.searchButton.setOnClickListener {
             val queries: MutableMap<String, String> = mutableMapOf()
-            val activityTypeStr: String = binding.typeAutoCompleteTextView.text.toString()
-            if (activityTypeStr.equals(activityTypeArr[0], ignoreCase = true)) {
+            val activityTypeText: String = binding.typeAutoCompleteTextView.text.toString()
+            if (activityTypeText.equals(activityTypeArr.first(), true)) {
                 viewModel.doActivity()
             } else {
-                queries[WEBSERVICE_QUERY_TYPE] = activityTypeStr.lowercase(ROOT)
+                queries[WEBSERVICE_QUERY_TYPE] = activityTypeText.lowercase(ROOT)
                 viewModel.doActivityFiltered(queries)
             }
 
             popBack()
         }
-
         binding.typeAutoCompleteTextView.createAdapter(fragmentContext, activityTypeArr)
 
         return binding.root

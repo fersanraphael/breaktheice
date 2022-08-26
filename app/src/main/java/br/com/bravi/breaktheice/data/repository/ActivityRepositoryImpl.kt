@@ -1,7 +1,7 @@
 package br.com.bravi.breaktheice.data.repository
 
-import br.com.bravi.breaktheice.data.source.local.LocalActivityDataSource
-import br.com.bravi.breaktheice.data.source.remote.RemoteActivityDataSource
+import br.com.bravi.breaktheice.data.source.LocalActivityDataSource
+import br.com.bravi.breaktheice.data.source.RemoteActivityDataSource
 import br.com.bravi.breaktheice.domain.entity.ActivityModel
 import br.com.bravi.breaktheice.domain.repository.IActivityRepository
 import kotlinx.coroutines.CoroutineDispatcher

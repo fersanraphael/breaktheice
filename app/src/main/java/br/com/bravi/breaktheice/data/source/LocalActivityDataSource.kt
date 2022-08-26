@@ -1,6 +1,6 @@
-package br.com.bravi.breaktheice.data.source.local
+package br.com.bravi.breaktheice.data.source
 
-import br.com.bravi.breaktheice.data.source.BreakTheIceDatabase
+import br.com.bravi.breaktheice.data.BreakTheIceDatabase
 import br.com.bravi.breaktheice.domain.entity.ActivityModel
 
 /**

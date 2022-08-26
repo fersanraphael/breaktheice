@@ -2,9 +2,9 @@ package br.com.bravi.breaktheice.di
 
 import androidx.room.Room
 import br.com.bravi.breaktheice.data.repository.ActivityRepositoryImpl
-import br.com.bravi.breaktheice.data.source.BreakTheIceDatabase
-import br.com.bravi.breaktheice.data.source.local.LocalActivityDataSource
-import br.com.bravi.breaktheice.data.source.remote.RemoteActivityDataSource
+import br.com.bravi.breaktheice.data.BreakTheIceDatabase
+import br.com.bravi.breaktheice.data.source.LocalActivityDataSource
+import br.com.bravi.breaktheice.data.source.RemoteActivityDataSource
 import br.com.bravi.breaktheice.domain.repository.IActivityRepository
 import br.com.bravi.breaktheice.domain.usecase.*
 import br.com.bravi.breaktheice.presentation.viewmodel.MainViewModel

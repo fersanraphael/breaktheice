@@ -1,4 +1,4 @@
-package br.com.bravi.breaktheice.data.source
+package br.com.bravi.breaktheice.data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
