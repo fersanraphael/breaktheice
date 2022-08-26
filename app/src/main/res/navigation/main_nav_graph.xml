@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/activity_list_fragment">
+
+    <fragment
+        android:id="@+id/activity_detail_fragment"
+        android:name="br.com.bravi.breaktheice.presentation.fragment.ActivityDetailFragment"
+        android:label="@string/fragment_activity_detail"
+        tools:layout="@layout/fragment_activity_detail">
+
+        <argument
+            android:name="activityId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/activity_list_fragment"
+        android:name="br.com.bravi.breaktheice.presentation.fragment.ActivityListFragment"
+        android:label="@string/fragment_activity_list"
+        tools:layout="@layout/fragment_activity_list">
+
+        <action
+            android:id="@+id/action_list_to_detail"
+            app:destination="@id/activity_detail_fragment"
+            app:popUpTo="@id/activity_list_fragment"
+            app:popUpToInclusive="false">
+
+            <argument
+                android:name="activityId"
+                android:defaultValue="0"
+                app:argType="integer" />
+
+        </action>
+
+        <action
+            android:id="@+id/action_list_to_filter"
+            app:destination="@id/activity_filter_fragment"
+            app:popUpTo="@id/activity_list_fragment"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/activity_filter_fragment"
+        android:name="br.com.bravi.breaktheice.presentation.fragment.ActivityFilterFragment"
+        android:label="@string/fragment_activity_filter"
+        tools:layout="@layout/fragment_activity_filter" />
+
+</navigation>

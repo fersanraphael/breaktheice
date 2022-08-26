@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="br.com.bravi.breaktheice.presentation.viewmodel.MainViewModel" />
+
+        <import type="br.com.bravi.breaktheice.presentation.state.MainUiState" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/app_bar"
+            style="@style/Widget.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_56dp" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/main_nav_host"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_56dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main_nav_graph" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/whiteTransparent"
+            android:visibility="@{viewModel.uiState instanceof MainUiState.Loading}">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/dimen_160dp"
+                android:layout_height="@dimen/dimen_160dp"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                app:lottie_colorFilter="@color/secondary"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/anim_spinner_dots" />
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
