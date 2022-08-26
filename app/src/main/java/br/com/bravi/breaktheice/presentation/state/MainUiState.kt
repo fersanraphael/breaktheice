@@ -7,9 +7,7 @@ import br.com.bravi.breaktheice.domain.entity.ActivityModel
  */
 sealed interface MainUiState {
 
-    data class DeleteActivity(
-        val activityModel: ActivityModel
-    ) : MainUiState
+    object DeleteActivity : MainUiState
 
     data class DoActivity(
         val activityModel: ActivityModel
@@ -29,9 +27,7 @@ sealed interface MainUiState {
         val activityModel: ActivityModel
     ) : MainUiState
 
-    data class InsertActivity(
-        val activityModel: ActivityModel
-    ) : MainUiState
+    object InsertActivity : MainUiState
 
     object Idle : MainUiState
 

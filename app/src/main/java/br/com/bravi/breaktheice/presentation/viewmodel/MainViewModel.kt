@@ -38,7 +38,7 @@ class MainViewModel constructor(
             deleteActivityUseCase(activityModel).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
-                        MainUiState.DeleteActivity(activityModel)
+                        MainUiState.DeleteActivity
                     }
                     is Result.Failure, is Result.Error -> {
                         MainUiState.Error
@@ -128,7 +128,7 @@ class MainViewModel constructor(
             insertActivityUseCase(activityModel).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
-                        MainUiState.InsertActivity(activityModel)
+                        MainUiState.InsertActivity
                     }
                     is Result.Failure, is Result.Error -> {
                         MainUiState.Error

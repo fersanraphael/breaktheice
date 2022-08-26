@@ -58,11 +58,8 @@ class ActivityListFragment : BaseFragment() {
                     is MainUiState.DoActivityFiltered -> {
                         viewModel.insertActivity(uiState.activityModel)
                     }
-                    is MainUiState.InsertActivity -> {
-                        mainAdapter.addItem(uiState.activityModel)
-                    }
-                    is MainUiState.DeleteActivity -> {
-                        mainAdapter.removeItem(uiState.activityModel)
+                    is MainUiState.InsertActivity, is MainUiState.DeleteActivity -> {
+                        viewModel.getActivities()
                     }
                     else -> {
                         // Do nothing.

@@ -33,20 +33,6 @@ class MainAdapter(
         return activityModelDataSet.size
     }
 
-    override fun addItem(data: ActivityModel) {
-        activityModelDataSet.apply {
-            add(data)
-            notifyItemInserted(lastIndex.plus(1))
-        }
-    }
-
-    override fun removeItem(data: ActivityModel) {
-        activityModelDataSet.apply {
-            remove(data)
-            notifyItemRemoved(indexOf(data))
-        }
-    }
-
     override fun replaceList(dataSet: MutableList<ActivityModel>) {
         activityModelDataSet.apply {
             clear()
