@@ -9,7 +9,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "br.com.bravi.breaktheice"
+        applicationId "br.com.breaktheice"
         minSdk 21
         targetSdk 32
         versionCode 1

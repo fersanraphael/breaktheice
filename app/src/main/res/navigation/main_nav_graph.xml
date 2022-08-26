@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/activity_detail_fragment"
-        android:name="br.com.bravi.breaktheice.presentation.fragment.ActivityDetailFragment"
+        android:name="br.com.breaktheice.presentation.fragment.ActivityDetailFragment"
         android:label="@string/fragment_activity_detail"
         tools:layout="@layout/fragment_activity_detail">
 
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/activity_list_fragment"
-        android:name="br.com.bravi.breaktheice.presentation.fragment.ActivityListFragment"
+        android:name="br.com.breaktheice.presentation.fragment.ActivityListFragment"
         android:label="@string/fragment_activity_list"
         tools:layout="@layout/fragment_activity_list">
 
@@ -51,7 +51,7 @@
 
     <dialog
         android:id="@+id/activity_filter_fragment"
-        android:name="br.com.bravi.breaktheice.presentation.fragment.ActivityFilterFragment"
+        android:name="br.com.breaktheice.presentation.fragment.ActivityFilterFragment"
         android:label="@string/fragment_activity_filter"
         tools:layout="@layout/fragment_activity_filter" />
 

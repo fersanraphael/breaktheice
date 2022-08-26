@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="br.com.bravi.breaktheice.presentation.viewmodel.MainViewModel" />
+            type="br.com.breaktheice.presentation.viewmodel.MainViewModel" />
 
     </data>
 

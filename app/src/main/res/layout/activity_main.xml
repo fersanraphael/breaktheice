@@ -6,9 +6,9 @@
 
         <variable
             name="viewModel"
-            type="br.com.bravi.breaktheice.presentation.viewmodel.MainViewModel" />
+            type="br.com.breaktheice.presentation.viewmodel.MainViewModel" />
 
-        <import type="br.com.bravi.breaktheice.presentation.state.MainUiState" />
+        <import type="br.com.breaktheice.presentation.state.MainUiState" />
 
     </data>
 
