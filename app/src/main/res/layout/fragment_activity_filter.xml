@@ -29,26 +29,27 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/FontText.MD"
+                        style="@style/FontLabel.SM"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/hint_filter_type"
-                        android:textColor="@color/primary_stated" />
+                        android:textColor="@color/onSecondary" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.ExposedDropdownMenu.OutlinedBox"
+                        style="@style/Widget.ExposedDropdownMenu.FilledBox"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_4dp">
 
                         <com.google.android.material.textfield.MaterialAutoCompleteTextView
                             android:id="@+id/type_auto_complete_text_view"
-                            style="@style/FontText.MD"
+                            style="@style/FontLabel.MD"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
                             android:paddingHorizontal="@dimen/dimen_16dp"
                             android:singleLine="true"
-                            android:textColor="@color/primary_stated"
+                            android:textColor="@color/onSecondary"
                             android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -61,8 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_64dp"
                     android:layout_marginTop="@dimen/dimen_16dp"
-                    android:text="@string/button_search"
-                    android:textAllCaps="true" />
+                    android:text="@string/button_search" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

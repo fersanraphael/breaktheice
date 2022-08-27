@@ -9,6 +9,7 @@
         <item name="colorSecondaryVariant">@color/secondaryVariant</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
         <item name="colorControlNormal">@color/white</item>
+        <item name="colorContainer">@color/lightGrey</item>
         <item name="android:statusBarColor">@color/primaryVariant</item>
     </style>
 
@@ -32,38 +33,40 @@
         <item name="titleTextColor">@color/white</item>
     </style>
 
-    <style name="Widget.ExposedDropdownMenu.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+    <style name="Widget.ExposedDropdownMenu.FilledBox" parent="Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
+        <item name="android:background">@drawable/background_card_view</item>
         <item name="errorEnabled">false</item>
         <item name="errorIconDrawable">@null</item>
         <item name="errorTextAppearance">@style/FontText.XS</item>
         <item name="counterTextAppearance">@style/FontText.XS</item>
-        <item name="hintTextAppearance">@style/FontText.MD</item>
+        <item name="hintTextAppearance">@style/FontLabel.SM</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopStart">@dimen/dimen_12dp</item>
-        <item name="boxBackgroundColor">@color/onPrimary</item>
-        <item name="boxStrokeColor">@color/primary_stated</item>
+        <item name="boxBackgroundColor">@color/lightGrey</item>
+        <item name="boxStrokeColor">@color/lightGrey</item>
         <item name="boxStrokeErrorColor">@color/red</item>
-        <item name="boxStrokeWidth">@dimen/dimen_3dp</item>
-        <item name="boxStrokeWidthFocused">@dimen/dimen_3dp</item>
+        <item name="boxStrokeWidth">@dimen/dimen_0dp</item>
+        <item name="boxStrokeWidthFocused">@dimen/dimen_0dp</item>
     </style>
 
-    <style name="Widget.TextInputLayout.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
+    <style name="Widget.TextInputLayout.FilledBox" parent="Widget.Material3.TextInputLayout.FilledBox.Dense">
+        <item name="android:background">@drawable/background_card_view</item>
         <item name="errorEnabled">false</item>
         <item name="errorIconDrawable">@null</item>
         <item name="errorTextAppearance">@style/FontText.XS</item>
         <item name="counterTextAppearance">@style/FontText.XS</item>
-        <item name="hintTextAppearance">@style/FontText.MD</item>
+        <item name="hintTextAppearance">@style/FontLabel.SM</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopStart">@dimen/dimen_12dp</item>
-        <item name="boxBackgroundColor">@color/onPrimary</item>
-        <item name="boxStrokeColor">@color/primary_stated</item>
+        <item name="boxBackgroundColor">@color/lightGrey</item>
+        <item name="boxStrokeColor">@color/lightGrey</item>
         <item name="boxStrokeErrorColor">@color/red</item>
-        <item name="boxStrokeWidth">@dimen/dimen_3dp</item>
-        <item name="boxStrokeWidthFocused">@dimen/dimen_3dp</item>
+        <item name="boxStrokeWidth">@dimen/dimen_0dp</item>
+        <item name="boxStrokeWidthFocused">@dimen/dimen_0dp</item>
     </style>
 
     <style name="Widget.Button" parent="Widget.Material3.Button">
@@ -86,17 +89,24 @@
 
     <style name="Widget.FloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
         <item name="android:textAppearance">@style/FontLabel.MD</item>
-        <item name="android:textColor">@color/onPrimary</item>
-        <item name="backgroundTint">@color/primary_stated</item>
+        <item name="android:textColor">@color/onSecondary</item>
+        <item name="backgroundTint">@color/secondary_stated</item>
         <item name="cornerRadius">@dimen/dimen_12dp</item>
         <item name="fabSize">normal</item>
+        <item name="iconTint">@color/onSecondary</item>
         <item name="layout_behavior">
             com.google.android.material.behavior.HideBottomViewOnScrollBehavior
         </item>
         <item name="maxImageSize">@dimen/dimen_32dp</item>
+        <item name="rippleColor">@null</item>
+        <item name="shapeAppearanceOverlay">@style/Widget.FloatingActionButton.Overlay</item>
         <item name="tint">@color/red</item>
-        <item name="iconTint">@color/onPrimary</item>
         <item name="useCompatPadding">true</item>
+    </style>
+
+    <style name="Widget.FloatingActionButton.Overlay">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dimen_12dp</item>
     </style>
 
     <style name="Widget.Switch" parent="Widget.Material3.CompoundButton.Switch">
@@ -118,7 +128,7 @@
     </style>
 
     <style name="FontText">
-        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="FontText.XS" parent="FontText">
