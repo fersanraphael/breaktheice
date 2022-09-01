@@ -29,27 +29,25 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/FontLabel.SM"
+                        style="@style/FontText.MD"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/hint_filter_type"
-                        android:textColor="@color/onSecondary" />
+                        android:textColor="@color/primary_stated" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.ExposedDropdownMenu.FilledBox"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_4dp">
+                        android:layout_height="wrap_content">
 
                         <com.google.android.material.textfield.MaterialAutoCompleteTextView
                             android:id="@+id/type_auto_complete_text_view"
-                            style="@style/FontLabel.MD"
+                            style="@style/FontText.MD"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            android:paddingHorizontal="@dimen/dimen_16dp"
                             android:singleLine="true"
-                            android:textColor="@color/onSecondary"
+                            android:textColor="@color/primary_stated"
                             android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>

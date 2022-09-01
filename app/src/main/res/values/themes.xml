@@ -8,8 +8,8 @@
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorSecondaryVariant">@color/secondaryVariant</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
-        <item name="colorControlNormal">@color/white</item>
         <item name="colorContainer">@color/lightGrey</item>
+        <item name="colorControlNormal">@color/white</item>
         <item name="android:statusBarColor">@color/primaryVariant</item>
     </style>
 
@@ -33,39 +33,37 @@
         <item name="titleTextColor">@color/white</item>
     </style>
 
-    <style name="Widget.ExposedDropdownMenu.FilledBox" parent="Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
-        <item name="android:background">@drawable/background_card_view</item>
+    <style name="Widget.ExposedDropdownMenu.FilledBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
         <item name="errorEnabled">false</item>
         <item name="errorIconDrawable">@null</item>
         <item name="errorTextAppearance">@style/FontText.XS</item>
         <item name="counterTextAppearance">@style/FontText.XS</item>
-        <item name="hintTextAppearance">@style/FontLabel.SM</item>
+        <item name="hintTextAppearance">@style/FontText.MD</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopStart">@dimen/dimen_12dp</item>
-        <item name="boxBackgroundColor">@color/lightGrey</item>
-        <item name="boxStrokeColor">@color/lightGrey</item>
+        <item name="boxBackgroundColor">@color/onPrimary</item>
+        <item name="boxStrokeColor">@color/primary_stated</item>
         <item name="boxStrokeErrorColor">@color/red</item>
-        <item name="boxStrokeWidth">@dimen/dimen_0dp</item>
+        <item name="boxStrokeWidth">@dimen/dimen_4dp</item>
         <item name="boxStrokeWidthFocused">@dimen/dimen_0dp</item>
     </style>
 
-    <style name="Widget.TextInputLayout.FilledBox" parent="Widget.Material3.TextInputLayout.FilledBox.Dense">
-        <item name="android:background">@drawable/background_card_view</item>
+    <style name="Widget.TextInputLayout.FilledBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
         <item name="errorEnabled">false</item>
         <item name="errorIconDrawable">@null</item>
         <item name="errorTextAppearance">@style/FontText.XS</item>
         <item name="counterTextAppearance">@style/FontText.XS</item>
-        <item name="hintTextAppearance">@style/FontLabel.SM</item>
+        <item name="hintTextAppearance">@style/FontText.MD</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopStart">@dimen/dimen_12dp</item>
-        <item name="boxBackgroundColor">@color/lightGrey</item>
-        <item name="boxStrokeColor">@color/lightGrey</item>
+        <item name="boxBackgroundColor">@color/onPrimary</item>
+        <item name="boxStrokeColor">@color/primary_stated</item>
         <item name="boxStrokeErrorColor">@color/red</item>
-        <item name="boxStrokeWidth">@dimen/dimen_0dp</item>
+        <item name="boxStrokeWidth">@dimen/dimen_4dp</item>
         <item name="boxStrokeWidthFocused">@dimen/dimen_0dp</item>
     </style>
 

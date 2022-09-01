@@ -20,8 +20,10 @@
     <color name="onSecondary">@color/darkGrey</color>
 
     <!--  General  -->
+    <color name="blue">#FF9DCFD2</color>
     <color name="darkGrey">#FF787878</color>
     <color name="grey">#FFCCCCCC</color>
+    <color name="lightBlue">#FFB8DADD</color>
     <color name="lightGrey">#FFEEEEEE</color>
     <color name="red">#FFFF0000</color>
     <color name="white">#FFF6F6F6</color>
