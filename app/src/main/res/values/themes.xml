@@ -47,7 +47,7 @@
         <item name="boxStrokeColor">@color/primary_stated</item>
         <item name="boxStrokeErrorColor">@color/red</item>
         <item name="boxStrokeWidth">@dimen/dimen_4dp</item>
-        <item name="boxStrokeWidthFocused">@dimen/dimen_0dp</item>
+        <item name="boxStrokeWidthFocused">@dimen/dimen_4dp</item>
     </style>
 
     <style name="Widget.TextInputLayout.FilledBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
@@ -64,7 +64,7 @@
         <item name="boxStrokeColor">@color/primary_stated</item>
         <item name="boxStrokeErrorColor">@color/red</item>
         <item name="boxStrokeWidth">@dimen/dimen_4dp</item>
-        <item name="boxStrokeWidthFocused">@dimen/dimen_0dp</item>
+        <item name="boxStrokeWidthFocused">@dimen/dimen_4dp</item>
     </style>
 
     <style name="Widget.Button" parent="Widget.Material3.Button">
