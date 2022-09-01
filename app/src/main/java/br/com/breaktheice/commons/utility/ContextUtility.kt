@@ -9,10 +9,10 @@ import br.com.breaktheice.R
 
 fun Context.getAccessibilityText(accessibility: Float): String {
     return when (accessibility) {
-        in 0.0..3.3 -> {
+        in 0.0..0.29 -> {
             getString(R.string.label_accessibility_easy)
         }
-        in 3.3..6.6 -> {
+        in 0.3..0.59 -> {
             getString(R.string.label_accessibility_medium)
         }
         else -> {
