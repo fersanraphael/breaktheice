@@ -17,7 +17,7 @@ class RemoteActivityDataSource constructor(
             .doActivity()
     }
 
-    suspend fun doActivityFiltered(options: MutableMap<String, String>?): Response<ActivityModel> {
+    suspend fun doActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel> {
         return retrofit.create(IActivityService::class.java)
             .doActivityFiltered(options)
     }
