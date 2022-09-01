@@ -15,7 +15,7 @@ class MainAdapter(
     val onItemClickListener: (ActivityModel) -> Unit
 ) : RecyclerView.Adapter<MainAdapter.ViewHolder>(), IItemContract<ActivityModel> {
 
-    private var activityModelDataSet: ArrayList<ActivityModel?> = arrayListOf()
+    private val activityModelDataSet: ArrayList<ActivityModel?> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(ItemActivityBinding.inflate(LayoutInflater.from(parent.context), parent, false))

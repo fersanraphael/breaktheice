@@ -1,9 +1,9 @@
-package br.com.breaktheice.util.binding
+package br.com.breaktheice.commons.binding
 
 import android.view.View
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import br.com.breaktheice.util.getAccessibilityText
+import br.com.breaktheice.commons.utility.getAccessibilityText
 
 /**
  * @author Raphael Santos

@@ -1,15 +1,15 @@
 package br.com.breaktheice.di
 
 import androidx.room.Room
-import br.com.breaktheice.data.repository.ActivityRepositoryImpl
 import br.com.breaktheice.data.BreakTheIceDatabase
+import br.com.breaktheice.data.repository.ActivityRepositoryImpl
 import br.com.breaktheice.data.source.LocalActivityDataSource
 import br.com.breaktheice.data.source.RemoteActivityDataSource
 import br.com.breaktheice.domain.repository.IActivityRepository
 import br.com.breaktheice.domain.usecase.*
 import br.com.breaktheice.presentation.viewmodel.MainViewModel
-import br.com.breaktheice.util.constant.DATABASE_NAME
-import br.com.breaktheice.util.constant.WEBSERVICE_BASEURL
+import br.com.breaktheice.commons.constant.DATABASE_NAME
+import br.com.breaktheice.commons.constant.WEBSERVICE_BASEURL
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -44,7 +44,7 @@ fun injectBreakTheIceModule(): Module {
         }
 
         /*
-         * Room Database Injection.
+         * Room Database injection.
          */
         single {
             Room.databaseBuilder(androidContext(), BreakTheIceDatabase::class.java, DATABASE_NAME)

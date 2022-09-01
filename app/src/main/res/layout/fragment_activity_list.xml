@@ -8,6 +8,8 @@
             name="viewModel"
             type="br.com.breaktheice.presentation.viewmodel.MainViewModel" />
 
+        <import type="br.com.breaktheice.presentation.state.MainUiState.GetActivities" />
+
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -27,6 +29,20 @@
                 android:padding="@dimen/dimen_6dp" />
 
         </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/dimen_128dp"
+                android:layout_height="@dimen/dimen_128dp"
+                android:layout_centerInParent="true"
+                android:visibility="@{viewModel.uiState instanceof GetActivities &amp;&amp; ((GetActivities) viewModel.uiState).activities.isEmpty(), default=gone}"
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/anim_not_found" />
+
+        </RelativeLayout>
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/new_activity_fab"

@@ -8,7 +8,7 @@
             name="viewModel"
             type="br.com.breaktheice.presentation.viewmodel.MainViewModel" />
 
-        <import type="br.com.breaktheice.presentation.state.MainUiState" />
+        <import type="br.com.breaktheice.presentation.state.MainUiState.Loading" />
 
     </data>
 
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/whiteTransparent"
-            android:visibility="@{viewModel.uiState instanceof MainUiState.Loading, default=gone}">
+            android:visibility="@{viewModel.uiState instanceof Loading, default=gone}">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="@dimen/dimen_160dp"
@@ -45,7 +45,7 @@
                 app:lottie_autoPlay="true"
                 app:lottie_colorFilter="@color/secondary"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/anim_spinner_dots" />
+                app:lottie_rawRes="@raw/anim_loading" />
 
         </RelativeLayout>
 

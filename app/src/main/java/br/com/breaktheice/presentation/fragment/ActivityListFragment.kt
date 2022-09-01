@@ -11,7 +11,7 @@ import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.navigateFromListToDetail
 import br.com.breaktheice.presentation.navigateFromListToFilter
 import br.com.breaktheice.presentation.state.MainUiState
-import br.com.breaktheice.util.createAdapter
+import br.com.breaktheice.commons.utility.createAdapter
 import kotlinx.coroutines.launch
 
 /**

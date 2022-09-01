@@ -1,4 +1,4 @@
-package br.com.breaktheice.util
+package br.com.breaktheice.commons.utility
 
 import android.content.Context
 import android.content.res.Configuration
@@ -42,8 +42,8 @@ fun RecyclerView.createAdapter(
 
 fun <T> AutoCompleteTextView.createAdapter(
     context: Context,
-    stringArray: Array<T>
+    array: Array<T>
 ) {
-    val arrayAdapter: ArrayAdapter<T> = ArrayAdapter(context, R.layout.dropdown_item, stringArray)
+    val arrayAdapter: ArrayAdapter<T> = ArrayAdapter(context, R.layout.dropdown_item, array)
     setAdapter(arrayAdapter)
 }

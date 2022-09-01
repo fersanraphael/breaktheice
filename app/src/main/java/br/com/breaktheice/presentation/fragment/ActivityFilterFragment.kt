@@ -8,8 +8,8 @@ import br.com.breaktheice.R
 import br.com.breaktheice.databinding.FragmentActivityFilterBinding
 import br.com.breaktheice.presentation.fragment.base.BaseDialogFragment
 import br.com.breaktheice.presentation.popBack
-import br.com.breaktheice.util.constant.WEBSERVICE_QUERY_TYPE
-import br.com.breaktheice.util.createAdapter
+import br.com.breaktheice.commons.constant.WEBSERVICE_QUERY_TYPE
+import br.com.breaktheice.commons.utility.createAdapter
 import java.util.Locale.ROOT
 
 /**

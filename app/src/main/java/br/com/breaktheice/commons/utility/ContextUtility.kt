@@ -1,4 +1,4 @@
-package br.com.breaktheice.util
+package br.com.breaktheice.commons.utility
 
 import android.content.Context
 import br.com.breaktheice.R
