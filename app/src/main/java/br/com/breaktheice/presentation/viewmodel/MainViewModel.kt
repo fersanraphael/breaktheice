@@ -140,12 +140,4 @@ class MainViewModel constructor(
             }
         }
     }
-
-    fun isLoadingState(): Boolean {
-        return uiState.value is MainUiState.Loading
-    }
-
-    fun isActivityListEmpty(): Boolean {
-        return uiState.value is MainUiState.GetActivities && (uiState.value as MainUiState.GetActivities).activities.isEmpty()
-    }
 }
