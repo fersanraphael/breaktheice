@@ -90,14 +90,12 @@
         <item name="android:stateListAnimator">@animator/state_scaled</item>
         <item name="android:textAppearance">@style/TextAppearance.LabelLarge</item>
         <item name="cornerRadius">@dimen/dimen_12dp</item>
-        <item name="rippleColor">@android:color/transparent</item>
     </style>
 
     <style name="Widget.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:stateListAnimator">@animator/state_scaled</item>
         <item name="android:textAppearance">@style/TextAppearance.LabelLarge</item>
         <item name="cornerRadius">@dimen/dimen_12dp</item>
-        <item name="rippleColor">@android:color/transparent</item>
         <item name="strokeWidth">@dimen/dimen_2dp</item>
     </style>
 
@@ -105,7 +103,6 @@
         <item name="cardCornerRadius">@dimen/dimen_12dp</item>
         <item name="cardElevation">@dimen/dimen_16dp</item>
         <item name="contentPadding">@dimen/dimen_16dp</item>
-        <item name="rippleColor">@android:color/transparent</item>
     </style>
 
     <style name="Widget.FloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
@@ -119,7 +116,6 @@
             com.google.android.material.behavior.HideBottomViewOnScrollBehavior
         </item>
         <item name="maxImageSize">@dimen/dimen_32dp</item>
-        <item name="rippleColor">@android:color/transparent</item>
         <item name="shapeAppearanceOverlay">@style/Widget.FloatingActionButton.Overlay</item>
         <item name="useCompatPadding">true</item>
     </style>
@@ -131,62 +127,77 @@
 
     <!-- Text Appearance -->
     <style name="TextAppearance.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:textSize">56sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:textSize">48sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:textSize">36sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textSize">32sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textSize">28sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textSize">24sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
-        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/montserrat_semibold</item>
     </style>
 
     <style name="TextAppearance.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
-        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/montserrat_semibold</item>
     </style>
 
     <style name="TextAppearance.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
-        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/montserrat_semibold</item>
     </style>
 
     <style name="TextAppearance.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">16sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">12sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
     <style name="TextAppearance.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textSize">15sp</item>
         <item name="fontFamily">@font/montserrat_medium</item>
     </style>
 
     <style name="TextAppearance.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">13sp</item>
         <item name="fontFamily">@font/montserrat_medium</item>
     </style>
 
     <style name="TextAppearance.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
         <item name="fontFamily">@font/montserrat_medium</item>
     </style>
 
