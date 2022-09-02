@@ -12,7 +12,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/activity_layout"
-        style="@style/Widget.CardView"
+        style="@style/Widget.Appbreaktheice.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_8dp">
@@ -23,7 +23,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/key_text_view"
-                style="@style/TextAppearance.LabelSmall"
+                style="@style/TextAppearance.Appbreaktheice.LabelSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -32,7 +32,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/activity_text_view"
-                style="@style/TextAppearance.LabelLarge"
+                style="@style/TextAppearance.Appbreaktheice.LabelLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/key_text_view"
@@ -63,7 +63,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/accessibility_text_view"
-                        style="@style/TextAppearance.LabelMedium"
+                        style="@style/TextAppearance.Appbreaktheice.LabelMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -86,7 +86,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/participants_text_view"
-                        style="@style/TextAppearance.LabelMedium"
+                        style="@style/TextAppearance.Appbreaktheice.LabelMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"

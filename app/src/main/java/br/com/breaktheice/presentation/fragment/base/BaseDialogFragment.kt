@@ -21,7 +21,7 @@ open class BaseDialogFragment : DialogFragment() {
     protected val viewModel by sharedViewModel<MainViewModel>()
 
     override fun onCreateDialog(bundle: Bundle?): Dialog {
-        setStyle(STYLE_NORMAL, R.style.Theme_Dialog)
+        setStyle(STYLE_NORMAL, R.style.Theme_Appbreaktheice_Dialog)
 
         return super.onCreateDialog(bundle)
     }

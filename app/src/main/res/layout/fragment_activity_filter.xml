@@ -11,7 +11,8 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorSurface">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -24,25 +25,24 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.ExposedDropdownMenu.OutlinedBox"
+                    style="@style/Widget.Appbreaktheice.ExposedDropdownMenu.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_filter_type">
 
                     <com.google.android.material.textfield.MaterialAutoCompleteTextView
                         android:id="@+id/type_auto_complete_text_view"
-                        style="@style/TextAppearance.LabelLarge"
+                        style="@style/TextAppearance.Appbreaktheice.LabelLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
-                        android:paddingHorizontal="@dimen/dimen_16dp"
                         android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/search_button"
-                    style="@style/Widget.Button"
+                    style="@style/Widget.Appbreaktheice.Button"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_56dp"
                     android:layout_marginTop="@dimen/dimen_16dp"

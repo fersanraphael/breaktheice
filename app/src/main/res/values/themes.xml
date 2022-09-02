@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Theme -->
-    <style name="Theme.Appbreaktheice" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.Appbreaktheice" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
@@ -25,46 +25,46 @@
         <item name="colorSurfaceVariant">@color/colorSurfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/colorOnSurfaceVariant</item>
         <item name="colorOutline">@color/colorOutline</item>
-        <item name="textAppearanceDisplayLarge">@style/TextAppearance.DisplayLarge</item>
-        <item name="textAppearanceDisplayMedium">@style/TextAppearance.DisplayMedium</item>
-        <item name="textAppearanceDisplaySmall">@style/TextAppearance.DisplaySmall</item>
-        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.HeadlineLarge</item>
-        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.HeadlineMedium</item>
-        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.HeadlineSmall</item>
-        <item name="textAppearanceTitleLarge">@style/TextAppearance.TitleLarge</item>
-        <item name="textAppearanceTitleMedium">@style/TextAppearance.TitleMedium</item>
-        <item name="textAppearanceTitleSmall">@style/TextAppearance.TitleSmall</item>
-        <item name="textAppearanceBodyLarge">@style/TextAppearance.BodyLarge</item>
-        <item name="textAppearanceBodyMedium">@style/TextAppearance.BodyMedium</item>
-        <item name="textAppearanceBodySmall">@style/TextAppearance.BodySmall</item>
-        <item name="textAppearanceLabelLarge">@style/TextAppearance.LabelLarge</item>
-        <item name="textAppearanceLabelMedium">@style/TextAppearance.LabelMedium</item>
-        <item name="textAppearanceLabelSmall">@style/TextAppearance.LabelSmall</item>
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Appbreaktheice.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Appbreaktheice.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.Appbreaktheice.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Appbreaktheice.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Appbreaktheice.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Appbreaktheice.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Appbreaktheice.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Appbreaktheice.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Appbreaktheice.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Appbreaktheice.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Appbreaktheice.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Appbreaktheice.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Appbreaktheice.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Appbreaktheice.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Appbreaktheice.LabelSmall</item>
     </style>
 
-    <style name="Theme.PopupOverlay" parent="ThemeOverlay.Material3.Light" />
+    <style name="Theme.Appbreaktheice.PopupOverlay" parent="ThemeOverlay.Material3.DynamicColors.DayNight" />
 
-    <style name="Theme.Dialog" parent="Theme.Material3.Light.Dialog">
+    <style name="Theme.Appbreaktheice.Dialog" parent="Theme.Material3.DayNight.Dialog.Alert">
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
         <item name="dialogCornerRadius">@dimen/dimen_12dp</item>
-        <item name="theme">@style/Theme.Appbreaktheice</item>
+        <item name="dialogTheme">@style/Theme.Appbreaktheice</item>
     </style>
 
     <!-- Widget -->
-    <style name="Widget.Toolbar" parent="Widget.Material3.Toolbar">
+    <style name="Widget.Appbreaktheice.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="contentInsetStartWithNavigation">@dimen/dimen_0dp</item>
-        <item name="popupTheme">@style/Theme.PopupOverlay</item>
+        <item name="popupTheme">@style/Theme.Appbreaktheice.PopupOverlay</item>
         <item name="title">@string/label_app_bar</item>
         <item name="titleCentered">true</item>
-        <item name="titleTextAppearance">@style/TextAppearance.TitleLarge</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Appbreaktheice.TitleLarge</item>
     </style>
 
-    <style name="Widget.ExposedDropdownMenu.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+    <style name="Widget.Appbreaktheice.ExposedDropdownMenu.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
         <item name="errorIconDrawable">@null</item>
-        <item name="errorTextAppearance">@style/TextAppearance.LabelSmall</item>
-        <item name="counterTextAppearance">@style/TextAppearance.LabelSmall</item>
-        <item name="hintTextAppearance">@style/TextAppearance.LabelMedium</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Appbreaktheice.LabelSmall</item>
+        <item name="counterTextAppearance">@style/TextAppearance.Appbreaktheice.LabelSmall</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Appbreaktheice.LabelMedium</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dimen_12dp</item>
@@ -73,11 +73,11 @@
         <item name="boxStrokeWidthFocused">@dimen/dimen_2dp</item>
     </style>
 
-    <style name="Widget.TextInputLayout.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
+    <style name="Widget.Appbreaktheice.TextInputLayout.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
         <item name="errorIconDrawable">@null</item>
-        <item name="errorTextAppearance">@style/TextAppearance.LabelSmall</item>
-        <item name="counterTextAppearance">@style/TextAppearance.LabelSmall</item>
-        <item name="hintTextAppearance">@style/TextAppearance.LabelMedium</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Appbreaktheice.LabelSmall</item>
+        <item name="counterTextAppearance">@style/TextAppearance.Appbreaktheice.LabelSmall</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Appbreaktheice.LabelMedium</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dimen_12dp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dimen_12dp</item>
@@ -86,27 +86,27 @@
         <item name="boxStrokeWidthFocused">@dimen/dimen_2dp</item>
     </style>
 
-    <style name="Widget.Button" parent="Widget.Material3.Button">
+    <style name="Widget.Appbreaktheice.Button" parent="Widget.Material3.Button">
         <item name="android:stateListAnimator">@animator/state_scaled</item>
-        <item name="android:textAppearance">@style/TextAppearance.LabelLarge</item>
+        <item name="android:textAppearance">@style/TextAppearance.Appbreaktheice.LabelLarge</item>
         <item name="cornerRadius">@dimen/dimen_12dp</item>
     </style>
 
-    <style name="Widget.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+    <style name="Widget.Appbreaktheice.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:stateListAnimator">@animator/state_scaled</item>
-        <item name="android:textAppearance">@style/TextAppearance.LabelLarge</item>
+        <item name="android:textAppearance">@style/TextAppearance.Appbreaktheice.LabelLarge</item>
         <item name="cornerRadius">@dimen/dimen_12dp</item>
         <item name="strokeWidth">@dimen/dimen_2dp</item>
     </style>
 
-    <style name="Widget.CardView" parent="Widget.Material3.CardView.Elevated">
+    <style name="Widget.Appbreaktheice.CardView" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">@dimen/dimen_12dp</item>
         <item name="cardElevation">@dimen/dimen_16dp</item>
         <item name="contentPadding">@dimen/dimen_16dp</item>
     </style>
 
-    <style name="Widget.FloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
-        <item name="android:textAppearance">@style/TextAppearance.LabelLarge</item>
+    <style name="Widget.Appbreaktheice.FloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
+        <item name="android:textAppearance">@style/TextAppearance.Appbreaktheice.LabelLarge</item>
         <item name="android:textColor">@color/colorOnPrimary</item>
         <item name="backgroundTint">@color/colorPrimary</item>
         <item name="cornerRadius">@dimen/dimen_12dp</item>
@@ -116,87 +116,87 @@
             com.google.android.material.behavior.HideBottomViewOnScrollBehavior
         </item>
         <item name="maxImageSize">@dimen/dimen_32dp</item>
-        <item name="shapeAppearanceOverlay">@style/Widget.FloatingActionButton.Overlay</item>
+        <item name="shapeAppearanceOverlay">@style/Widget.Appbreaktheice.FloatingActionButton.Overlay</item>
         <item name="useCompatPadding">true</item>
     </style>
 
-    <style name="Widget.FloatingActionButton.Overlay">
+    <style name="Widget.Appbreaktheice.FloatingActionButton.Overlay">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/dimen_12dp</item>
     </style>
 
     <!-- Text Appearance -->
-    <style name="TextAppearance.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+    <style name="TextAppearance.Appbreaktheice.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
         <item name="android:textSize">56sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+    <style name="TextAppearance.Appbreaktheice.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
         <item name="android:textSize">48sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+    <style name="TextAppearance.Appbreaktheice.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
         <item name="android:textSize">36sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+    <style name="TextAppearance.Appbreaktheice.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
         <item name="android:textSize">32sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+    <style name="TextAppearance.Appbreaktheice.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
         <item name="android:textSize">28sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+    <style name="TextAppearance.Appbreaktheice.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
         <item name="android:textSize">24sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+    <style name="TextAppearance.Appbreaktheice.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:textSize">18sp</item>
         <item name="fontFamily">@font/montserrat_semibold</item>
     </style>
 
-    <style name="TextAppearance.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+    <style name="TextAppearance.Appbreaktheice.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:textSize">16sp</item>
         <item name="fontFamily">@font/montserrat_semibold</item>
     </style>
 
-    <style name="TextAppearance.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+    <style name="TextAppearance.Appbreaktheice.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/montserrat_semibold</item>
     </style>
 
-    <style name="TextAppearance.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+    <style name="TextAppearance.Appbreaktheice.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:textSize">16sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+    <style name="TextAppearance.Appbreaktheice.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.BodySmall" parent="TextAppearance.Material3.BodySmall">
+    <style name="TextAppearance.Appbreaktheice.BodySmall" parent="TextAppearance.Material3.BodySmall">
         <item name="android:textSize">12sp</item>
         <item name="fontFamily">@font/montserrat_regular</item>
     </style>
 
-    <style name="TextAppearance.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+    <style name="TextAppearance.Appbreaktheice.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
         <item name="android:textSize">15sp</item>
         <item name="fontFamily">@font/montserrat_medium</item>
     </style>
 
-    <style name="TextAppearance.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+    <style name="TextAppearance.Appbreaktheice.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
         <item name="android:textSize">13sp</item>
         <item name="fontFamily">@font/montserrat_medium</item>
     </style>
 
-    <style name="TextAppearance.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+    <style name="TextAppearance.Appbreaktheice.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
         <item name="android:textSize">11sp</item>
         <item name="fontFamily">@font/montserrat_medium</item>
     </style>
