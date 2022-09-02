@@ -4,7 +4,7 @@
     <string name="app_name">Break The Ice</string>
 
     <!-- Button -->
-    <string name="button_activity">New Activity</string>
+    <string name="button_activity">Activity</string>
     <string name="button_search">Search</string>
 
     <!-- Fragment -->
