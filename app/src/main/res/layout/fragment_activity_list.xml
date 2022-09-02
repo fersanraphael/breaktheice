@@ -25,8 +25,9 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
-                android:padding="@dimen/dimen_6dp" />
+                android:padding="@dimen/dimen_8dp" />
 
         </androidx.core.widget.NestedScrollView>
 

@@ -7,11 +7,6 @@
     <string name="button_activity">New Activity</string>
     <string name="button_search">Search</string>
 
-    <!-- Example -->
-    <string name="example_helper">Helper</string>
-    <string name="example_hint">Hint</string>
-    <string name="example_label">Label</string>
-
     <!-- Fragment -->
     <string name="fragment_activity_detail">Detail</string>
     <string name="fragment_activity_filter">Search</string>
@@ -26,7 +21,7 @@
     <string name="label_accessibility_hard">Hard</string>
     <string name="label_app_bar">Hello there!</string>
     <string name="label_common_error">Something went wrong.</string>
-    <string name="label_key">Id: %s</string>
+    <string name="label_id">Id: %s</string>
     <string name="label_participants">%d</string>
 
 </resources>

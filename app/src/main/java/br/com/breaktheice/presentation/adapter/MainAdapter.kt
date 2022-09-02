@@ -2,11 +2,11 @@ package br.com.breaktheice.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.RelativeLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.com.breaktheice.R
 import br.com.breaktheice.databinding.ItemActivityBinding
 import br.com.breaktheice.domain.entity.ActivityModel
+import com.google.android.material.card.MaterialCardView
 
 /**
  * @author Raphael Santos
@@ -42,7 +42,7 @@ class MainAdapter(
     }
 
     private fun ViewHolder.onItemClick(activityModel: ActivityModel) {
-        itemView.findViewById<RelativeLayout>(R.id.activity_layout).setOnClickListener {
+        itemView.findViewById<MaterialCardView>(R.id.activity_layout).setOnClickListener {
             onItemClickListener(activityModel)
         }
     }
