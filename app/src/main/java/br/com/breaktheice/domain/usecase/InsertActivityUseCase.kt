@@ -2,6 +2,7 @@ package br.com.breaktheice.domain.usecase
 
 import br.com.breaktheice.commons.Result
 import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.entity.ErrorModel
 import br.com.breaktheice.domain.repository.IActivityRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -17,12 +18,12 @@ class InsertActivityUseCase constructor(
 
     operator fun invoke(
         activityModel: ActivityModel?
-    ): Flow<Result<Unit>> {
+    ): Flow<Result<Unit, ErrorModel>> {
         return flow {
             if (activityModel != null) {
                 emit(Result.Success(activityRepository.insertActivity(activityModel)))
             } else {
-                emit(Result.Failure)
+                emit(Result.Failure())
             }
         }.onStart {
             emit(Result.Loading)

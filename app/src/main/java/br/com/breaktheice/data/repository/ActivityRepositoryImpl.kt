@@ -1,8 +1,11 @@
 package br.com.breaktheice.data.repository
 
+import br.com.breaktheice.commons.Result
+import br.com.breaktheice.commons.asError
 import br.com.breaktheice.data.source.LocalActivityDataSource
 import br.com.breaktheice.data.source.RemoteActivityDataSource
 import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.entity.ErrorModel
 import br.com.breaktheice.domain.repository.IActivityRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -18,15 +21,27 @@ class ActivityRepositoryImpl constructor(
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : IActivityRepository {
 
-    override suspend fun doActivity(): Response<ActivityModel> {
+    override suspend fun doActivity(): Result<ActivityModel, ErrorModel> {
         return withContext(coroutineDispatcher) {
-            remoteActivityDataSource.doActivity()
+            val response: Response<ActivityModel> = remoteActivityDataSource.doActivity()
+            val body = response.body()
+            if (response.isSuccessful && body != null) {
+                Result.Success(body)
+            } else {
+                Result.Failure(response.errorBody()?.asError())
+            }
         }
     }
 
-    override suspend fun doActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel> {
+    override suspend fun doActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel, ErrorModel> {
         return withContext(coroutineDispatcher) {
-            remoteActivityDataSource.doActivityFiltered(options)
+            val response: Response<ActivityModel> = remoteActivityDataSource.doActivityFiltered(options)
+            val body = response.body()
+            if (response.isSuccessful && body != null) {
+                Result.Success(body)
+            } else {
+                Result.Failure(response.errorBody()?.asError())
+            }
         }
     }
 

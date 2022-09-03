@@ -1,16 +1,17 @@
 package br.com.breaktheice.domain.repository
 
+import br.com.breaktheice.commons.Result
 import br.com.breaktheice.domain.entity.ActivityModel
-import retrofit2.Response
+import br.com.breaktheice.domain.entity.ErrorModel
 
 /**
  * @author Raphael Santos
  */
 interface IActivityRepository {
 
-    suspend fun doActivity(): Response<ActivityModel>
+    suspend fun doActivity(): Result<ActivityModel, ErrorModel>
 
-    suspend fun doActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel>
+    suspend fun doActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel, ErrorModel>
 
     suspend fun getActivity(id: Int): ActivityModel?
 

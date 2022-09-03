@@ -2,12 +2,12 @@ package br.com.breaktheice.domain.usecase
 
 import br.com.breaktheice.commons.Result
 import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.entity.ErrorModel
 import br.com.breaktheice.domain.repository.IActivityRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
-import retrofit2.Response
 
 /**
  * @author Raphael Santos
@@ -16,18 +16,18 @@ class DoActivityUseCase constructor(
     private val activityRepository: IActivityRepository
 ) {
 
-    operator fun invoke(): Flow<Result<ActivityModel>> {
+    operator fun invoke(): Flow<Result<ActivityModel, ErrorModel?>> {
         return flow {
-            val response: Response<ActivityModel> = activityRepository.doActivity()
-            if (response.isSuccessful) {
-                val body: ActivityModel? = response.body()
-                if (body?.isObjectValid == true) {
-                    emit(Result.Success(body))
-                } else {
-                    emit(Result.Failure)
+            when (val result: Result<ActivityModel, ErrorModel?> = activityRepository.doActivity()) {
+                is Result.Success -> {
+                    emit(Result.Success(result.value))
                 }
-            } else {
-                emit(Result.Failure)
+                is Result.Failure -> {
+                    emit(Result.Failure(result.value))
+                }
+                else -> {
+                    emit(Result.Failure())
+                }
             }
         }.onStart {
             emit(Result.Loading)
