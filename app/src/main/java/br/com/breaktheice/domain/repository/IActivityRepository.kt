@@ -9,9 +9,9 @@ import br.com.breaktheice.domain.entity.ErrorModel
  */
 interface IActivityRepository {
 
-    suspend fun doActivity(): Result<ActivityModel, ErrorModel>
+    suspend fun doActivity(): Result<ActivityModel?, ErrorModel?>
 
-    suspend fun doActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel, ErrorModel>
+    suspend fun doActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel?, ErrorModel?>
 
     suspend fun getActivity(id: Int): ActivityModel?
 

@@ -20,9 +20,13 @@ class DoActivityFilteredUseCase constructor(
         options: MutableMap<String, String>
     ): Flow<Result<ActivityModel, ErrorModel?>> {
         return flow {
-            when (val result: Result<ActivityModel, ErrorModel?> = activityRepository.doActivityFiltered(options)) {
+            when (val result = activityRepository.doActivityFiltered(options)) {
                 is Result.Success -> {
-                    emit(Result.Success(result.value))
+                    if (result.value != null) {
+                        emit(Result.Success(result.value))
+                    } else {
+                        emit(Result.Failure())
+                    }
                 }
                 is Result.Failure -> {
                     emit(Result.Failure(result.value))

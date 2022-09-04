@@ -18,9 +18,13 @@ class DoActivityUseCase constructor(
 
     operator fun invoke(): Flow<Result<ActivityModel, ErrorModel?>> {
         return flow {
-            when (val result: Result<ActivityModel, ErrorModel?> = activityRepository.doActivity()) {
+            when (val result = activityRepository.doActivity()) {
                 is Result.Success -> {
-                    emit(Result.Success(result.value))
+                    if (result.value != null) {
+                        emit(Result.Success(result.value))
+                    } else {
+                        emit(Result.Failure())
+                    }
                 }
                 is Result.Failure -> {
                     emit(Result.Failure(result.value))
