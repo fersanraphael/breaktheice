@@ -18,9 +18,9 @@ import kotlinx.coroutines.plus
  * @author Raphael Santos
  */
 class MainViewModel constructor(
-    private val deleteActivityUseCase: DeleteActivityUseCase,
     private val callActivityFilteredUseCase: CallActivityFilteredUseCase,
     private val callActivityUseCase: CallActivityUseCase,
+    private val deleteActivityUseCase: DeleteActivityUseCase,
     private val getActivitiesUseCase: GetActivitiesUseCase,
     private val getActivityByIdUseCase: GetActivityByIdUseCase,
     private val insertActivityUseCase: InsertActivityUseCase
