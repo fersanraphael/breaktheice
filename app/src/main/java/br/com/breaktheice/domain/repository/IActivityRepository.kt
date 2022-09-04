@@ -8,11 +8,11 @@ import retrofit2.Response
  */
 interface IActivityRepository {
 
-    suspend fun doActivity(): Response<ActivityModel>
+    suspend fun callActivity(): Response<ActivityModel>
 
-    suspend fun doActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel>
+    suspend fun callActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel>
 
-    suspend fun getActivity(id: Int): ActivityModel?
+    suspend fun getActivityById(id: Int): ActivityModel?
 
     suspend fun getActivities(): MutableList<ActivityModel>?
 

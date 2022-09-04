@@ -12,13 +12,15 @@ import retrofit2.Response
 /**
  * @author Raphael Santos
  */
-class DoActivityUseCase constructor(
+class CallActivityFilteredUseCase constructor(
     private val activityRepository: IActivityRepository
 ) {
 
-    operator fun invoke(): Flow<Result<ActivityModel>> {
+    operator fun invoke(
+        options: MutableMap<String, String>
+    ): Flow<Result<ActivityModel>> {
         return flow {
-            val response: Response<ActivityModel> = activityRepository.doActivity()
+            val response: Response<ActivityModel> = activityRepository.callActivityFiltered(options)
             if (response.isSuccessful) {
                 val body: ActivityModel? = response.body()
                 if (body?.isObjectValid == true) {

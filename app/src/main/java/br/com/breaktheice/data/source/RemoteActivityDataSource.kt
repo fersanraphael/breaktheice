@@ -12,13 +12,13 @@ class RemoteActivityDataSource constructor(
     private val retrofit: Retrofit
 ) {
 
-    suspend fun doActivity(): Response<ActivityModel> {
+    suspend fun callActivity(): Response<ActivityModel> {
         return retrofit.create(IActivityService::class.java)
-            .doActivity()
+            .callActivity()
     }
 
-    suspend fun doActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel> {
+    suspend fun callActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel> {
         return retrofit.create(IActivityService::class.java)
-            .doActivityFiltered(options)
+            .callActivityFiltered(options)
     }
 }

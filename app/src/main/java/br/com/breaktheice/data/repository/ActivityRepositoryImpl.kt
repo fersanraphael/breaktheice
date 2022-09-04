@@ -18,21 +18,21 @@ class ActivityRepositoryImpl constructor(
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : IActivityRepository {
 
-    override suspend fun doActivity(): Response<ActivityModel> {
+    override suspend fun callActivity(): Response<ActivityModel> {
         return withContext(coroutineDispatcher) {
-            remoteActivityDataSource.doActivity()
+            remoteActivityDataSource.callActivity()
         }
     }
 
-    override suspend fun doActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel> {
+    override suspend fun callActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel> {
         return withContext(coroutineDispatcher) {
-            remoteActivityDataSource.doActivityFiltered(options)
+            remoteActivityDataSource.callActivityFiltered(options)
         }
     }
 
-    override suspend fun getActivity(id: Int): ActivityModel? {
+    override suspend fun getActivityById(id: Int): ActivityModel? {
         return withContext(coroutineDispatcher) {
-            localActivityDataSource.getActivity(id)
+            localActivityDataSource.getActivityById(id)
         }
     }
 

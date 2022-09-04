@@ -7,21 +7,25 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
+import retrofit2.Response
 
 /**
  * @author Raphael Santos
  */
-class GetActivityUseCase constructor(
+class CallActivityUseCase constructor(
     private val activityRepository: IActivityRepository
 ) {
 
-    operator fun invoke(
-        id: Int
-    ): Flow<Result<ActivityModel>> {
+    operator fun invoke(): Flow<Result<ActivityModel>> {
         return flow {
-            val activity: ActivityModel? = activityRepository.getActivity(id)
-            if (activity != null) {
-                emit(Result.Success(activity))
+            val response: Response<ActivityModel> = activityRepository.callActivity()
+            if (response.isSuccessful) {
+                val body: ActivityModel? = response.body()
+                if (body?.isObjectValid == true) {
+                    emit(Result.Success(body))
+                } else {
+                    emit(Result.Failure)
+                }
             } else {
                 emit(Result.Failure)
             }

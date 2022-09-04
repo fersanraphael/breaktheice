@@ -19,10 +19,10 @@ import kotlinx.coroutines.plus
  */
 class MainViewModel constructor(
     private val deleteActivityUseCase: DeleteActivityUseCase,
-    private val doActivityFilteredUseCase: DoActivityFilteredUseCase,
-    private val doActivityUseCase: DoActivityUseCase,
+    private val callActivityFilteredUseCase: CallActivityFilteredUseCase,
+    private val callActivityUseCase: CallActivityUseCase,
     private val getActivitiesUseCase: GetActivitiesUseCase,
-    private val getActivityUseCase: GetActivityUseCase,
+    private val getActivityByIdUseCase: GetActivityByIdUseCase,
     private val insertActivityUseCase: InsertActivityUseCase
 ) : ViewModel() {
 
@@ -53,7 +53,7 @@ class MainViewModel constructor(
 
     fun doActivity() {
         uiScope.launch {
-            doActivityUseCase().collect { result ->
+            callActivityUseCase().collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.DoActivity(result.value)
@@ -71,7 +71,7 @@ class MainViewModel constructor(
 
     fun doActivityFiltered(options: MutableMap<String, String>) {
         uiScope.launch {
-            doActivityFilteredUseCase(options).collect { result ->
+            callActivityFilteredUseCase(options).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.DoActivityFiltered(result.value)
@@ -107,7 +107,7 @@ class MainViewModel constructor(
 
     fun getActivity(id: Int) {
         uiScope.launch {
-            getActivityUseCase(id).collect { result ->
+            getActivityByIdUseCase(id).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.GetActivity(result.value)

@@ -7,27 +7,21 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
-import retrofit2.Response
 
 /**
  * @author Raphael Santos
  */
-class DoActivityFilteredUseCase constructor(
+class GetActivityByIdUseCase constructor(
     private val activityRepository: IActivityRepository
 ) {
 
     operator fun invoke(
-        options: MutableMap<String, String>
+        id: Int
     ): Flow<Result<ActivityModel>> {
         return flow {
-            val response: Response<ActivityModel> = activityRepository.doActivityFiltered(options)
-            if (response.isSuccessful) {
-                val body: ActivityModel? = response.body()
-                if (body?.isObjectValid == true) {
-                    emit(Result.Success(body))
-                } else {
-                    emit(Result.Failure)
-                }
+            val activity: ActivityModel? = activityRepository.getActivityById(id)
+            if (activity != null) {
+                emit(Result.Success(activity))
             } else {
                 emit(Result.Failure)
             }

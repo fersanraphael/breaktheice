@@ -13,7 +13,7 @@ import br.com.breaktheice.domain.entity.ActivityModel
 interface IActivityDao {
 
     @Query("SELECT * FROM activity WHERE _id = :id")
-    suspend fun getActivity(id: Int): ActivityModel?
+    suspend fun getActivityById(id: Int): ActivityModel?
 
     @Query("SELECT * FROM activity")
     suspend fun getActivities(): MutableList<ActivityModel>?

@@ -12,8 +12,8 @@ import retrofit2.http.QueryMap
 interface IActivityService {
 
     @GET(WEBSERVICE_ENDPOINT_ACTIVITY)
-    suspend fun doActivity(): Response<ActivityModel>
+    suspend fun callActivity(): Response<ActivityModel>
 
     @GET(WEBSERVICE_ENDPOINT_ACTIVITY)
-    suspend fun doActivityFiltered(@QueryMap options: MutableMap<String, String>?): Response<ActivityModel>
+    suspend fun callActivityFiltered(@QueryMap options: MutableMap<String, String>?): Response<ActivityModel>
 }

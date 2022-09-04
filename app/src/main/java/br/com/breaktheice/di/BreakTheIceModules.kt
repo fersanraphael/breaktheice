@@ -72,19 +72,19 @@ val breakTheIceModule: Module = module {
      * Use Case injection.
      */
     factory {
+        CallActivityFilteredUseCase(get())
+    }
+    factory {
+        CallActivityUseCase(get())
+    }
+    factory {
         DeleteActivityUseCase(get())
-    }
-    factory {
-        DoActivityFilteredUseCase(get())
-    }
-    factory {
-        DoActivityUseCase(get())
     }
     factory {
         GetActivitiesUseCase(get())
     }
     factory {
-        GetActivityUseCase(get())
+        GetActivityByIdUseCase(get())
     }
     factory {
         InsertActivityUseCase(get())

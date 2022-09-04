@@ -10,9 +10,9 @@ class LocalActivityDataSource constructor(
     private val database: BreakTheIceDatabase
 ) {
 
-    suspend fun getActivity(id: Int): ActivityModel? {
+    suspend fun getActivityById(id: Int): ActivityModel? {
         return database.activityDao()
-            .getActivity(id)
+            .getActivityById(id)
     }
 
     suspend fun getActivities(): MutableList<ActivityModel>? {
