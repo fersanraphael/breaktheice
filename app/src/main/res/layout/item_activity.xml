@@ -28,7 +28,17 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_toStartOf="@id/type_text_view"
                 android:text="@{@string/label_id(activityModel.key)}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/type_text_view"
+                style="@style/TextAppearance.Appbreaktheice.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                app:capFirstCharText="@{activityModel.type}" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/activity_text_view"

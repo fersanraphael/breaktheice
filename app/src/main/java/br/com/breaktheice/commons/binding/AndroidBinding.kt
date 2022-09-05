@@ -25,4 +25,10 @@ object AndroidBinding {
     fun TextView.setAccessibilityText(accessibility: Float) {
         text = context.getAccessibilityText(accessibility)
     }
+
+    @JvmStatic
+    @BindingAdapter("capFirstCharText")
+    fun TextView.setCapFirstCharText(type: String) {
+        text = type.replaceFirstChar { char -> char.uppercase() }
+    }
 }
