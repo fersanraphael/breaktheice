@@ -33,10 +33,10 @@ class ActivityFilterFragment : BaseDialogFragment() {
             val queries: MutableMap<String, String> = mutableMapOf()
             val activityTypeText: String = binding.typeAutoCompleteTextView.text.toString()
             if (activityTypeText.equals(activityTypeArr.first(), true)) {
-                viewModel.doActivity()
+                viewModel.callActivity()
             } else {
                 queries[WEBSERVICE_QUERY_TYPE] = activityTypeText.lowercase(ROOT)
-                viewModel.doActivityFiltered(queries)
+                viewModel.callActivityFiltered(queries)
             }
 
             popBack()

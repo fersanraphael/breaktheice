@@ -7,15 +7,15 @@ import br.com.breaktheice.domain.entity.ActivityModel
  */
 sealed interface MainUiState {
 
+    data class CallActivity(
+        val activityModel: ActivityModel
+    ) : MainUiState
+
+    data class CallActivityFiltered(
+        val activityModel: ActivityModel
+    ) : MainUiState
+
     object DeleteActivity : MainUiState
-
-    data class DoActivity(
-        val activityModel: ActivityModel
-    ) : MainUiState
-
-    data class DoActivityFiltered(
-        val activityModel: ActivityModel
-    ) : MainUiState
 
     object Error : MainUiState
 

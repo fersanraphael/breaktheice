@@ -52,10 +52,10 @@ class ActivityListFragment : BaseFragment() {
                     is MainUiState.GetActivities -> {
                         mainAdapter.replaceList(uiState.activities)
                     }
-                    is MainUiState.DoActivity -> {
+                    is MainUiState.CallActivity -> {
                         viewModel.insertActivity(uiState.activityModel)
                     }
-                    is MainUiState.DoActivityFiltered -> {
+                    is MainUiState.CallActivityFiltered -> {
                         viewModel.insertActivity(uiState.activityModel)
                     }
                     is MainUiState.InsertActivity, is MainUiState.DeleteActivity -> {

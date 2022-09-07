@@ -33,48 +33,48 @@ class MainViewModel constructor(
     val uiState: StateFlow<MainUiState>
         get() = _uiState.asStateFlow()
 
+    fun callActivity() {
+        uiScope.launch {
+            callActivityUseCase().collect { result ->
+                _uiState.value = when (result) {
+                    is Result.Success -> {
+                        MainUiState.CallActivity(result.value)
+                    }
+                    is Result.Failure, is Result.Error -> {
+                        MainUiState.Error
+                    }
+                    is Result.Loading -> {
+                        MainUiState.Loading
+                    }
+                }
+            }
+        }
+    }
+
+    fun callActivityFiltered(options: MutableMap<String, String>) {
+        uiScope.launch {
+            callActivityFilteredUseCase(options).collect { result ->
+                _uiState.value = when (result) {
+                    is Result.Success -> {
+                        MainUiState.CallActivityFiltered(result.value)
+                    }
+                    is Result.Failure, is Result.Error -> {
+                        MainUiState.Error
+                    }
+                    is Result.Loading -> {
+                        MainUiState.Loading
+                    }
+                }
+            }
+        }
+    }
+
     fun deleteActivity(activityModel: ActivityModel) {
         uiScope.launch {
             deleteActivityUseCase(activityModel).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.DeleteActivity
-                    }
-                    is Result.Failure, is Result.Error -> {
-                        MainUiState.Error
-                    }
-                    is Result.Loading -> {
-                        MainUiState.Loading
-                    }
-                }
-            }
-        }
-    }
-
-    fun doActivity() {
-        uiScope.launch {
-            callActivityUseCase().collect { result ->
-                _uiState.value = when (result) {
-                    is Result.Success -> {
-                        MainUiState.DoActivity(result.value)
-                    }
-                    is Result.Failure, is Result.Error -> {
-                        MainUiState.Error
-                    }
-                    is Result.Loading -> {
-                        MainUiState.Loading
-                    }
-                }
-            }
-        }
-    }
-
-    fun doActivityFiltered(options: MutableMap<String, String>) {
-        uiScope.launch {
-            callActivityFilteredUseCase(options).collect { result ->
-                _uiState.value = when (result) {
-                    is Result.Success -> {
-                        MainUiState.DoActivityFiltered(result.value)
                     }
                     is Result.Failure, is Result.Error -> {
                         MainUiState.Error
