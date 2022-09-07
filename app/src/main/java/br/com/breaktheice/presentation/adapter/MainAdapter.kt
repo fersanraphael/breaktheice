@@ -2,6 +2,7 @@ package br.com.breaktheice.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.breaktheice.R
 import br.com.breaktheice.databinding.ItemActivityBinding
@@ -36,7 +37,13 @@ class MainAdapter(
     override fun replaceList(dataSet: MutableList<ActivityModel>) {
         activityModelDataSet.apply {
             clear()
-            addAll(dataSet)
+            addAll(
+                dataSet.sortedWith(
+                    compareBy<ActivityModel> { activityModel ->
+                        activityModel.favorite
+                    }.reversed()
+                )
+            )
             notifyItemRangeChanged(0, dataSet.size)
         }
     }
@@ -44,6 +51,9 @@ class MainAdapter(
     private fun ViewHolder.onItemClick(activityModel: ActivityModel) {
         itemView.findViewById<MaterialCardView>(R.id.activity_layout).setOnClickListener {
             onItemClickListener(activityModel)
+        }
+        itemView.findViewById<AppCompatImageView>(R.id.star_image_view).setOnClickListener {
+            // TODO
         }
     }
 

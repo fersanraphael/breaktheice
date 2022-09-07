@@ -37,6 +37,17 @@ object AndroidBinding {
     }
 
     @JvmStatic
+    @BindingAdapter("srcFavorite")
+    fun AppCompatImageView.setSrcFavorite(favorite: Boolean) {
+        @DrawableRes val resId: Int = if (favorite) {
+            R.drawable.ic_star_filled
+        } else {
+            R.drawable.ic_star_outlined
+        }
+        setImageDrawable(ResourcesCompat.getDrawable(resources, resId, context.theme))
+    }
+
+    @JvmStatic
     @BindingAdapter("srcType")
     fun AppCompatImageView.setSrcType(type: String) {
         @DrawableRes val resId: Int = when (type) {

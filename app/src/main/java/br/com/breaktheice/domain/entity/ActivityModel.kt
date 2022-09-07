@@ -13,6 +13,9 @@ data class ActivityModel constructor(
     @field:PrimaryKey(autoGenerate = true)
     var _id: Int,
 
+    @field:ColumnInfo(name = "favorite")
+    var favorite: Boolean,
+
     @SerializedName("participants")
     @field:ColumnInfo(name = "participants")
     var participants: Int,

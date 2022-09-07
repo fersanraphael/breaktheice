@@ -1,9 +1,6 @@
 package br.com.breaktheice.data.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import br.com.breaktheice.domain.entity.ActivityModel
 
 /**
@@ -18,8 +15,11 @@ interface IActivityDao {
     @Query("SELECT * FROM activity")
     suspend fun getActivities(): MutableList<ActivityModel>?
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insertActivity(activityModel: ActivityModel)
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateActivity(activityModel: ActivityModel)
 
     @Delete
     suspend fun deleteActivity(activityModel: ActivityModel)
