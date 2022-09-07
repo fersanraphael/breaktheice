@@ -23,7 +23,9 @@ class MainViewModel constructor(
     private val deleteActivityUseCase: DeleteActivityUseCase,
     private val getActivitiesUseCase: GetActivitiesUseCase,
     private val getActivityByIdUseCase: GetActivityByIdUseCase,
-    private val insertActivityUseCase: InsertActivityUseCase
+    private val insertActivityUseCase: InsertActivityUseCase,
+    private val updateActivityFavoriteUseCase: UpdateActivityFavoriteUseCase,
+    private val updateActivityUseCase: UpdateActivityUseCase
 ) : ViewModel() {
 
     private val uiScope: CoroutineScope = viewModelScope.plus(Dispatchers.Main)
@@ -126,6 +128,45 @@ class MainViewModel constructor(
     fun insertActivity(activityModel: ActivityModel) {
         uiScope.launch {
             insertActivityUseCase(activityModel).collect { result ->
+                _uiState.value = when (result) {
+                    is Result.Success -> {
+                        MainUiState.InsertActivity
+                    }
+                    is Result.Failure, is Result.Error -> {
+                        MainUiState.Error
+                    }
+                    is Result.Loading -> {
+                        MainUiState.Loading
+                    }
+                }
+            }
+        }
+    }
+
+    fun updateActivityFavorite(
+        id: Int,
+        favorite: Boolean
+    ) {
+        uiScope.launch {
+            updateActivityFavoriteUseCase(id, favorite).collect { result ->
+                _uiState.value = when (result) {
+                    is Result.Success -> {
+                        MainUiState.InsertActivity
+                    }
+                    is Result.Failure, is Result.Error -> {
+                        MainUiState.Error
+                    }
+                    is Result.Loading -> {
+                        MainUiState.Loading
+                    }
+                }
+            }
+        }
+    }
+
+    fun updateActivity(activityModel: ActivityModel) {
+        uiScope.launch {
+            updateActivityUseCase(activityModel).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.InsertActivity

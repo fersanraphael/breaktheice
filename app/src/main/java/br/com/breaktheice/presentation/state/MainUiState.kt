@@ -27,9 +27,13 @@ sealed interface MainUiState {
         val activityModel: ActivityModel
     ) : MainUiState
 
-    object InsertActivity : MainUiState
-
     object Idle : MainUiState
 
+    object InsertActivity : MainUiState
+
     object Loading : MainUiState
+
+    object UpdateActivity : MainUiState
+
+    object UpdateActivityFavorite : MainUiState
 }

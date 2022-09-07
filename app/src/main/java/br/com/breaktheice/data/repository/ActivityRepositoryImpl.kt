@@ -30,6 +30,12 @@ class ActivityRepositoryImpl constructor(
         }
     }
 
+    override suspend fun deleteActivity(activityModel: ActivityModel) {
+        withContext(coroutineDispatcher) {
+            localActivityDataSource.deleteActivity(activityModel)
+        }
+    }
+
     override suspend fun getActivityById(id: Int): ActivityModel? {
         return withContext(coroutineDispatcher) {
             localActivityDataSource.getActivityById(id)
@@ -48,9 +54,18 @@ class ActivityRepositoryImpl constructor(
         }
     }
 
-    override suspend fun deleteActivity(activityModel: ActivityModel) {
+    override suspend fun updateActivityFavorite(
+        id: Int,
+        favorite: Boolean
+    ) {
         withContext(coroutineDispatcher) {
-            localActivityDataSource.deleteActivity(activityModel)
+            localActivityDataSource.updateActivityFavorite(id, favorite)
+        }
+    }
+
+    override suspend fun updateActivity(activityModel: ActivityModel) {
+        withContext(coroutineDispatcher) {
+            localActivityDataSource.updateActivity(activityModel)
         }
     }
 }

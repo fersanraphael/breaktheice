@@ -89,11 +89,17 @@ val breakTheIceModule: Module = module {
     factory {
         InsertActivityUseCase(get())
     }
+    factory {
+        UpdateActivityFavoriteUseCase(get())
+    }
+    factory {
+        UpdateActivityUseCase(get())
+    }
 
     /*
      * View Model injection.
      */
     viewModel {
-        MainViewModel(get(), get(), get(), get(), get(), get())
+        MainViewModel(get(), get(), get(), get(), get(), get(), get(), get())
     }
 }

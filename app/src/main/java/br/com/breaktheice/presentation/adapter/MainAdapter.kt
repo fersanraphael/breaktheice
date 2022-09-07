@@ -13,7 +13,8 @@ import com.google.android.material.card.MaterialCardView
  * @author Raphael Santos
  */
 class MainAdapter(
-    val onItemClickListener: (ActivityModel) -> Unit
+    val onActivityClickListener: (ActivityModel) -> Unit,
+    val onActivityFavoriteClickListener: (Int, Boolean) -> Unit
 ) : RecyclerView.Adapter<MainAdapter.ViewHolder>(), IItemContract<ActivityModel> {
 
     private val activityModelDataSet: ArrayList<ActivityModel?> = arrayListOf()
@@ -50,10 +51,10 @@ class MainAdapter(
 
     private fun ViewHolder.onItemClick(activityModel: ActivityModel) {
         itemView.findViewById<MaterialCardView>(R.id.activity_layout).setOnClickListener {
-            onItemClickListener(activityModel)
+            onActivityClickListener(activityModel)
         }
         itemView.findViewById<AppCompatImageView>(R.id.star_image_view).setOnClickListener {
-            // TODO
+            onActivityFavoriteClickListener(activityModel._id, !activityModel.favorite)
         }
     }
 

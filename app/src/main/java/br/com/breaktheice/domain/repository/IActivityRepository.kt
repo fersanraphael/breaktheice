@@ -12,11 +12,18 @@ interface IActivityRepository {
 
     suspend fun callActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel>
 
+    suspend fun deleteActivity(activityModel: ActivityModel)
+
     suspend fun getActivityById(id: Int): ActivityModel?
 
     suspend fun getActivities(): MutableList<ActivityModel>?
 
     suspend fun insertActivity(activityModel: ActivityModel)
 
-    suspend fun deleteActivity(activityModel: ActivityModel)
+    suspend fun updateActivityFavorite(
+        id: Int,
+        favorite: Boolean
+    )
+
+    suspend fun updateActivity(activityModel: ActivityModel)
 }

@@ -9,6 +9,9 @@ import br.com.breaktheice.domain.entity.ActivityModel
 @Dao
 interface IActivityDao {
 
+    @Delete
+    suspend fun deleteActivity(activityModel: ActivityModel)
+
     @Query("SELECT * FROM activity WHERE _id = :id")
     suspend fun getActivityById(id: Int): ActivityModel?
 
@@ -21,6 +24,9 @@ interface IActivityDao {
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateActivity(activityModel: ActivityModel)
 
-    @Delete
-    suspend fun deleteActivity(activityModel: ActivityModel)
+    @Query("UPDATE activity SET favorite=:favorite WHERE _id=:id")
+    suspend fun updateActivityFavorite(
+        id: Int,
+        favorite: Boolean
+    )
 }

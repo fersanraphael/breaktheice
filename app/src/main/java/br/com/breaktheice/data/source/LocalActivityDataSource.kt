@@ -10,6 +10,11 @@ class LocalActivityDataSource constructor(
     private val database: BreakTheIceDatabase
 ) {
 
+    suspend fun deleteActivity(activityModel: ActivityModel) {
+        database.activityDao()
+            .deleteActivity(activityModel)
+    }
+
     suspend fun getActivityById(id: Int): ActivityModel? {
         return database.activityDao()
             .getActivityById(id)
@@ -25,8 +30,16 @@ class LocalActivityDataSource constructor(
             .insertActivity(activityModel)
     }
 
-    suspend fun deleteActivity(activityModel: ActivityModel) {
+    suspend fun updateActivity(activityModel: ActivityModel) {
         database.activityDao()
-            .deleteActivity(activityModel)
+            .updateActivity(activityModel)
+    }
+
+    suspend fun updateActivityFavorite(
+        id: Int,
+        favorite: Boolean
+    ) {
+        database.activityDao()
+            .updateActivityFavorite(id, favorite)
     }
 }
