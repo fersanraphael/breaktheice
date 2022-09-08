@@ -63,8 +63,8 @@ class ActivityListFragment : BaseFragment() {
                     is MainUiState.CallActivityFiltered -> {
                         viewModel.insertActivity(uiState.activityModel)
                     }
-                    is MainUiState.InsertActivity,
                     is MainUiState.DeleteActivity,
+                    is MainUiState.InsertActivity,
                     is MainUiState.UpdateActivity,
                     is MainUiState.UpdateActivityFavorite -> {
                         viewModel.getActivities()

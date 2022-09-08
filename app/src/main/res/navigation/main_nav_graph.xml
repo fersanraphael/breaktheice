@@ -32,7 +32,8 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/activity_list_fragment"
-            app:popUpToInclusive="false">
+            app:popUpToInclusive="false"
+            app:restoreState="true">
 
             <argument
                 android:name="activityId"

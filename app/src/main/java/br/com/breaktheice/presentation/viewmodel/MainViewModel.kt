@@ -151,7 +151,7 @@ class MainViewModel constructor(
             updateActivityFavoriteUseCase(id, favorite).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
-                        MainUiState.InsertActivity
+                        MainUiState.UpdateActivityFavorite
                     }
                     is Result.Failure, is Result.Error -> {
                         MainUiState.Error
@@ -169,7 +169,7 @@ class MainViewModel constructor(
             updateActivityUseCase(activityModel).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
-                        MainUiState.InsertActivity
+                        MainUiState.UpdateActivity
                     }
                     is Result.Failure, is Result.Error -> {
                         MainUiState.Error
