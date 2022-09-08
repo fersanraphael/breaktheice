@@ -53,6 +53,11 @@
     </style>
 
     <!-- Widget -->
+    <style name="Widget.Appbreaktheice.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="liftOnScroll">true</item>
+    </style>
+
     <style name="Widget.Appbreaktheice.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="contentInsetStartWithNavigation">@dimen/dimen_0dp</item>
         <item name="popupTheme">@style/Theme.Appbreaktheice.PopupOverlay</item>
@@ -103,7 +108,6 @@
     <style name="Widget.Appbreaktheice.CardView" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">@dimen/dimen_12dp</item>
         <item name="cardElevation">@dimen/dimen_16dp</item>
-        <item name="contentPadding">@dimen/dimen_12dp</item>
     </style>
 
     <style name="Widget.Appbreaktheice.FloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
@@ -113,9 +117,7 @@
         <item name="cornerRadius">@dimen/dimen_12dp</item>
         <item name="fabSize">normal</item>
         <item name="iconTint">@color/colorOnPrimary</item>
-        <item name="layout_behavior">
-            com.google.android.material.behavior.HideBottomViewOnScrollBehavior
-        </item>
+        <item name="layout_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</item>
         <item name="maxImageSize">@dimen/dimen_32dp</item>
         <item name="shapeAppearanceOverlay">@style/Widget.Appbreaktheice.FloatingActionButton.Overlay</item>
         <item name="useCompatPadding">true</item>

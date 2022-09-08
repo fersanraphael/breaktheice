@@ -16,7 +16,10 @@
     <dimen name="dimen_48dp">48dp</dimen>
     <dimen name="dimen_56dp">56dp</dimen>
     <dimen name="dimen_64dp">64dp</dimen>
+    <dimen name="dimen_120dp">120dp</dimen>
+    <dimen name="dimen_144dp">144dp</dimen>
     <dimen name="dimen_160dp">160dp</dimen>
+    <dimen name="dimen_192dp">192dp</dimen>
 
     <!-- SP -->
     <dimen name="dimen_13sp">13sp</dimen>

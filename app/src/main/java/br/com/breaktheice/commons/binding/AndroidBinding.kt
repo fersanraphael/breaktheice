@@ -37,12 +37,29 @@ object AndroidBinding {
     }
 
     @JvmStatic
+    @BindingAdapter("backgroundType")
+    fun View.setBackgroundType(type: String) {
+        @DrawableRes val resId: Int = when (type.lowercase()) {
+            "education" -> R.drawable.image_education
+            "recreational" -> R.drawable.image_recreational
+            "social" -> R.drawable.image_social
+            "diy" -> R.drawable.image_diy
+            "charity" -> R.drawable.image_charity
+            "cooking" -> R.drawable.image_cooking
+            "relaxation" -> R.drawable.image_relaxation
+            "music" -> R.drawable.image_music
+            else -> R.drawable.image_busywork
+        }
+        background = ResourcesCompat.getDrawable(resources, resId, context.theme)
+    }
+
+    @JvmStatic
     @BindingAdapter("srcFavorite")
     fun AppCompatImageView.setSrcFavorite(favorite: Boolean) {
         @DrawableRes val resId: Int = if (favorite) {
-            R.drawable.ic_star_filled
+            R.drawable.icon_star_filled
         } else {
-            R.drawable.ic_star_outlined
+            R.drawable.icon_star_outlined
         }
         setImageDrawable(ResourcesCompat.getDrawable(resources, resId, context.theme))
     }
@@ -50,16 +67,16 @@ object AndroidBinding {
     @JvmStatic
     @BindingAdapter("srcType")
     fun AppCompatImageView.setSrcType(type: String) {
-        @DrawableRes val resId: Int = when (type) {
-            "education" -> R.drawable.ic_education
-            "recreational" -> R.drawable.ic_recreational
-            "social" -> R.drawable.ic_social
-            "diy" -> R.drawable.ic_diy
-            "charity" -> R.drawable.ic_charity
-            "cooking" -> R.drawable.ic_cooking
-            "relaxation" -> R.drawable.ic_relaxation
-            "music" -> R.drawable.ic_music
-            else -> R.drawable.ic_busywork
+        @DrawableRes val resId: Int = when (type.lowercase()) {
+            "education" -> R.drawable.icon_education
+            "recreational" -> R.drawable.icon_recreational
+            "social" -> R.drawable.icon_social
+            "diy" -> R.drawable.icon_diy
+            "charity" -> R.drawable.icon_charity
+            "cooking" -> R.drawable.icon_cooking
+            "relaxation" -> R.drawable.icon_relaxation
+            "music" -> R.drawable.icon_music
+            else -> R.drawable.icon_busywork
         }
         setImageDrawable(ResourcesCompat.getDrawable(resources, resId, context.theme))
     }

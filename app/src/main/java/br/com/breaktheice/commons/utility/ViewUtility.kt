@@ -4,11 +4,10 @@ import android.content.Context
 import android.content.res.Configuration
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.*
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import br.com.breaktheice.R
+
 
 /**
  * @author Raphael Santos
@@ -22,12 +21,14 @@ fun RecyclerView.createAdapter(
     context: Context,
     viewAdapter: RecyclerView.Adapter<*>,
     itemDecoration: ItemDecoration? = null,
-    orientation: Int = RecyclerView.VERTICAL
+    orientation: Int = RecyclerView.VERTICAL,
+    spanCount: Int = 2,
+    attachSnapHelper: Boolean = false
 ) {
     val linearLayoutManager = LinearLayoutManager(context, orientation, false)
-    val gridLayoutManager = GridLayoutManager(context, 2)
+    val gridLayoutManager = GridLayoutManager(context, spanCount)
     adapter = viewAdapter
-    layoutManager = if (context.isOrientationPortrait()) {
+    layoutManager = if (context.isOrientationPortrait() || orientation == RecyclerView.HORIZONTAL) {
         linearLayoutManager
     } else {
         gridLayoutManager
@@ -37,6 +38,11 @@ fun RecyclerView.createAdapter(
 
     if (itemDecoration != null) {
         addItemDecoration(itemDecoration)
+    }
+
+    if (attachSnapHelper) {
+        val snapHelper: SnapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(this)
     }
 }
 

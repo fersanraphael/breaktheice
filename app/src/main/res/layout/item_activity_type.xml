@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="activityType"
+            type="java.lang.String" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/activity_type_layout"
+        style="@style/Widget.Appbreaktheice.CardView"
+        android:layout_width="@dimen/dimen_192dp"
+        android:layout_height="@dimen/dimen_144dp"
+        android:layout_margin="@dimen/dimen_8dp"
+        app:contentPadding="@dimen/dimen_0dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundType="@{activityType}">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activity_text_view"
+                style="@style/TextAppearance.Appbreaktheice.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{activityType}" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

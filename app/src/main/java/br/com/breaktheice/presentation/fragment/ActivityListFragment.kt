@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
+import br.com.breaktheice.R
 import br.com.breaktheice.commons.utility.createAdapter
 import br.com.breaktheice.databinding.FragmentActivityListBinding
-import br.com.breaktheice.presentation.adapter.MainAdapter
+import br.com.breaktheice.presentation.adapter.ActivityAdapter
+import br.com.breaktheice.presentation.adapter.ActivityTypeAdapter
 import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.navigateFromListToDetail
 import br.com.breaktheice.presentation.navigateFromListToFilter
@@ -19,13 +22,20 @@ import kotlinx.coroutines.launch
  */
 class ActivityListFragment : BaseFragment() {
 
-    private val mainAdapter by lazy {
-        MainAdapter(
+    private val activityAdapter by lazy {
+        ActivityAdapter(
             { activityModel ->
                 navigateFromListToDetail(activityModel._id)
             },
             { id, favorite ->
                 viewModel.updateActivityFavorite(id, favorite)
+            }
+        )
+    }
+    private val activityTypeAdapter by lazy {
+        ActivityTypeAdapter(
+            { activityType ->
+                // TODO
             }
         )
     }
@@ -41,7 +51,19 @@ class ActivityListFragment : BaseFragment() {
         binding.newActivityFab.setOnClickListener {
             navigateFromListToFilter()
         }
-        binding.recyclerView.createAdapter(fragmentActivity.applicationContext, mainAdapter)
+        binding.activityRecyclerView.createAdapter(
+            fragmentActivity.applicationContext,
+            activityAdapter
+        )
+        binding.activityTypeRecyclerView.createAdapter(
+            fragmentActivity.applicationContext,
+            activityTypeAdapter.apply {
+                replaceList(resources.getStringArray(R.array.activity_type_array).toMutableList())
+            },
+            orientation = RecyclerView.HORIZONTAL,
+            spanCount = 1,
+            attachSnapHelper = true
+        )
 
         fetchUiState()
 
@@ -55,7 +77,7 @@ class ActivityListFragment : BaseFragment() {
             viewModel.uiState.collect { uiState ->
                 when (uiState) {
                     is MainUiState.GetActivities -> {
-                        mainAdapter.replaceList(uiState.activities)
+                        activityAdapter.replaceList(uiState.activities)
                     }
                     is MainUiState.CallActivity -> {
                         viewModel.insertActivity(uiState.activityModel)
