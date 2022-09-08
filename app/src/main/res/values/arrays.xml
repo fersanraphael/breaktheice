@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="activity_type_array">
+    <string-array name="activity_array">
         <item>All</item>
-        <item>Education</item>
-        <item>Recreational</item>
-        <item>Social</item>
-        <item>Diy</item>
+        <item>Busywork</item>
         <item>Charity</item>
         <item>Cooking</item>
-        <item>Relaxation</item>
+        <item>Diy</item>
+        <item>Education</item>
         <item>Music</item>
+        <item>Recreational</item>
+        <item>Relaxation</item>
+        <item>Social</item>
+    </string-array>
+
+    <string-array name="activity_type_array">
         <item>Busywork</item>
+        <item>Charity</item>
+        <item>Cooking</item>
+        <item>Diy</item>
+        <item>Education</item>
+        <item>Music</item>
+        <item>Recreational</item>
+        <item>Relaxation</item>
+        <item>Social</item>
     </string-array>
 
 </resources>

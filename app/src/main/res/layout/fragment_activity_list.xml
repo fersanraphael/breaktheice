@@ -26,6 +26,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Appbreaktheice.LabelLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_16dp"
+                    android:text="@string/label_categories"
+                    android:textColor="@color/colorOnDark" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/activity_type_recycler_view"
                     android:layout_width="match_parent"
@@ -34,21 +42,22 @@
                     android:nestedScrollingEnabled="false"
                     android:padding="@dimen/dimen_8dp" />
 
-                <androidx.appcompat.widget.LinearLayoutCompat
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Appbreaktheice.LabelLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_16dp"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:text="@string/label_activities"
+                    android:textColor="@color/colorOnDark" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/activity_recycler_view"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/background_container"
-                    android:orientation="vertical">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/activity_recycler_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:clipToPadding="false"
-                        android:nestedScrollingEnabled="false"
-                        android:padding="@dimen/dimen_12dp" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:padding="@dimen/dimen_8dp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

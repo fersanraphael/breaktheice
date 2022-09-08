@@ -18,7 +18,7 @@ import java.util.Locale.ROOT
 class ActivityFilterFragment : BaseDialogFragment() {
 
     private val activityTypeArr by lazy {
-        resources.getStringArray(R.array.activity_type_array)
+        resources.getStringArray(R.array.activity_array)
     }
 
     override fun onCreateView(
