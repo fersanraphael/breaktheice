@@ -13,8 +13,8 @@ import com.google.android.material.card.MaterialCardView
  * @author Raphael Santos
  */
 class ActivityAdapter(
-    val onActivityClickListener: (ActivityModel) -> Unit,
-    val onActivityFavoriteClickListener: (Int, Boolean) -> Unit
+    private val onActivityClickListener: (ActivityModel) -> Unit,
+    private val onActivityFavoriteClickListener: (Int, Boolean) -> Unit
 ) : RecyclerView.Adapter<ActivityAdapter.ViewHolder>(), IItemContract<ActivityModel> {
 
     private val activityModelDataSet: ArrayList<ActivityModel?> = arrayListOf()

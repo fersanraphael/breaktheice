@@ -18,21 +18,28 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:layout_height="match_parent">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/TextAppearance.Appbreaktheice.LabelLarge"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/dimen_16dp"
-                    android:text="@string/label_categories"
-                    android:textColor="@color/colorOnDark" />
+                    android:minHeight="@dimen/dimen_32dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Appbreaktheice.LabelLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/label_categories" />
+
+                </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/activity_type_recycler_view"
@@ -42,14 +49,37 @@
                     android:nestedScrollingEnabled="false"
                     android:padding="@dimen/dimen_8dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/TextAppearance.Appbreaktheice.LabelLarge"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/dimen_16dp"
-                    android:layout_marginTop="@dimen/dimen_8dp"
-                    android:text="@string/label_activities"
-                    android:textColor="@color/colorOnDark" />
+                    android:minHeight="@dimen/dimen_32dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Appbreaktheice.LabelLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dimen_2dp"
+                        android:layout_toStartOf="@id/more_activity_button"
+                        android:text="@string/label_activities" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/more_activity_button"
+                        style="@style/Widget.Appbreaktheice.Button.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/dimen_2dp"
+                        android:paddingVertical="@dimen/dimen_0dp"
+                        android:paddingStart="@dimen/dimen_8dp"
+                        android:paddingEnd="@dimen/dimen_0dp"
+                        android:text="@string/label_more"
+                        app:icon="@drawable/icon_arrow_right"
+                        app:iconGravity="end" />
+
+                </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/activity_recycler_view"

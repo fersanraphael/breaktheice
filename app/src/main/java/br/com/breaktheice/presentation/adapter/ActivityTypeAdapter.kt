@@ -11,7 +11,7 @@ import com.google.android.material.card.MaterialCardView
  * @author Raphael Santos
  */
 class ActivityTypeAdapter(
-    val onActivityClickListener: (String) -> Unit
+    private val onActivityClickListener: (String) -> Unit
 ) : RecyclerView.Adapter<ActivityTypeAdapter.ViewHolder>(), IItemContract<String> {
 
     private val activityTypeDataSet: ArrayList<String?> = arrayListOf()

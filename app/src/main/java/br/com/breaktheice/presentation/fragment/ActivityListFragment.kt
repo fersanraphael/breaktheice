@@ -32,13 +32,6 @@ class ActivityListFragment : BaseFragment() {
             }
         )
     }
-    private val activityTypeAdapter by lazy {
-        ActivityTypeAdapter(
-            { activityType ->
-                // TODO
-            }
-        )
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,7 +50,9 @@ class ActivityListFragment : BaseFragment() {
         )
         binding.activityTypeRecyclerView.createAdapter(
             fragmentActivity.applicationContext,
-            activityTypeAdapter.apply {
+            ActivityTypeAdapter { activityType ->
+                // TODO
+            }.apply {
                 replaceList(resources.getStringArray(R.array.activity_type_array).toMutableList())
             },
             orientation = RecyclerView.HORIZONTAL,
@@ -77,7 +72,7 @@ class ActivityListFragment : BaseFragment() {
             viewModel.uiState.collect { uiState ->
                 when (uiState) {
                     is MainUiState.GetActivities -> {
-                        activityAdapter.replaceList(uiState.activities)
+                        activityAdapter.replaceList(uiState.activities.subList(0, uiState.activities.size.coerceAtMost(3)))
                     }
                     is MainUiState.CallActivity -> {
                         viewModel.insertActivity(uiState.activityModel)

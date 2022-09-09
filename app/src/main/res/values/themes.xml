@@ -105,6 +105,11 @@
         <item name="strokeWidth">@dimen/dimen_2dp</item>
     </style>
 
+    <style name="Widget.Appbreaktheice.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textAppearance">@style/TextAppearance.Appbreaktheice.LabelLarge</item>
+        <item name="cornerRadius">@dimen/dimen_12dp</item>
+    </style>
+
     <style name="Widget.Appbreaktheice.CardView" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">@dimen/dimen_12dp</item>
         <item name="cardElevation">@dimen/dimen_12dp</item>

@@ -9,49 +9,37 @@
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorSurface">
+        android:background="@color/colorSurface"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_16dp">
 
-        <androidx.core.widget.NestedScrollView
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Appbreaktheice.ExposedDropdownMenu.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/dimen_16dp">
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_filter_type">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/type_auto_complete_text_view"
+                style="@style/TextAppearance.Appbreaktheice.LabelLarge"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:singleLine="true" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Appbreaktheice.ExposedDropdownMenu.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_filter_type">
+        </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                        android:id="@+id/type_auto_complete_text_view"
-                        style="@style/TextAppearance.Appbreaktheice.LabelLarge"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none"
-                        android:singleLine="true" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/search_button"
+            style="@style/Widget.Appbreaktheice.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_56dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:text="@string/button_search" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/search_button"
-                    style="@style/Widget.Appbreaktheice.Button"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_56dp"
-                    android:layout_marginTop="@dimen/dimen_16dp"
-                    android:text="@string/button_search" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-        </androidx.core.widget.NestedScrollView>
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </layout>

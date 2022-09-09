@@ -25,6 +25,7 @@
     <string name="label_categories">Categories</string>
     <string name="label_common_error">Something went wrong.</string>
     <string name="label_id">Id: %s</string>
+    <string name="label_more">See More</string>
     <string name="label_participants">%d</string>
 
 </resources>
