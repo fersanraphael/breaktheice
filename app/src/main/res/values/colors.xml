@@ -25,5 +25,6 @@
     <color name="colorOnSurfaceVariant">#FF4A454E</color>
     <color name="colorOutline">#FF7B757F</color>
     <color name="colorOnDark">#FFFFFFFF</color>
+    <color name="colorBackground">#7FFFFBFF</color>
 
 </resources>
