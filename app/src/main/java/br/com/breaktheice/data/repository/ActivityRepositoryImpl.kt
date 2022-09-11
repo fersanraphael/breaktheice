@@ -55,6 +55,12 @@ class ActivityRepositoryImpl constructor(
         }
     }
 
+    override suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>? {
+        return withContext(coroutineDispatcher) {
+            localActivityDataSource.getActivitiesByType(type)
+        }
+    }
+
     override suspend fun getActivities(): MutableList<ActivityModel>? {
         return withContext(coroutineDispatcher) {
             localActivityDataSource.getActivities()

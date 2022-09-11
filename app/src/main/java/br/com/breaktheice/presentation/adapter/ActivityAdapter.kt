@@ -45,7 +45,7 @@ class ActivityAdapter(
                     }.reversed()
                 )
             )
-            notifyItemRangeChanged(0, dataSet.size)
+            notifyDataSetChanged()
         }
     }
 

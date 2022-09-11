@@ -20,6 +20,11 @@ class LocalActivityDataSource constructor(
             .getActivityById(id)
     }
 
+    suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>? {
+        return database.activityDao()
+            .getActivitiesByType(type)
+    }
+
     suspend fun getActivities(): MutableList<ActivityModel>? {
         return database.activityDao()
             .getActivities()

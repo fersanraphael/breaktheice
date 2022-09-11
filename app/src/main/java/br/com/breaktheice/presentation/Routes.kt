@@ -14,8 +14,8 @@ fun BaseFragment.navigateFromHomeToDetail(activityId: Int) {
     findNavController().navigate(ActivityHomeFragmentDirections.actionHomeToDetail(activityId))
 }
 
-fun BaseFragment.navigateFromHomeToList() {
-    findNavController().navigate(ActivityHomeFragmentDirections.actionHomeToList())
+fun BaseFragment.navigateFromHomeToList(activityType: String? = null) {
+    findNavController().navigate(ActivityHomeFragmentDirections.actionHomeToList(activityType))
 }
 
 fun BaseFragment.navigateFromListToDetail(activityId: Int) {

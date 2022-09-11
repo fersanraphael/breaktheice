@@ -23,6 +23,7 @@ class MainViewModel constructor(
     private val deleteActivityUseCase: DeleteActivityUseCase,
     private val getActivitiesUseCase: GetActivitiesUseCase,
     private val getActivityByIdUseCase: GetActivityByIdUseCase,
+    private val getActivitiesByTypeUseCase: GetActivitiesByTypeUseCase,
     private val insertActivityUseCase: InsertActivityUseCase,
     private val updateActivityFavoriteUseCase: UpdateActivityFavoriteUseCase,
     private val updateActivityUseCase: UpdateActivityUseCase
@@ -107,12 +108,30 @@ class MainViewModel constructor(
         }
     }
 
-    fun getActivity(id: Int) {
+    fun getActivityById(id: Int) {
         uiScope.launch {
             getActivityByIdUseCase(id).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
-                        MainUiState.GetActivity(result.value)
+                        MainUiState.GetActivityById(result.value)
+                    }
+                    is Result.Failure, is Result.Error -> {
+                        MainUiState.Error
+                    }
+                    is Result.Loading -> {
+                        MainUiState.Loading
+                    }
+                }
+            }
+        }
+    }
+
+    fun getActivitiesByType(type: String) {
+        uiScope.launch {
+            getActivitiesByTypeUseCase(type).collect { result ->
+                _uiState.value = when (result) {
+                    is Result.Success -> {
+                        MainUiState.GetActivitiesByType(result.value)
                     }
                     is Result.Failure, is Result.Error -> {
                         MainUiState.Error

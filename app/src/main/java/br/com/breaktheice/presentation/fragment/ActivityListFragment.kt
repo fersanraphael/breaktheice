@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
 import br.com.breaktheice.R
 import br.com.breaktheice.commons.utility.createAdapter
 import br.com.breaktheice.databinding.FragmentActivityListBinding
@@ -30,6 +31,7 @@ class ActivityListFragment : BaseFragment() {
             }
         )
     }
+    private val arguments by navArgs<ActivityListFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,11 +49,16 @@ class ActivityListFragment : BaseFragment() {
             navigateFromListToFilter()
         }
 
-        setAppBarTitle(R.string.fragment_activity_list)
-
         fetchUiState()
 
-        viewModel.getActivities()
+        val activityType: String? = arguments.activityType
+        if (activityType.isNullOrEmpty()) {
+            setAppBarTitle(getString(R.string.fragment_activity_list))
+            viewModel.getActivities()
+        } else {
+            setAppBarTitle(getString(R.string.fragment_activity_type_list, activityType))
+            viewModel.getActivitiesByType(activityType.lowercase())
+        }
 
         return binding.root
     }
@@ -61,6 +68,9 @@ class ActivityListFragment : BaseFragment() {
             viewModel.uiState.collect { uiState ->
                 when (uiState) {
                     is MainUiState.GetActivities -> {
+                        activityAdapter.replaceList(uiState.activities)
+                    }
+                    is MainUiState.GetActivitiesByType -> {
                         activityAdapter.replaceList(uiState.activities)
                     }
                     is MainUiState.CallActivity -> {

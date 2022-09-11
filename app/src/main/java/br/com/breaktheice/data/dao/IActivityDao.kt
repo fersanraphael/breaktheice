@@ -15,6 +15,9 @@ interface IActivityDao {
     @Query("SELECT * FROM activity WHERE _id = :id")
     suspend fun getActivityById(id: Int): ActivityModel?
 
+    @Query("SELECT * FROM activity WHERE type = :type")
+    suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>?
+
     @Query("SELECT * FROM activity")
     suspend fun getActivities(): MutableList<ActivityModel>?
 

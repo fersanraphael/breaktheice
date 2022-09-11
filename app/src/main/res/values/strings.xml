@@ -11,6 +11,7 @@
     <string name="fragment_activity_filter">Search</string>
     <string name="fragment_activity_home">Hello, Raphael!</string>
     <string name="fragment_activity_list">My Activities</string>
+    <string name="fragment_activity_type_list">My Activities: %s</string>
 
     <!-- Hint -->
     <string name="hint_filter_type">Filter by Type</string>

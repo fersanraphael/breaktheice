@@ -29,11 +29,11 @@ class ActivityDetailFragment : BaseFragment() {
         binding.lifecycleOwner = fragmentActivity
         binding.viewModel = viewModel
 
-        setAppBarTitle(R.string.fragment_activity_detail)
-
         fetchResult()
 
-        viewModel.getActivity(arguments.activityId)
+        setAppBarTitle(getString(R.string.fragment_activity_detail))
+
+        viewModel.getActivityById(arguments.activityId)
 
         return binding.root
     }
@@ -41,7 +41,7 @@ class ActivityDetailFragment : BaseFragment() {
     private fun fetchResult() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.uiState.collect { uiState ->
-                if (uiState is MainUiState.GetActivity) {
+                if (uiState is MainUiState.GetActivityById) {
                     Log.d(TAG, uiState.activityModel.toString())
                 }
             }

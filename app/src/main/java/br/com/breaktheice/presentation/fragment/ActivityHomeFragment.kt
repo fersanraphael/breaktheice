@@ -44,7 +44,7 @@ class ActivityHomeFragment : BaseFragment() {
         binding.activityTypeRecyclerView.createAdapter(
             fragmentActivity.applicationContext,
             ActivityTypeAdapter { activityType ->
-                // TODO
+                navigateFromHomeToList(activityType)
             }.apply {
                 replaceList(resources.getStringArray(R.array.activity_type_array).toMutableList())
             },
@@ -60,9 +60,9 @@ class ActivityHomeFragment : BaseFragment() {
             navigateFromHomeToList()
         }
 
-        setAppBarTitle(R.string.fragment_activity_home)
-
         fetchUiState()
+
+        setAppBarTitle(getString(R.string.fragment_activity_home))
 
         viewModel.getActivities()
 

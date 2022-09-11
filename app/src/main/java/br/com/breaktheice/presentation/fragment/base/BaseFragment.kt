@@ -1,6 +1,5 @@
 package br.com.breaktheice.presentation.fragment.base
 
-import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import br.com.breaktheice.R
 import br.com.breaktheice.presentation.viewmodel.MainViewModel
@@ -17,8 +16,8 @@ open class BaseFragment : Fragment() {
     }
     protected val viewModel by sharedViewModel<MainViewModel>()
 
-    fun setAppBarTitle(@StringRes resId: Int) {
+    fun setAppBarTitle(title: String) {
         val appBarLayout = fragmentActivity.findViewById<CollapsingToolbarLayout?>(R.id.app_bar_layout) ?: return
-        appBarLayout.title = getString(resId)
+        appBarLayout.title = title
     }
 }
