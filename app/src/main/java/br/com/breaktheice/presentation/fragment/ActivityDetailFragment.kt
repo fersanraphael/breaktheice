@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import br.com.breaktheice.R
 import br.com.breaktheice.databinding.FragmentActivityDetailBinding
 import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.state.MainUiState
@@ -27,6 +28,8 @@ class ActivityDetailFragment : BaseFragment() {
         val binding: FragmentActivityDetailBinding = FragmentActivityDetailBinding.inflate(layoutInflater)
         binding.lifecycleOwner = fragmentActivity
         binding.viewModel = viewModel
+
+        setAppBarTitle(R.string.fragment_activity_detail)
 
         fetchResult()
 

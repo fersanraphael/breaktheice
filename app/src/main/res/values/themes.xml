@@ -2,7 +2,6 @@
 
     <!-- Theme -->
     <style name="Theme.Appbreaktheice" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- <item name="android:windowTranslucentStatus">true</item> -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
@@ -26,6 +25,8 @@
         <item name="colorSurfaceVariant">@color/colorSurfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/colorOnSurfaceVariant</item>
         <item name="colorOutline">@color/colorOutline</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="textAppearanceDisplayLarge">@style/TextAppearance.Appbreaktheice.DisplayLarge</item>
         <item name="textAppearanceDisplayMedium">@style/TextAppearance.Appbreaktheice.DisplayMedium</item>
         <item name="textAppearanceDisplaySmall">@style/TextAppearance.Appbreaktheice.DisplaySmall</item>
@@ -58,12 +59,13 @@
         <item name="liftOnScroll">true</item>
     </style>
 
+    <style name="Widget.Appbreaktheice.CollapsingToolbar" parent="Widget.Material3.CollapsingToolbar.Medium">
+        <item name="contentScrim">@android:color/transparent</item>
+    </style>
+
     <style name="Widget.Appbreaktheice.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="contentInsetStartWithNavigation">@dimen/dimen_0dp</item>
         <item name="popupTheme">@style/Theme.Appbreaktheice.PopupOverlay</item>
-        <item name="title">@string/label_app_bar</item>
-        <item name="titleCentered">true</item>
-        <item name="titleTextAppearance">@style/TextAppearance.Appbreaktheice.TitleLarge</item>
     </style>
 
     <style name="Widget.Appbreaktheice.ExposedDropdownMenu.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">

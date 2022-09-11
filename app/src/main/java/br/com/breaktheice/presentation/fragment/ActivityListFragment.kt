@@ -13,7 +13,6 @@ import br.com.breaktheice.presentation.adapter.ActivityAdapter
 import br.com.breaktheice.presentation.adapter.ActivityTypeAdapter
 import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.navigateFromListToDetail
-import br.com.breaktheice.presentation.navigateFromListToFilter
 import br.com.breaktheice.presentation.state.MainUiState
 import kotlinx.coroutines.launch
 
@@ -41,13 +40,6 @@ class ActivityListFragment : BaseFragment() {
         val binding: FragmentActivityListBinding = FragmentActivityListBinding.inflate(layoutInflater)
         binding.lifecycleOwner = fragmentActivity
         binding.viewModel = viewModel
-        binding.newActivityFab.setOnClickListener {
-            navigateFromListToFilter()
-        }
-        binding.activityRecyclerView.createAdapter(
-            fragmentActivity.applicationContext,
-            activityAdapter
-        )
         binding.activityTypeRecyclerView.createAdapter(
             fragmentActivity.applicationContext,
             ActivityTypeAdapter { activityType ->
@@ -59,6 +51,12 @@ class ActivityListFragment : BaseFragment() {
             spanCount = 1,
             attachSnapHelper = true
         )
+        binding.activityRecyclerView.createAdapter(
+            fragmentActivity.applicationContext,
+            activityAdapter
+        )
+
+        setAppBarTitle(R.string.fragment_activity_list)
 
         fetchUiState()
 
@@ -72,7 +70,7 @@ class ActivityListFragment : BaseFragment() {
             viewModel.uiState.collect { uiState ->
                 when (uiState) {
                     is MainUiState.GetActivities -> {
-                        activityAdapter.replaceList(uiState.activities.subList(0, uiState.activities.size.coerceAtMost(3)))
+                        activityAdapter.replaceList(uiState.activities.subList(0, uiState.activities.size.coerceAtMost(5)))
                     }
                     is MainUiState.CallActivity -> {
                         viewModel.insertActivity(uiState.activityModel)
