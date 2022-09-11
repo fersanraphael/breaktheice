@@ -51,14 +51,13 @@ class ActivityListFragment : BaseFragment() {
 
         fetchUiState()
 
-        val activityType: String? = arguments.activityType
-        if (activityType.isNullOrEmpty()) {
+        validateArgument({
             setAppBarTitle(getString(R.string.fragment_activity_list))
             viewModel.getActivities()
-        } else {
+        }, { activityType ->
             setAppBarTitle(getString(R.string.fragment_activity_type_list, activityType))
             viewModel.getActivitiesByType(activityType.lowercase())
-        }
+        })
 
         return binding.root
     }
@@ -83,13 +82,29 @@ class ActivityListFragment : BaseFragment() {
                     is MainUiState.InsertActivity,
                     is MainUiState.UpdateActivity,
                     is MainUiState.UpdateActivityFavorite -> {
-                        viewModel.getActivities()
+                        validateArgument({
+                            viewModel.getActivities()
+                        }, { activityType ->
+                            viewModel.getActivitiesByType(activityType.lowercase())
+                        })
                     }
                     else -> {
                         // Do nothing.
                     }
                 }
             }
+        }
+    }
+
+    private fun validateArgument(
+        queryAll: () -> Unit,
+        queryType: (String) -> Unit
+    ) {
+        val activityType: String? = arguments.activityType
+        if (activityType?.isEmpty() == true) {
+            queryType.invoke(activityType)
+        } else {
+            queryAll.invoke()
         }
     }
 }
