@@ -33,23 +33,15 @@ object AndroidBinding {
     @JvmStatic
     @BindingAdapter("capitalizeFirstCharText")
     fun AppCompatTextView.setCapitalizeFirstCharText(type: String) {
-        text = type.replaceFirstChar { char -> char.uppercase() }
+        text = type.replaceFirstChar { char ->
+            char.uppercase()
+        }
     }
 
     @JvmStatic
     @BindingAdapter("backgroundType")
     fun View.setBackgroundType(type: String) {
-        @DrawableRes val resId: Int = when (type.lowercase()) {
-            "education" -> R.drawable.image_education
-            "recreational" -> R.drawable.image_recreational
-            "social" -> R.drawable.image_social
-            "diy" -> R.drawable.image_diy
-            "charity" -> R.drawable.image_charity
-            "cooking" -> R.drawable.image_cooking
-            "relaxation" -> R.drawable.image_relaxation
-            "music" -> R.drawable.image_music
-            else -> R.drawable.image_busywork
-        }
+        @DrawableRes val resId: Int = resources.getIdentifier("image_${type.lowercase()}", "drawable", context.packageName)
         background = ResourcesCompat.getDrawable(resources, resId, context.theme)
     }
 
@@ -67,17 +59,7 @@ object AndroidBinding {
     @JvmStatic
     @BindingAdapter("srcType")
     fun AppCompatImageView.setSrcType(type: String) {
-        @DrawableRes val resId: Int = when (type.lowercase()) {
-            "education" -> R.drawable.icon_education
-            "recreational" -> R.drawable.icon_recreational
-            "social" -> R.drawable.icon_social
-            "diy" -> R.drawable.icon_diy
-            "charity" -> R.drawable.icon_charity
-            "cooking" -> R.drawable.icon_cooking
-            "relaxation" -> R.drawable.icon_relaxation
-            "music" -> R.drawable.icon_music
-            else -> R.drawable.icon_busywork
-        }
+        @DrawableRes val resId: Int = resources.getIdentifier("icon_${type.lowercase()}", "drawable", context.packageName)
         setImageDrawable(ResourcesCompat.getDrawable(resources, resId, context.theme))
     }
 }

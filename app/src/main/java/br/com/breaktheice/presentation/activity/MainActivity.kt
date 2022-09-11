@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.breaktheice.R
 import br.com.breaktheice.databinding.ActivityMainBinding
-import br.com.breaktheice.presentation.fragment.ActivityListFragmentDirections
 import br.com.breaktheice.presentation.state.MainUiState
 import br.com.breaktheice.presentation.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
@@ -37,7 +37,14 @@ class MainActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.settings -> {
                     // TODO: Temporary.
-                    navHostFragment.navController.navigate(ActivityListFragmentDirections.actionListToFilter())
+                    true
+                }
+                R.id.themes -> {
+                    if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    } else {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    }
                     true
                 }
                 else -> {

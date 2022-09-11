@@ -9,11 +9,13 @@
     <!-- Fragment -->
     <string name="fragment_activity_detail">Detail</string>
     <string name="fragment_activity_filter">Search</string>
-    <string name="fragment_activity_list">Hello, Raphael!</string>
+    <string name="fragment_activity_home">Hello, Raphael!</string>
+    <string name="fragment_activity_list">My Activities</string>
 
     <!-- Hint -->
     <string name="hint_filter_type">Filter by Type</string>
     <string name="hint_settings">Settings</string>
+    <string name="hint_themes">Toggle Theme</string>
 
     <!-- Label-->
     <string name="label_accessibility_easy">Easy</string>
@@ -22,7 +24,7 @@
     <string name="label_accessibility_very_easy">Very Easy</string>
     <string name="label_accessibility_very_hard">Very Hard</string>
     <string name="label_activities">My Activities</string>
-    <string name="label_app_bar">Hello, Raphael!</string>
+    <string name="label_app_bar">Hello, there!</string>
     <string name="label_categories">Categories</string>
     <string name="label_common_error">Something went wrong.</string>
     <string name="label_id">Id: %s</string>

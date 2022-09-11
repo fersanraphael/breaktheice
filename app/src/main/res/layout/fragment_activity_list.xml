@@ -8,85 +8,42 @@
             name="viewModel"
             type="br.com.breaktheice.presentation.viewmodel.MainViewModel" />
 
-        <import type="br.com.breaktheice.presentation.state.MainUiState.GetActivities" />
-
     </data>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <RelativeLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dimen_16dp"
-                android:minHeight="@dimen/dimen_32dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/TextAppearance.Appbreaktheice.LabelLarge"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/activity_recycler_view"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/label_categories" />
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:padding="@dimen/dimen_8dp" />
 
-            </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/activity_type_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:nestedScrollingEnabled="false"
-                android:padding="@dimen/dimen_8dp" />
+        </androidx.core.widget.NestedScrollView>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dimen_16dp"
-                android:minHeight="@dimen/dimen_32dp">
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/new_activity_fab"
+            style="@style/Widget.Appbreaktheice.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/dimen_16dp"
+            app:icon="@drawable/icon_add" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/TextAppearance.Appbreaktheice.LabelLarge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/dimen_2dp"
-                    android:layout_toStartOf="@id/more_activity_button"
-                    android:text="@string/label_activities" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/more_activity_button"
-                    style="@style/Widget.Appbreaktheice.Button.Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dimen_32dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="@dimen/dimen_2dp"
-                    android:paddingVertical="@dimen/dimen_0dp"
-                    android:paddingStart="@dimen/dimen_8dp"
-                    android:paddingEnd="@dimen/dimen_0dp"
-                    android:text="@string/label_more"
-                    app:icon="@drawable/icon_arrow_right"
-                    app:iconGravity="end" />
-
-            </RelativeLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/activity_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:nestedScrollingEnabled="false"
-                android:padding="@dimen/dimen_8dp" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>
