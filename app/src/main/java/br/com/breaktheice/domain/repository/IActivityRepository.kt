@@ -1,16 +1,16 @@
 package br.com.breaktheice.domain.repository
 
+import br.com.breaktheice.commons.Result
 import br.com.breaktheice.domain.entity.ActivityModel
-import retrofit2.Response
 
 /**
  * @author Raphael Santos
  */
 interface IActivityRepository {
 
-    suspend fun callActivity(): Response<ActivityModel>
+    suspend fun callActivity(): Result<ActivityModel?>
 
-    suspend fun callActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel>
+    suspend fun callActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel?>
 
     suspend fun deleteActivity(activityModel: ActivityModel)
 

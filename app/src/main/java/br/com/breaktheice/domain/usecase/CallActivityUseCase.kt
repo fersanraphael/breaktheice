@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
-import retrofit2.Response
 
 /**
  * @author Raphael Santos
@@ -18,16 +17,17 @@ class CallActivityUseCase constructor(
 
     operator fun invoke(): Flow<Result<ActivityModel>> {
         return flow {
-            val response: Response<ActivityModel> = activityRepository.callActivity()
-            if (response.isSuccessful) {
-                val body: ActivityModel? = response.body()
-                if (body?.isObjectValid == true) {
-                    emit(Result.Success(body))
-                } else {
+            when (val result = activityRepository.callActivity()) {
+                is Result.Success -> {
+                    if (result.value != null) {
+                        emit(Result.Success(result.value))
+                    } else {
+                        emit(Result.Failure)
+                    }
+                }
+                else -> {
                     emit(Result.Failure)
                 }
-            } else {
-                emit(Result.Failure)
             }
         }.onStart {
             emit(Result.Loading)

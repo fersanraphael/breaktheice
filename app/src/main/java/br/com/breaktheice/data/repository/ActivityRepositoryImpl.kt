@@ -1,5 +1,6 @@
 package br.com.breaktheice.data.repository
 
+import br.com.breaktheice.commons.Result
 import br.com.breaktheice.data.source.LocalActivityDataSource
 import br.com.breaktheice.data.source.RemoteActivityDataSource
 import br.com.breaktheice.domain.entity.ActivityModel
@@ -18,15 +19,27 @@ class ActivityRepositoryImpl constructor(
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : IActivityRepository {
 
-    override suspend fun callActivity(): Response<ActivityModel> {
+    override suspend fun callActivity(): Result<ActivityModel?> {
         return withContext(coroutineDispatcher) {
-            remoteActivityDataSource.callActivity()
+            val response: Response<ActivityModel> = remoteActivityDataSource.callActivity()
+            if (response.isSuccessful) {
+                val body: ActivityModel? = response.body()
+                Result.Success(body)
+            } else {
+                Result.Failure
+            }
         }
     }
 
-    override suspend fun callActivityFiltered(options: MutableMap<String, String>): Response<ActivityModel> {
+    override suspend fun callActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel?> {
         return withContext(coroutineDispatcher) {
-            remoteActivityDataSource.callActivityFiltered(options)
+            val response: Response<ActivityModel> = remoteActivityDataSource.callActivityFiltered(options)
+            if (response.isSuccessful) {
+                val body: ActivityModel? = response.body()
+                Result.Success(body)
+            } else {
+                Result.Failure
+            }
         }
     }
 

@@ -114,7 +114,7 @@
 
     <style name="Widget.Appbreaktheice.CardView" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">@dimen/dimen_12dp</item>
-        <item name="cardElevation">@dimen/dimen_12dp</item>
+        <item name="cardElevation">@dimen/dimen_8dp</item>
     </style>
 
     <style name="Widget.Appbreaktheice.FloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
