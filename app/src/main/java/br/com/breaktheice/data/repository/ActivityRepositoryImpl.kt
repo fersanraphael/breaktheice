@@ -49,9 +49,9 @@ class ActivityRepositoryImpl constructor(
         }
     }
 
-    override suspend fun getActivityById(id: Int): ActivityModel? {
+    override suspend fun getActivities(): MutableList<ActivityModel>? {
         return withContext(coroutineDispatcher) {
-            localActivityDataSource.getActivityById(id)
+            localActivityDataSource.getActivities()
         }
     }
 
@@ -61,9 +61,9 @@ class ActivityRepositoryImpl constructor(
         }
     }
 
-    override suspend fun getActivities(): MutableList<ActivityModel>? {
+    override suspend fun getActivityById(id: Int): ActivityModel? {
         return withContext(coroutineDispatcher) {
-            localActivityDataSource.getActivities()
+            localActivityDataSource.getActivityById(id)
         }
     }
 

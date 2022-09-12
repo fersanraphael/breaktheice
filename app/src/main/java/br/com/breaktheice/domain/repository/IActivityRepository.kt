@@ -14,11 +14,11 @@ interface IActivityRepository {
 
     suspend fun deleteActivity(activityModel: ActivityModel)
 
-    suspend fun getActivityById(id: Int): ActivityModel?
+    suspend fun getActivities(): MutableList<ActivityModel>?
 
     suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>?
 
-    suspend fun getActivities(): MutableList<ActivityModel>?
+    suspend fun getActivityById(id: Int): ActivityModel?
 
     suspend fun insertActivity(activityModel: ActivityModel)
 

@@ -35,16 +35,10 @@ class ActivityAdapter(
         return activityModelDataSet.size
     }
 
-    override fun replaceList(dataSet: MutableList<ActivityModel>) {
+    override fun replaceList(dataSet: List<ActivityModel>) {
         activityModelDataSet.apply {
             clear()
-            addAll(
-                dataSet.sortedWith(
-                    compareBy<ActivityModel> { activityModel ->
-                        activityModel.favorite
-                    }.reversed()
-                )
-            )
+            addAll(dataSet)
             notifyDataSetChanged()
         }
     }

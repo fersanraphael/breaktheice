@@ -23,12 +23,12 @@ sealed interface MainUiState {
         val activities: MutableList<ActivityModel>
     ) : MainUiState
 
-    data class GetActivityById(
-        val activityModel: ActivityModel
-    ) : MainUiState
-
     data class GetActivitiesByType(
         val activities: MutableList<ActivityModel>
+    ) : MainUiState
+
+    data class GetActivityById(
+        val activityModel: ActivityModel
     ) : MainUiState
 
     object Idle : MainUiState

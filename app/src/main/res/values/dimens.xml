@@ -20,6 +20,7 @@
     <dimen name="dimen_144dp">144dp</dimen>
     <dimen name="dimen_160dp">160dp</dimen>
     <dimen name="dimen_192dp">192dp</dimen>
+    <dimen name="dimen_256dp">256dp</dimen>
 
     <!-- SP -->
     <dimen name="dimen_13sp">13sp</dimen>

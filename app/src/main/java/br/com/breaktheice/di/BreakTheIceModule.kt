@@ -55,54 +55,67 @@ val breakTheIceModule: Module = module {
      * Data Source injection.
      */
     factory {
-        LocalActivityDataSource(get())
+        LocalActivityDataSource(database = get())
     }
     factory {
-        RemoteActivityDataSource(get())
+        RemoteActivityDataSource(retrofit = get())
     }
 
     /*
      * Repository injection.
      */
     factory<IActivityRepository> {
-        ActivityRepositoryImpl(get(), get())
+        ActivityRepositoryImpl(
+            localActivityDataSource = get(),
+            remoteActivityDataSource = get()
+        )
     }
 
     /*
      * Use Case injection.
      */
     factory {
-        CallActivityFilteredUseCase(get())
+        CallActivityFilteredUseCase(activityRepository = get())
     }
     factory {
-        CallActivityUseCase(get())
+        CallActivityUseCase(activityRepository = get())
     }
     factory {
-        DeleteActivityUseCase(get())
+        DeleteActivityUseCase(activityRepository = get())
     }
     factory {
-        GetActivitiesUseCase(get())
+        GetActivitiesByTypeUseCase(activityRepository = get())
     }
     factory {
-        GetActivityByIdUseCase(get())
+        GetActivitiesUseCase(activityRepository = get())
     }
     factory {
-        GetActivitiesByTypeUseCase(get())
+        GetActivityByIdUseCase(activityRepository = get())
     }
     factory {
-        InsertActivityUseCase(get())
+        InsertActivityUseCase(activityRepository = get())
     }
     factory {
-        UpdateActivityFavoriteUseCase(get())
+        UpdateActivityFavoriteUseCase(activityRepository = get())
     }
     factory {
-        UpdateActivityUseCase(get())
+        UpdateActivityUseCase(activityRepository = get())
     }
 
     /*
      * View Model injection.
      */
     viewModel {
-        MainViewModel(get(), get(), get(), get(), get(), get(), get(), get(), get())
+        MainViewModel(
+            callActivityFilteredUseCase = get(),
+            callActivityUseCase = get(),
+            deleteActivityUseCase = get(),
+            getActivitiesUseCase = get(),
+            getActivityByIdUseCase = get(),
+            getActivitiesByTypeUseCase = get(),
+            insertActivityUseCase = get(),
+            updateActivityFavoriteUseCase = get(),
+            updateActivityUseCase = get()
+        )
     }
 }

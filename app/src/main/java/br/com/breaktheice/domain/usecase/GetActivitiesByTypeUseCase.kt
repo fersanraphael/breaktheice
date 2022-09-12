@@ -20,7 +20,7 @@ class GetActivitiesByTypeUseCase constructor(
     ): Flow<Result<MutableList<ActivityModel>>> {
         return flow {
             val activities: MutableList<ActivityModel>? = activityRepository.getActivitiesByType(type)
-            if (activities != null && activities.isNotEmpty()) {
+            if (activities != null) {
                 emit(Result.Success(activities))
             } else {
                 emit(Result.Failure)

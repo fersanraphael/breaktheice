@@ -90,6 +90,24 @@ class MainViewModel constructor(
         }
     }
 
+    fun getActivitiesByType(type: String) {
+        uiScope.launch {
+            getActivitiesByTypeUseCase(type).collect { result ->
+                _uiState.value = when (result) {
+                    is Result.Success -> {
+                        MainUiState.GetActivitiesByType(result.value)
+                    }
+                    is Result.Failure, is Result.Error -> {
+                        MainUiState.Error
+                    }
+                    is Result.Loading -> {
+                        MainUiState.Loading
+                    }
+                }
+            }
+        }
+    }
+
     fun getActivities() {
         uiScope.launch {
             getActivitiesUseCase().collect { result ->
@@ -114,24 +132,6 @@ class MainViewModel constructor(
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.GetActivityById(result.value)
-                    }
-                    is Result.Failure, is Result.Error -> {
-                        MainUiState.Error
-                    }
-                    is Result.Loading -> {
-                        MainUiState.Loading
-                    }
-                }
-            }
-        }
-    }
-
-    fun getActivitiesByType(type: String) {
-        uiScope.launch {
-            getActivitiesByTypeUseCase(type).collect { result ->
-                _uiState.value = when (result) {
-                    is Result.Success -> {
-                        MainUiState.GetActivitiesByType(result.value)
                     }
                     is Result.Failure, is Result.Error -> {
                         MainUiState.Error

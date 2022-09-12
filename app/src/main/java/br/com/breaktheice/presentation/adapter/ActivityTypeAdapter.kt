@@ -32,7 +32,7 @@ class ActivityTypeAdapter(
         return activityTypeDataSet.size
     }
 
-    override fun replaceList(dataSet: MutableList<String>) {
+    override fun replaceList(dataSet: List<String>) {
         activityTypeDataSet.apply {
             clear()
             addAll(dataSet)

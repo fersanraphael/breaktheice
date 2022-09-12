@@ -113,6 +113,7 @@
     </style>
 
     <style name="Widget.Appbreaktheice.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:stateListAnimator">@animator/state_scaled</item>
         <item name="cardCornerRadius">@dimen/dimen_12dp</item>
         <item name="cardElevation">@dimen/dimen_8dp</item>
     </style>

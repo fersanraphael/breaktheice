@@ -15,9 +15,9 @@ class LocalActivityDataSource constructor(
             .deleteActivity(activityModel)
     }
 
-    suspend fun getActivityById(id: Int): ActivityModel? {
+    suspend fun getActivities(): MutableList<ActivityModel>? {
         return database.activityDao()
-            .getActivityById(id)
+            .getActivities()
     }
 
     suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>? {
@@ -25,9 +25,9 @@ class LocalActivityDataSource constructor(
             .getActivitiesByType(type)
     }
 
-    suspend fun getActivities(): MutableList<ActivityModel>? {
+    suspend fun getActivityById(id: Int): ActivityModel? {
         return database.activityDao()
-            .getActivities()
+            .getActivityById(id)
     }
 
     suspend fun insertActivity(activityModel: ActivityModel) {

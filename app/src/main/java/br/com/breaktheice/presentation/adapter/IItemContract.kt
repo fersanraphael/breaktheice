@@ -5,5 +5,5 @@ package br.com.breaktheice.presentation.adapter
  */
 interface IItemContract<T> {
 
-    fun replaceList(dataSet: MutableList<T>)
+    fun replaceList(dataSet: List<T>)
 }

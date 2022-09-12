@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import br.com.breaktheice.R
 import br.com.breaktheice.commons.utility.createAdapter
 import br.com.breaktheice.databinding.FragmentActivityListBinding
+import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.presentation.adapter.ActivityAdapter
 import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.navigateFromListToDetail
@@ -67,10 +68,18 @@ class ActivityListFragment : BaseFragment() {
             viewModel.uiState.collect { uiState ->
                 when (uiState) {
                     is MainUiState.GetActivities -> {
-                        activityAdapter.replaceList(uiState.activities)
+                        activityAdapter.replaceList(
+                            uiState.activities.sortedWith(
+                                compareBy<ActivityModel> { activityModel -> activityModel.favorite }.reversed()
+                            )
+                        )
                     }
                     is MainUiState.GetActivitiesByType -> {
-                        activityAdapter.replaceList(uiState.activities)
+                        activityAdapter.replaceList(
+                            uiState.activities.sortedWith(
+                                compareBy<ActivityModel> { activityModel -> activityModel.favorite }.reversed()
+                            )
+                        )
                     }
                     is MainUiState.CallActivity -> {
                         viewModel.insertActivity(uiState.activityModel)

@@ -4,11 +4,11 @@
 
     <data>
 
+        <import type="br.com.breaktheice.presentation.state.MainUiState.Loading" />
+
         <variable
             name="viewModel"
             type="br.com.breaktheice.presentation.viewmodel.MainViewModel" />
-
-        <import type="br.com.breaktheice.presentation.state.MainUiState.Loading" />
 
     </data>
 

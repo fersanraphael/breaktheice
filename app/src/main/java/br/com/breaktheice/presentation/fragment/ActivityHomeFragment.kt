@@ -47,7 +47,7 @@ class ActivityHomeFragment : BaseFragment() {
             ActivityTypeAdapter { activityType ->
                 navigateFromHomeToList(activityType)
             }.apply {
-                replaceList(resources.getStringArray(R.array.activity_type_array).toMutableList())
+                replaceList(resources.getStringArray(R.array.activity_type_array).toList())
             },
             orientation = RecyclerView.HORIZONTAL,
             spanCount = 1,
@@ -77,10 +77,8 @@ class ActivityHomeFragment : BaseFragment() {
                     is MainUiState.GetActivities -> {
                         activityAdapter.replaceList(
                             uiState.activities.sortedWith(
-                                compareBy<ActivityModel> { activityModel ->
-                                    activityModel.favorite
-                                }.reversed()
-                            ).subList(0, uiState.activities.size.coerceAtMost(3)).toMutableList()
+                                compareBy<ActivityModel> { activityModel -> activityModel.favorite }.reversed()
+                            ).subList(0, uiState.activities.size.coerceAtMost(3))
                         )
                     }
                     is MainUiState.UpdateActivityFavorite -> {
