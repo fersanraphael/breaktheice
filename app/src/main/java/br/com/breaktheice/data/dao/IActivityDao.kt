@@ -1,7 +1,7 @@
 package br.com.breaktheice.data.dao
 
 import androidx.room.*
-import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.data.model.LocalActivityModel
 
 /**
  * @author Raphael Santos
@@ -10,19 +10,19 @@ import br.com.breaktheice.domain.entity.ActivityModel
 interface IActivityDao {
 
     @Delete
-    suspend fun deleteActivity(activityModel: ActivityModel)
+    suspend fun deleteActivity(localActivityModel: LocalActivityModel)
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    suspend fun insertActivity(activityModel: ActivityModel)
+    suspend fun insertActivity(localActivityModel: LocalActivityModel)
 
     @Query("SELECT * FROM activity")
-    suspend fun getActivities(): MutableList<ActivityModel>?
+    suspend fun getActivities(): MutableList<LocalActivityModel>?
 
     @Query("SELECT * FROM activity WHERE type = :type")
-    suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>?
+    suspend fun getActivitiesByType(type: String): MutableList<LocalActivityModel>?
 
     @Query("SELECT * FROM activity WHERE _id = :id")
-    suspend fun getActivityById(id: Int): ActivityModel?
+    suspend fun getActivityById(id: Int): LocalActivityModel?
 
     @Query("UPDATE activity SET favorite=:favorite WHERE _id=:id")
     suspend fun updateActivityFavorite(
@@ -31,5 +31,5 @@ interface IActivityDao {
     )
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun updateActivity(activityModel: ActivityModel)
+    suspend fun updateActivity(localActivityModel: LocalActivityModel)
 }

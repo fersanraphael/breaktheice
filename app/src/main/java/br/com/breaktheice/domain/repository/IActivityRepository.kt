@@ -8,17 +8,17 @@ import br.com.breaktheice.domain.entity.ActivityModel
  */
 interface IActivityRepository {
 
-    suspend fun callActivity(): Result<ActivityModel?>
+    suspend fun callActivity(): Result<ActivityModel>
 
-    suspend fun callActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel?>
+    suspend fun callActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel>
 
     suspend fun deleteActivity(activityModel: ActivityModel)
 
-    suspend fun getActivities(): MutableList<ActivityModel>?
+    suspend fun getActivities(): Result<MutableList<ActivityModel>>
 
-    suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>?
+    suspend fun getActivitiesByType(type: String): Result<MutableList<ActivityModel>>
 
-    suspend fun getActivityById(id: Int): ActivityModel?
+    suspend fun getActivityById(id: Int): Result<ActivityModel>
 
     suspend fun insertActivity(activityModel: ActivityModel)
 

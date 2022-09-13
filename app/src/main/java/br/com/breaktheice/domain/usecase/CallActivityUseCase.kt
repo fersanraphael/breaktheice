@@ -19,11 +19,7 @@ class CallActivityUseCase constructor(
         return flow {
             when (val result = activityRepository.callActivity()) {
                 is Result.Success -> {
-                    if (result.value != null) {
-                        emit(Result.Success(result.value))
-                    } else {
-                        emit(Result.Failure)
-                    }
+                    emit(Result.Success(result.value))
                 }
                 else -> {
                     emit(Result.Failure)

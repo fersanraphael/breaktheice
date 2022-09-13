@@ -26,7 +26,7 @@ class ActivityHomeFragment : BaseFragment() {
     private val activityAdapter by lazy {
         ActivityAdapter(
             { activityModel ->
-                navigateFromHomeToDetail(activityModel._id)
+                navigateFromHomeToDetail(activityModel.id)
             },
             { id, favorite ->
                 viewModel.updateActivityFavorite(id, favorite)

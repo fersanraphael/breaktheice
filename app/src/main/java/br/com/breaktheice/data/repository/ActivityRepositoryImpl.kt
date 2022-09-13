@@ -1,6 +1,10 @@
 package br.com.breaktheice.data.repository
 
+import br.com.breaktheice.commons.ListMapper
 import br.com.breaktheice.commons.Result
+import br.com.breaktheice.data.mapper.ActivityMapper
+import br.com.breaktheice.data.model.LocalActivityModel
+import br.com.breaktheice.data.model.RemoteActivityModel
 import br.com.breaktheice.data.source.LocalActivityDataSource
 import br.com.breaktheice.data.source.RemoteActivityDataSource
 import br.com.breaktheice.domain.entity.ActivityModel
@@ -14,29 +18,30 @@ import retrofit2.Response
  * @author Raphael Santos
  */
 class ActivityRepositoryImpl constructor(
+    private val activityMapper: ActivityMapper,
     private val localActivityDataSource: LocalActivityDataSource,
     private val remoteActivityDataSource: RemoteActivityDataSource,
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : IActivityRepository {
 
-    override suspend fun callActivity(): Result<ActivityModel?> {
+    override suspend fun callActivity(): Result<ActivityModel> {
         return withContext(coroutineDispatcher) {
-            val response: Response<ActivityModel> = remoteActivityDataSource.callActivity()
+            val response: Response<RemoteActivityModel> = remoteActivityDataSource.callActivity()
             if (response.isSuccessful) {
-                val body: ActivityModel? = response.body()
-                Result.Success(body)
+                val body: RemoteActivityModel = response.body() ?: return@withContext Result.Failure
+                Result.Success(activityMapper.remoteActivityToActivityMapper.map(body))
             } else {
                 Result.Failure
             }
         }
     }
 
-    override suspend fun callActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel?> {
+    override suspend fun callActivityFiltered(options: MutableMap<String, String>): Result<ActivityModel> {
         return withContext(coroutineDispatcher) {
-            val response: Response<ActivityModel> = remoteActivityDataSource.callActivityFiltered(options)
+            val response: Response<RemoteActivityModel> = remoteActivityDataSource.callActivityFiltered(options)
             if (response.isSuccessful) {
-                val body: ActivityModel? = response.body()
-                Result.Success(body)
+                val body: RemoteActivityModel = response.body() ?: return@withContext Result.Failure
+                Result.Success(activityMapper.remoteActivityToActivityMapper.map(body))
             } else {
                 Result.Failure
             }
@@ -45,31 +50,34 @@ class ActivityRepositoryImpl constructor(
 
     override suspend fun deleteActivity(activityModel: ActivityModel) {
         withContext(coroutineDispatcher) {
-            localActivityDataSource.deleteActivity(activityModel)
+            localActivityDataSource.deleteActivity(activityMapper.activityToLocalActivityMapper.map(activityModel))
         }
     }
 
-    override suspend fun getActivities(): MutableList<ActivityModel>? {
+    override suspend fun getActivities(): Result<MutableList<ActivityModel>> {
         return withContext(coroutineDispatcher) {
-            localActivityDataSource.getActivities()
+            val localActivities: MutableList<LocalActivityModel> = localActivityDataSource.getActivities() ?: return@withContext Result.Failure
+            Result.Success(ArrayList(ListMapper(activityMapper.localActivityToActivityMapper).map(localActivities)))
         }
     }
 
-    override suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>? {
+    override suspend fun getActivitiesByType(type: String): Result<MutableList<ActivityModel>> {
         return withContext(coroutineDispatcher) {
-            localActivityDataSource.getActivitiesByType(type)
+            val localActivities: MutableList<LocalActivityModel> = localActivityDataSource.getActivitiesByType(type) ?: return@withContext Result.Failure
+            Result.Success(ArrayList(ListMapper(activityMapper.localActivityToActivityMapper).map(localActivities)))
         }
     }
 
-    override suspend fun getActivityById(id: Int): ActivityModel? {
+    override suspend fun getActivityById(id: Int): Result<ActivityModel> {
         return withContext(coroutineDispatcher) {
-            localActivityDataSource.getActivityById(id)
+            val localActivityModel: LocalActivityModel = localActivityDataSource.getActivityById(id) ?: return@withContext Result.Failure
+            Result.Success(activityMapper.localActivityToActivityMapper.map(localActivityModel))
         }
     }
 
     override suspend fun insertActivity(activityModel: ActivityModel) {
         withContext(coroutineDispatcher) {
-            localActivityDataSource.insertActivity(activityModel)
+            localActivityDataSource.insertActivity(activityMapper.activityToLocalActivityMapper.map(activityModel))
         }
     }
 
@@ -84,7 +92,7 @@ class ActivityRepositoryImpl constructor(
 
     override suspend fun updateActivity(activityModel: ActivityModel) {
         withContext(coroutineDispatcher) {
-            localActivityDataSource.updateActivity(activityModel)
+            localActivityDataSource.updateActivity(activityMapper.activityToLocalActivityMapper.map(activityModel))
         }
     }
 }

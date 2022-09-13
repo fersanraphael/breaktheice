@@ -19,11 +19,13 @@ class GetActivityByIdUseCase constructor(
         id: Int
     ): Flow<Result<ActivityModel>> {
         return flow {
-            val activity: ActivityModel? = activityRepository.getActivityById(id)
-            if (activity != null) {
-                emit(Result.Success(activity))
-            } else {
-                emit(Result.Failure)
+            when (val result = activityRepository.getActivityById(id)) {
+                is Result.Success -> {
+                    emit(Result.Success(result.value))
+                }
+                else -> {
+                    emit(Result.Failure)
+                }
             }
         }.onStart {
             emit(Result.Loading)

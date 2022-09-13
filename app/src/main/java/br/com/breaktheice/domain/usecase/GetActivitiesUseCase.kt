@@ -17,11 +17,13 @@ class GetActivitiesUseCase constructor(
 
     operator fun invoke(): Flow<Result<MutableList<ActivityModel>>> {
         return flow {
-            val activities: MutableList<ActivityModel>? = activityRepository.getActivities()
-            if (activities != null) {
-                emit(Result.Success(activities))
-            } else {
-                emit(Result.Failure)
+            when (val result = activityRepository.getActivities()) {
+                is Result.Success -> {
+                    emit(Result.Success(result.value))
+                }
+                else -> {
+                    emit(Result.Failure)
+                }
             }
         }.onStart {
             emit(Result.Loading)

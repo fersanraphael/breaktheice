@@ -1,7 +1,7 @@
 package br.com.breaktheice.data.source
 
 import br.com.breaktheice.data.BreakTheIceDatabase
-import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.data.model.LocalActivityModel
 
 /**
  * @author Raphael Santos
@@ -10,34 +10,34 @@ class LocalActivityDataSource constructor(
     private val database: BreakTheIceDatabase
 ) {
 
-    suspend fun deleteActivity(activityModel: ActivityModel) {
+    suspend fun deleteActivity(localActivityModel: LocalActivityModel) {
         database.activityDao()
-            .deleteActivity(activityModel)
+            .deleteActivity(localActivityModel)
     }
 
-    suspend fun getActivities(): MutableList<ActivityModel>? {
+    suspend fun getActivities(): MutableList<LocalActivityModel>? {
         return database.activityDao()
             .getActivities()
     }
 
-    suspend fun getActivitiesByType(type: String): MutableList<ActivityModel>? {
+    suspend fun getActivitiesByType(type: String): MutableList<LocalActivityModel>? {
         return database.activityDao()
             .getActivitiesByType(type)
     }
 
-    suspend fun getActivityById(id: Int): ActivityModel? {
+    suspend fun getActivityById(id: Int): LocalActivityModel? {
         return database.activityDao()
             .getActivityById(id)
     }
 
-    suspend fun insertActivity(activityModel: ActivityModel) {
+    suspend fun insertActivity(localActivityModel: LocalActivityModel) {
         database.activityDao()
-            .insertActivity(activityModel)
+            .insertActivity(localActivityModel)
     }
 
-    suspend fun updateActivity(activityModel: ActivityModel) {
+    suspend fun updateActivity(localActivityModel: LocalActivityModel) {
         database.activityDao()
-            .updateActivity(activityModel)
+            .updateActivity(localActivityModel)
     }
 
     suspend fun updateActivityFavorite(

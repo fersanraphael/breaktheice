@@ -26,7 +26,7 @@ class ActivityListFragment : BaseFragment() {
     private val activityAdapter by lazy {
         ActivityAdapter(
             { activityModel ->
-                navigateFromListToDetail(activityModel._id)
+                navigateFromListToDetail(activityModel.id)
             },
             { id, favorite ->
                 viewModel.updateActivityFavorite(id, favorite)

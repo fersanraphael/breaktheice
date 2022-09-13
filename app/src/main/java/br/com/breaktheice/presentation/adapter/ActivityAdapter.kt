@@ -48,7 +48,7 @@ class ActivityAdapter(
             onActivityClickListener.invoke(activityModel)
         }
         itemView.findViewById<AppCompatImageView>(R.id.star_image_view).setOnClickListener {
-            onActivityFavoriteClickListener.invoke(activityModel._id, !activityModel.favorite)
+            onActivityFavoriteClickListener.invoke(activityModel.id, !activityModel.favorite)
         }
     }
 

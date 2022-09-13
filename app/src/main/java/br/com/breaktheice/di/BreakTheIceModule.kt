@@ -4,6 +4,7 @@ import androidx.room.Room
 import br.com.breaktheice.commons.constant.DATABASE_NAME
 import br.com.breaktheice.commons.constant.WEBSERVICE_BASEURL
 import br.com.breaktheice.data.BreakTheIceDatabase
+import br.com.breaktheice.data.mapper.*
 import br.com.breaktheice.data.repository.ActivityRepositoryImpl
 import br.com.breaktheice.data.source.LocalActivityDataSource
 import br.com.breaktheice.data.source.RemoteActivityDataSource
@@ -52,6 +53,18 @@ val breakTheIceModule: Module = module {
     }
 
     /*
+     * Activity Mapper injection.
+     */
+    single {
+        ActivityMapper(
+            activityToLocalActivityMapper = ActivityToLocalActivityMapper(),
+            activityToRemoteActivityMapper = ActivityToRemoteActivityMapper(),
+            localActivityToActivityMapper = LocalActivityToActivityMapper(),
+            remoteActivityToActivityMapper = RemoteActivityToActivityMapper()
+        )
+    }
+
+    /*
      * Data Source injection.
      */
     factory {
@@ -66,6 +79,7 @@ val breakTheIceModule: Module = module {
      */
     factory<IActivityRepository> {
         ActivityRepositoryImpl(
+            activityMapper = get(),
             localActivityDataSource = get(),
             remoteActivityDataSource = get()
         )

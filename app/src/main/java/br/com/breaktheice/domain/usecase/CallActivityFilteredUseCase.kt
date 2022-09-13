@@ -21,7 +21,7 @@ class CallActivityFilteredUseCase constructor(
         return flow {
             when (val result = activityRepository.callActivityFiltered(options)) {
                 is Result.Success -> {
-                    if (result.value?.isObjectValid == true) {
+                    if (result.value.isObjectValid) {
                         emit(Result.Success(result.value))
                     } else {
                         emit(Result.Failure)
