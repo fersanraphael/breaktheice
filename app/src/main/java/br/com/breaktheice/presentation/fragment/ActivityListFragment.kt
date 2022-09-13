@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.breaktheice.R
+import br.com.breaktheice.commons.constant.WEBSERVICE_QUERY_TYPE
 import br.com.breaktheice.commons.utility.createAdapter
 import br.com.breaktheice.databinding.FragmentActivityListBinding
 import br.com.breaktheice.domain.entity.ActivityModel
@@ -47,7 +48,13 @@ class ActivityListFragment : BaseFragment() {
             activityAdapter
         )
         binding.newActivityFab.setOnClickListener {
-            navigateFromListToFilter()
+            checkArgs({ activityType ->
+                val queries: MutableMap<String, String> = mutableMapOf()
+                queries[WEBSERVICE_QUERY_TYPE] = activityType.lowercase()
+                viewModel.callActivityFiltered(queries)
+            }, {
+                navigateFromListToFilter()
+            })
         }
 
         fetchUiState()
