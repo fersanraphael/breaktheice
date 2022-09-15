@@ -48,7 +48,7 @@ dependencies {
     def koin = '3.2.0'
     def lottie = '5.2.0'
     def material = '1.6.1'
-    def navigation = '2.5.1'
+    def navigation = '2.5.2'
     def retrofit = '2.9.0'
     def room = '2.4.3'
 
