@@ -1,4 +1,4 @@
-package br.com.breaktheice.commons
+package br.com.breaktheice.domain.common
 
 /**
  * @author Raphael Santos

@@ -1,6 +1,5 @@
 package br.com.breaktheice.data.mapper
 
-import br.com.breaktheice.commons.Mapper
 import br.com.breaktheice.data.model.LocalActivityModel
 import br.com.breaktheice.data.model.RemoteActivityModel
 import br.com.breaktheice.domain.entity.ActivityModel

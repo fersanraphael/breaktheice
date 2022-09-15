@@ -2,9 +2,9 @@ package br.com.breaktheice.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.breaktheice.commons.Result
+import br.com.breaktheice.domain.common.Interactor
+import br.com.breaktheice.domain.common.Result
 import br.com.breaktheice.domain.entity.ActivityModel
-import br.com.breaktheice.domain.usecase.*
 import br.com.breaktheice.presentation.state.MainUiState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,15 +18,7 @@ import kotlinx.coroutines.plus
  * @author Raphael Santos
  */
 class MainViewModel constructor(
-    private val callActivityFilteredUseCase: CallActivityFilteredUseCase,
-    private val callActivityUseCase: CallActivityUseCase,
-    private val deleteActivityUseCase: DeleteActivityUseCase,
-    private val getActivitiesUseCase: GetActivitiesUseCase,
-    private val getActivityByIdUseCase: GetActivityByIdUseCase,
-    private val getActivitiesByTypeUseCase: GetActivitiesByTypeUseCase,
-    private val insertActivityUseCase: InsertActivityUseCase,
-    private val updateActivityFavoriteUseCase: UpdateActivityFavoriteUseCase,
-    private val updateActivityUseCase: UpdateActivityUseCase
+    private val interactor: Interactor
 ) : ViewModel() {
 
     private val uiScope: CoroutineScope = viewModelScope.plus(Dispatchers.Main)
@@ -38,7 +30,7 @@ class MainViewModel constructor(
 
     fun callActivity() {
         uiScope.launch {
-            callActivityUseCase().collect { result ->
+            interactor.callActivityUseCase().collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.CallActivity(result.value)
@@ -56,7 +48,7 @@ class MainViewModel constructor(
 
     fun callActivityFiltered(options: MutableMap<String, String>) {
         uiScope.launch {
-            callActivityFilteredUseCase(options).collect { result ->
+            interactor.callActivityFilteredUseCase(options).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.CallActivityFiltered(result.value)
@@ -74,7 +66,7 @@ class MainViewModel constructor(
 
     fun deleteActivity(activityModel: ActivityModel) {
         uiScope.launch {
-            deleteActivityUseCase(activityModel).collect { result ->
+            interactor.deleteActivityUseCase(activityModel).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.DeleteActivity
@@ -92,7 +84,7 @@ class MainViewModel constructor(
 
     fun getActivitiesByType(type: String) {
         uiScope.launch {
-            getActivitiesByTypeUseCase(type).collect { result ->
+            interactor.getActivitiesByTypeUseCase(type).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.GetActivitiesByType(result.value)
@@ -110,7 +102,7 @@ class MainViewModel constructor(
 
     fun getActivities() {
         uiScope.launch {
-            getActivitiesUseCase().collect { result ->
+            interactor.getActivitiesUseCase().collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.GetActivities(result.value)
@@ -128,7 +120,7 @@ class MainViewModel constructor(
 
     fun getActivityById(id: Int) {
         uiScope.launch {
-            getActivityByIdUseCase(id).collect { result ->
+            interactor.getActivityByIdUseCase(id).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.GetActivityById(result.value)
@@ -146,7 +138,7 @@ class MainViewModel constructor(
 
     fun insertActivity(activityModel: ActivityModel) {
         uiScope.launch {
-            insertActivityUseCase(activityModel).collect { result ->
+            interactor.insertActivityUseCase(activityModel).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.InsertActivity
@@ -167,7 +159,7 @@ class MainViewModel constructor(
         favorite: Boolean
     ) {
         uiScope.launch {
-            updateActivityFavoriteUseCase(id, favorite).collect { result ->
+            interactor.updateActivityFavoriteUseCase(id, favorite).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.UpdateActivityFavorite
@@ -185,7 +177,7 @@ class MainViewModel constructor(
 
     fun updateActivity(activityModel: ActivityModel) {
         uiScope.launch {
-            updateActivityUseCase(activityModel).collect { result ->
+            interactor.updateActivityUseCase(activityModel).collect { result ->
                 _uiState.value = when (result) {
                     is Result.Success -> {
                         MainUiState.UpdateActivity

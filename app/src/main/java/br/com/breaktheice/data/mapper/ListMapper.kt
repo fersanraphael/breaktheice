@@ -1,4 +1,4 @@
-package br.com.breaktheice.commons
+package br.com.breaktheice.data.mapper
 
 /**
  * @author Raphael Santos

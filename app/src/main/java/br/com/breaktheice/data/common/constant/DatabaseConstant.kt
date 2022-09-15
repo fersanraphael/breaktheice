@@ -1,4 +1,4 @@
-package br.com.breaktheice.commons.constant
+package br.com.breaktheice.data.common.constant
 
 /**
  * @author Raphael Santos

@@ -1,7 +1,6 @@
-package br.com.breaktheice.commons.utility
+package br.com.breaktheice.presentation.common.utility
 
 import android.content.Context
-import android.content.res.Configuration
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.recyclerview.widget.*
@@ -13,8 +12,12 @@ import br.com.breaktheice.R
  * @author Raphael Santos
  */
 
-private fun Context.isOrientationPortrait(): Boolean {
-    return resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+fun <T> AutoCompleteTextView.createAdapter(
+    context: Context,
+    array: Array<T>
+) {
+    val arrayAdapter: ArrayAdapter<T> = ArrayAdapter(context, R.layout.dropdown_item, array)
+    setAdapter(arrayAdapter)
 }
 
 fun RecyclerView.createAdapter(
@@ -62,12 +65,4 @@ fun RecyclerView.createAdapter(
         )
         itemTouchHelper.attachToRecyclerView(this)
     }
-}
-
-fun <T> AutoCompleteTextView.createAdapter(
-    context: Context,
-    array: Array<T>
-) {
-    val arrayAdapter: ArrayAdapter<T> = ArrayAdapter(context, R.layout.dropdown_item, array)
-    setAdapter(arrayAdapter)
 }

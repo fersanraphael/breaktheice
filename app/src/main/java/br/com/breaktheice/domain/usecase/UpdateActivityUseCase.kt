@@ -1,6 +1,6 @@
 package br.com.breaktheice.domain.usecase
 
-import br.com.breaktheice.commons.Result
+import br.com.breaktheice.domain.common.Result
 import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.domain.repository.IActivityRepository
 import kotlinx.coroutines.flow.Flow

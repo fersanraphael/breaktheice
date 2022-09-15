@@ -1,13 +1,14 @@
 package br.com.breaktheice.di
 
 import androidx.room.Room
-import br.com.breaktheice.commons.constant.DATABASE_NAME
-import br.com.breaktheice.commons.constant.WEBSERVICE_BASEURL
 import br.com.breaktheice.data.BreakTheIceDatabase
+import br.com.breaktheice.data.common.constant.DATABASE_NAME
+import br.com.breaktheice.data.common.constant.WEBSERVICE_BASEURL
 import br.com.breaktheice.data.mapper.*
 import br.com.breaktheice.data.repository.ActivityRepositoryImpl
 import br.com.breaktheice.data.source.LocalActivityDataSource
 import br.com.breaktheice.data.source.RemoteActivityDataSource
+import br.com.breaktheice.domain.common.Interactor
 import br.com.breaktheice.domain.repository.IActivityRepository
 import br.com.breaktheice.domain.usecase.*
 import br.com.breaktheice.presentation.viewmodel.MainViewModel
@@ -117,10 +118,10 @@ val breakTheIceModule: Module = module {
     }
 
     /*
-     * View Model injection.
+     * Interactor injection.
      */
-    viewModel {
-        MainViewModel(
+    single {
+        Interactor(
             callActivityFilteredUseCase = get(),
             callActivityUseCase = get(),
             deleteActivityUseCase = get(),
@@ -131,5 +132,12 @@ val breakTheIceModule: Module = module {
             updateActivityFavoriteUseCase = get(),
             updateActivityUseCase = get()
         )
+    }
+
+    /*
+     * View Model injection.
+     */
+    viewModel {
+        MainViewModel(interactor = get())
     }
 }

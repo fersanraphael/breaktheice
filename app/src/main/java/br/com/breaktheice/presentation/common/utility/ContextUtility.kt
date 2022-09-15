@@ -1,6 +1,7 @@
-package br.com.breaktheice.commons.utility
+package br.com.breaktheice.presentation.common.utility
 
 import android.content.Context
+import android.content.res.Configuration
 import br.com.breaktheice.R
 
 /**
@@ -25,4 +26,8 @@ fun Context.getAccessibilityText(accessibility: Float): String {
             getString(R.string.label_accessibility_very_hard)
         }
     }
+}
+
+fun Context.isOrientationPortrait(): Boolean {
+    return resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 }

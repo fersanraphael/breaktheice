@@ -1,6 +1,6 @@
 package br.com.breaktheice.domain.repository
 
-import br.com.breaktheice.commons.Result
+import br.com.breaktheice.domain.common.Result
 import br.com.breaktheice.domain.entity.ActivityModel
 
 /**

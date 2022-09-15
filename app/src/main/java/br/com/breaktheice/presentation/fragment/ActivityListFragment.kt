@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.breaktheice.R
-import br.com.breaktheice.commons.constant.WEBSERVICE_QUERY_TYPE
-import br.com.breaktheice.commons.utility.createAdapter
+import br.com.breaktheice.data.common.constant.WEBSERVICE_QUERY_TYPE
 import br.com.breaktheice.databinding.FragmentActivityListBinding
 import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.presentation.adapter.ActivityAdapter
+import br.com.breaktheice.presentation.common.utility.createAdapter
 import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.navigateFromListToDetail
 import br.com.breaktheice.presentation.navigateFromListToFilter
