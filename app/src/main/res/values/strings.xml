@@ -16,7 +16,6 @@
     <!-- Hint -->
     <string name="hint_filter_type">Filter by Type</string>
     <string name="hint_settings">Settings</string>
-    <string name="hint_themes">Toggle Theme</string>
 
     <!-- Label-->
     <string name="label_accessibility_easy">Easy</string>

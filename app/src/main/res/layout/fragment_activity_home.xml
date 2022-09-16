@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -42,7 +43,11 @@
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
-                android:padding="@dimen/dimen_8dp" />
+                android:padding="@dimen/dimen_8dp"
+                tools:itemCount="8"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_activity_type"
+                tools:orientation="horizontal" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -82,7 +87,10 @@
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
-                android:padding="@dimen/dimen_8dp" />
+                android:padding="@dimen/dimen_8dp"
+                tools:itemCount="3"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_activity" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

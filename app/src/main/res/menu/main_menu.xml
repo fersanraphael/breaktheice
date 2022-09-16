@@ -6,14 +6,6 @@
         android:contentDescription="@string/hint_settings"
         android:icon="@drawable/icon_settings"
         android:title="@string/hint_settings"
-        android:visible="false"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/themes"
-        android:contentDescription="@string/hint_themes"
-        android:icon="@drawable/icon_brightness_medium"
-        android:title="@string/hint_themes"
         app:showAsAction="ifRoom" />
 
 </menu>

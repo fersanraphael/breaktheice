@@ -33,7 +33,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="@{activityType}"
-                android:textColor="@color/colorOnDark" />
+                android:textColor="@color/colorWhite" />
 
         </RelativeLayout>
 
