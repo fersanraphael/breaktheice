@@ -1,4 +1,4 @@
-package br.com.breaktheice.domain.common
+package br.com.breaktheice.domain
 
 import br.com.breaktheice.domain.usecase.*
 

@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.breaktheice.R
-import br.com.breaktheice.data.common.constant.WEBSERVICE_QUERY_TYPE
+import br.com.breaktheice.data.common.WEBSERVICE_QUERY_TYPE
 import br.com.breaktheice.databinding.FragmentActivityFilterBinding
 import br.com.breaktheice.presentation.common.utility.createAdapter
 import br.com.breaktheice.presentation.fragment.base.BaseDialogFragment

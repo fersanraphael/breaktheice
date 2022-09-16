@@ -1,7 +1,7 @@
-package br.com.breaktheice.data.service
+package br.com.breaktheice.data.remote.service
 
-import br.com.breaktheice.data.common.constant.WEBSERVICE_ENDPOINT_ACTIVITY
-import br.com.breaktheice.data.model.RemoteActivityModel
+import br.com.breaktheice.data.common.WEBSERVICE_ENDPOINT_ACTIVITY
+import br.com.breaktheice.data.remote.model.RemoteActivityModel
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.QueryMap

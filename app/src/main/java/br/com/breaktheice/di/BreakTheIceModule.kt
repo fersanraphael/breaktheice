@@ -1,14 +1,18 @@
 package br.com.breaktheice.di
 
 import androidx.room.Room
-import br.com.breaktheice.data.BreakTheIceDatabase
-import br.com.breaktheice.data.common.constant.DATABASE_NAME
-import br.com.breaktheice.data.common.constant.WEBSERVICE_BASEURL
-import br.com.breaktheice.data.mapper.*
+import br.com.breaktheice.data.common.DATABASE_NAME
+import br.com.breaktheice.data.common.WEBSERVICE_BASEURL
+import br.com.breaktheice.data.local.BreakTheIceDatabase
+import br.com.breaktheice.data.local.mapper.ActivityToLocalActivityMapper
+import br.com.breaktheice.data.local.mapper.LocalActivityToActivityMapper
+import br.com.breaktheice.data.local.source.LocalActivityDataSource
+import br.com.breaktheice.data.mapper.ActivityMapper
+import br.com.breaktheice.data.remote.mapper.ActivityToRemoteActivityMapper
+import br.com.breaktheice.data.remote.mapper.RemoteActivityToActivityMapper
+import br.com.breaktheice.data.remote.source.RemoteActivityDataSource
 import br.com.breaktheice.data.repository.ActivityRepositoryImpl
-import br.com.breaktheice.data.source.LocalActivityDataSource
-import br.com.breaktheice.data.source.RemoteActivityDataSource
-import br.com.breaktheice.domain.common.Interactor
+import br.com.breaktheice.domain.Interactor
 import br.com.breaktheice.domain.repository.IActivityRepository
 import br.com.breaktheice.domain.usecase.*
 import br.com.breaktheice.presentation.viewmodel.MainViewModel

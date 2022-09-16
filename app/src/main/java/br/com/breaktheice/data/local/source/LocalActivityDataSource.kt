@@ -1,7 +1,7 @@
-package br.com.breaktheice.data.source
+package br.com.breaktheice.data.local.source
 
-import br.com.breaktheice.data.BreakTheIceDatabase
-import br.com.breaktheice.data.model.LocalActivityModel
+import br.com.breaktheice.data.local.BreakTheIceDatabase
+import br.com.breaktheice.data.local.model.LocalActivityModel
 
 /**
  * @author Raphael Santos

@@ -1,4 +1,4 @@
-package br.com.breaktheice.data.model
+package br.com.breaktheice.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 

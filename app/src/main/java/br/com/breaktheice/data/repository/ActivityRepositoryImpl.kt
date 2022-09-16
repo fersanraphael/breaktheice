@@ -1,11 +1,11 @@
 package br.com.breaktheice.data.repository
 
+import br.com.breaktheice.data.local.model.LocalActivityModel
+import br.com.breaktheice.data.local.source.LocalActivityDataSource
 import br.com.breaktheice.data.mapper.ActivityMapper
 import br.com.breaktheice.data.mapper.ListMapper
-import br.com.breaktheice.data.model.LocalActivityModel
-import br.com.breaktheice.data.model.RemoteActivityModel
-import br.com.breaktheice.data.source.LocalActivityDataSource
-import br.com.breaktheice.data.source.RemoteActivityDataSource
+import br.com.breaktheice.data.remote.model.RemoteActivityModel
+import br.com.breaktheice.data.remote.source.RemoteActivityDataSource
 import br.com.breaktheice.domain.common.Result
 import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.domain.repository.IActivityRepository

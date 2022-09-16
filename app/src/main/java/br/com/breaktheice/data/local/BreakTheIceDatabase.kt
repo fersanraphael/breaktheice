@@ -1,9 +1,9 @@
-package br.com.breaktheice.data
+package br.com.breaktheice.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import br.com.breaktheice.data.dao.IActivityDao
-import br.com.breaktheice.data.model.LocalActivityModel
+import br.com.breaktheice.data.local.dao.IActivityDao
+import br.com.breaktheice.data.local.model.LocalActivityModel
 
 /**
  * @author Raphael Santos
