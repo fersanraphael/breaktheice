@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.fragment
+package br.com.breaktheice.presentation.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,15 +7,15 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.breaktheice.R
-import br.com.breaktheice.data.common.WEBSERVICE_QUERY_TYPE
+import br.com.breaktheice.data.util.WEBSERVICE_QUERY_TYPE
 import br.com.breaktheice.databinding.FragmentActivityListBinding
 import br.com.breaktheice.domain.entity.ActivityModel
-import br.com.breaktheice.presentation.adapter.ActivityAdapter
-import br.com.breaktheice.presentation.common.utility.createAdapter
-import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.navigateFromListToDetail
 import br.com.breaktheice.presentation.navigateFromListToFilter
 import br.com.breaktheice.presentation.state.MainUiState
+import br.com.breaktheice.presentation.util.utility.createAdapter
+import br.com.breaktheice.presentation.view.adapter.ActivityAdapter
+import br.com.breaktheice.presentation.view.fragment.base.BaseFragment
 import kotlinx.coroutines.launch
 
 /**

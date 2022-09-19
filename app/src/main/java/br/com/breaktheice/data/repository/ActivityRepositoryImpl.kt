@@ -6,9 +6,9 @@ import br.com.breaktheice.data.mapper.ActivityMapper
 import br.com.breaktheice.data.mapper.ListMapper
 import br.com.breaktheice.data.remote.model.RemoteActivityModel
 import br.com.breaktheice.data.remote.source.RemoteActivityDataSource
-import br.com.breaktheice.domain.common.Result
 import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.domain.repository.IActivityRepository
+import br.com.breaktheice.domain.util.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

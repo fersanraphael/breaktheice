@@ -1,15 +1,15 @@
-package br.com.breaktheice.presentation.fragment
+package br.com.breaktheice.presentation.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.breaktheice.R
-import br.com.breaktheice.data.common.WEBSERVICE_QUERY_TYPE
+import br.com.breaktheice.data.util.WEBSERVICE_QUERY_TYPE
 import br.com.breaktheice.databinding.FragmentActivityFilterBinding
-import br.com.breaktheice.presentation.common.utility.createAdapter
-import br.com.breaktheice.presentation.fragment.base.BaseDialogFragment
 import br.com.breaktheice.presentation.popBack
+import br.com.breaktheice.presentation.util.utility.createAdapter
+import br.com.breaktheice.presentation.view.fragment.base.BaseDialogFragment
 
 /**
  * @author Raphael Santos

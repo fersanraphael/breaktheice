@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.fragment
+package br.com.breaktheice.presentation.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.breaktheice.R
 import br.com.breaktheice.databinding.FragmentActivityHomeBinding
 import br.com.breaktheice.domain.entity.ActivityModel
-import br.com.breaktheice.presentation.adapter.ActivityAdapter
-import br.com.breaktheice.presentation.adapter.ActivityTypeAdapter
-import br.com.breaktheice.presentation.common.utility.createAdapter
-import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.navigateFromHomeToDetail
 import br.com.breaktheice.presentation.navigateFromHomeToList
 import br.com.breaktheice.presentation.state.MainUiState
+import br.com.breaktheice.presentation.util.utility.createAdapter
+import br.com.breaktheice.presentation.view.adapter.ActivityAdapter
+import br.com.breaktheice.presentation.view.adapter.ActivityTypeAdapter
+import br.com.breaktheice.presentation.view.fragment.base.BaseFragment
 import kotlinx.coroutines.launch
 
 /**

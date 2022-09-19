@@ -2,9 +2,9 @@ package br.com.breaktheice.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.breaktheice.domain.Interactor
-import br.com.breaktheice.domain.common.Result
 import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.usecase.Interactor
+import br.com.breaktheice.domain.util.Result
 import br.com.breaktheice.presentation.state.MainUiState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

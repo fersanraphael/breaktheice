@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.fragment.base
+package br.com.breaktheice.presentation.view.fragment.base
 
 import androidx.fragment.app.Fragment
 import br.com.breaktheice.R

@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.activity
+package br.com.breaktheice.presentation.view.activity
 
 import android.os.Bundle
 import android.view.Menu

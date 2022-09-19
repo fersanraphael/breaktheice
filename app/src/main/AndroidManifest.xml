@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Appbreaktheice">
 
         <activity
-            android:name=".presentation.activity.MainActivity"
+            android:name="br.com.breaktheice.presentation.view.activity.MainActivity"
             android:exported="true">
 
             <intent-filter>

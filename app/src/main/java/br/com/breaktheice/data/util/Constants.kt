@@ -1,4 +1,6 @@
-package br.com.breaktheice.data.common
+package br.com.breaktheice.data.util
+
+import androidx.annotation.VisibleForTesting
 
 /**
  * @author Raphael Santos
@@ -13,6 +15,8 @@ const val DATABASE_NAME: String = "breaktheice_database"
  * Remote.
  */
 const val WEBSERVICE_BASEURL: String = "http://www.boredapi.com"
-private const val WEBSERVICE_PATH_SEGMENT: String = "/api"
+
+@VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+const val WEBSERVICE_PATH_SEGMENT: String = "/api"
 const val WEBSERVICE_ENDPOINT_ACTIVITY: String = "$WEBSERVICE_PATH_SEGMENT/activity"
 const val WEBSERVICE_QUERY_TYPE: String = "type"

@@ -1,6 +1,6 @@
 package br.com.breaktheice.data.remote.mapper
 
-import br.com.breaktheice.data.mapper.Mapper
+import br.com.breaktheice.data.mapper.IMapper
 import br.com.breaktheice.data.remote.model.RemoteActivityModel
 import br.com.breaktheice.domain.entity.ActivityModel
 
@@ -11,7 +11,7 @@ import br.com.breaktheice.domain.entity.ActivityModel
 /**
  * Transforms ActivityModel into RemoteActivityModel.
  */
-class ActivityToRemoteActivityMapper : Mapper<ActivityModel, RemoteActivityModel> {
+class ActivityToRemoteActivityMapper : IMapper<ActivityModel, RemoteActivityModel> {
 
     override fun map(input: ActivityModel): RemoteActivityModel {
         return RemoteActivityModel(
@@ -29,7 +29,7 @@ class ActivityToRemoteActivityMapper : Mapper<ActivityModel, RemoteActivityModel
 /**
  * Transforms RemoteActivityModel into ActivityModel.
  */
-class RemoteActivityToActivityMapper : Mapper<RemoteActivityModel, ActivityModel> {
+class RemoteActivityToActivityMapper : IMapper<RemoteActivityModel, ActivityModel> {
 
     override fun map(input: RemoteActivityModel): ActivityModel {
         return ActivityModel(

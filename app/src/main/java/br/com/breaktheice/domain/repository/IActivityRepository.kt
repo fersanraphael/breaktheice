@@ -1,7 +1,7 @@
 package br.com.breaktheice.domain.repository
 
-import br.com.breaktheice.domain.common.Result
 import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.util.Result
 
 /**
  * @author Raphael Santos

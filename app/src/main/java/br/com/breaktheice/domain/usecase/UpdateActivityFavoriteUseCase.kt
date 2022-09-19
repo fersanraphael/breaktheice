@@ -1,7 +1,7 @@
 package br.com.breaktheice.domain.usecase
 
-import br.com.breaktheice.domain.common.Result
 import br.com.breaktheice.domain.repository.IActivityRepository
+import br.com.breaktheice.domain.util.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow

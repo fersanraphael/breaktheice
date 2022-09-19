@@ -1,6 +1,4 @@
-package br.com.breaktheice.domain
-
-import br.com.breaktheice.domain.usecase.*
+package br.com.breaktheice.domain.usecase
 
 /**
  * @author Raphael Santos

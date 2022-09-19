@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.common.utility
+package br.com.breaktheice.presentation.util.utility
 
 import android.content.Context
 import android.widget.ArrayAdapter

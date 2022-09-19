@@ -1,7 +1,7 @@
 package br.com.breaktheice.data.local.mapper
 
 import br.com.breaktheice.data.local.model.LocalActivityModel
-import br.com.breaktheice.data.mapper.Mapper
+import br.com.breaktheice.data.mapper.IMapper
 import br.com.breaktheice.domain.entity.ActivityModel
 
 /**
@@ -11,7 +11,7 @@ import br.com.breaktheice.domain.entity.ActivityModel
 /**
  * Transforms ActivityModel into LocalActivityModel.
  */
-class ActivityToLocalActivityMapper : Mapper<ActivityModel, LocalActivityModel> {
+class ActivityToLocalActivityMapper : IMapper<ActivityModel, LocalActivityModel> {
 
     override fun map(input: ActivityModel): LocalActivityModel {
         return LocalActivityModel(
@@ -31,7 +31,7 @@ class ActivityToLocalActivityMapper : Mapper<ActivityModel, LocalActivityModel> 
 /**
  * Transforms LocalActivityModel into ActivityModel.
  */
-class LocalActivityToActivityMapper : Mapper<LocalActivityModel, ActivityModel> {
+class LocalActivityToActivityMapper : IMapper<LocalActivityModel, ActivityModel> {
 
     override fun map(input: LocalActivityModel): ActivityModel {
         return ActivityModel(

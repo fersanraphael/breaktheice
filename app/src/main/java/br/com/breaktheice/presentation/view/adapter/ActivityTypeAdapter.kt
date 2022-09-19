@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.adapter
+package br.com.breaktheice.presentation.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.fragment
+package br.com.breaktheice.presentation.view.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -9,8 +9,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.breaktheice.R
 import br.com.breaktheice.databinding.FragmentActivityDetailBinding
-import br.com.breaktheice.presentation.fragment.base.BaseFragment
 import br.com.breaktheice.presentation.state.MainUiState
+import br.com.breaktheice.presentation.view.fragment.base.BaseFragment
 import kotlinx.coroutines.launch
 
 /**
