@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
  */
 class ActivityDetailFragment : BaseFragment() {
 
-    private val arguments by navArgs<ActivityDetailFragmentArgs>()
+    private val arguments: ActivityDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,

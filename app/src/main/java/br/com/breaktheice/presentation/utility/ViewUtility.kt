@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.util.utility
+package br.com.breaktheice.presentation.utility
 
 import android.content.Context
 import android.widget.ArrayAdapter
@@ -6,7 +6,6 @@ import android.widget.AutoCompleteTextView
 import androidx.recyclerview.widget.*
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import br.com.breaktheice.R
-
 
 /**
  * @author Raphael Santos

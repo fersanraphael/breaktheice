@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import br.com.breaktheice.R
-import br.com.breaktheice.data.util.WEBSERVICE_QUERY_TYPE
+import br.com.breaktheice.data.utility.WEBSERVICE_QUERY_TYPE
 import br.com.breaktheice.databinding.FragmentActivityListBinding
 import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.presentation.navigateFromListToDetail
 import br.com.breaktheice.presentation.navigateFromListToFilter
 import br.com.breaktheice.presentation.state.MainUiState
-import br.com.breaktheice.presentation.util.utility.createAdapter
+import br.com.breaktheice.presentation.utility.createAdapter
 import br.com.breaktheice.presentation.view.adapter.ActivityAdapter
 import br.com.breaktheice.presentation.view.fragment.base.BaseFragment
 import kotlinx.coroutines.launch
@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
  */
 class ActivityListFragment : BaseFragment() {
 
-    private val activityAdapter by lazy {
+    private val activityAdapter: ActivityAdapter by lazy {
         ActivityAdapter(
             { activityModel ->
                 navigateFromListToDetail(activityModel.id)
@@ -33,7 +33,7 @@ class ActivityListFragment : BaseFragment() {
             }
         )
     }
-    private val arguments by navArgs<ActivityListFragmentArgs>()
+    private val arguments: ActivityListFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,

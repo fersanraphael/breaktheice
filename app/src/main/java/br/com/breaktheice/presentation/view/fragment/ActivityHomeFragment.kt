@@ -12,7 +12,7 @@ import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.presentation.navigateFromHomeToDetail
 import br.com.breaktheice.presentation.navigateFromHomeToList
 import br.com.breaktheice.presentation.state.MainUiState
-import br.com.breaktheice.presentation.util.utility.createAdapter
+import br.com.breaktheice.presentation.utility.createAdapter
 import br.com.breaktheice.presentation.view.adapter.ActivityAdapter
 import br.com.breaktheice.presentation.view.adapter.ActivityTypeAdapter
 import br.com.breaktheice.presentation.view.fragment.base.BaseFragment
@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
  */
 class ActivityHomeFragment : BaseFragment() {
 
-    private val activityAdapter by lazy {
+    private val activityAdapter: ActivityAdapter by lazy {
         ActivityAdapter(
             { activityModel ->
                 navigateFromHomeToDetail(activityModel.id)

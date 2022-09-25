@@ -2,7 +2,7 @@ package br.com.breaktheice.domain.usecase
 
 import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.domain.repository.IActivityRepository
-import br.com.breaktheice.domain.util.Result
+import br.com.breaktheice.domain.utility.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow

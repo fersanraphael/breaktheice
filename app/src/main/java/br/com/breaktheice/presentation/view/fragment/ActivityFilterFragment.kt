@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.breaktheice.R
-import br.com.breaktheice.data.util.WEBSERVICE_QUERY_TYPE
+import br.com.breaktheice.data.utility.WEBSERVICE_QUERY_TYPE
 import br.com.breaktheice.databinding.FragmentActivityFilterBinding
 import br.com.breaktheice.presentation.popBack
-import br.com.breaktheice.presentation.util.utility.createAdapter
+import br.com.breaktheice.presentation.utility.createAdapter
 import br.com.breaktheice.presentation.view.fragment.base.BaseDialogFragment
 
 /**
@@ -16,7 +16,7 @@ import br.com.breaktheice.presentation.view.fragment.base.BaseDialogFragment
  */
 class ActivityFilterFragment : BaseDialogFragment() {
 
-    private val activityTypeArr by lazy {
+    private val activityTypeArr: Array<out String> by lazy {
         resources.getStringArray(R.array.activity_array)
     }
 

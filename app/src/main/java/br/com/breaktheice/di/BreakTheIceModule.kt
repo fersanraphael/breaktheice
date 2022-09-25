@@ -10,8 +10,8 @@ import br.com.breaktheice.data.remote.mapper.ActivityToRemoteActivityMapper
 import br.com.breaktheice.data.remote.mapper.RemoteActivityToActivityMapper
 import br.com.breaktheice.data.remote.source.RemoteActivityDataSource
 import br.com.breaktheice.data.repository.ActivityRepositoryImpl
-import br.com.breaktheice.data.util.DATABASE_NAME
-import br.com.breaktheice.data.util.WEBSERVICE_BASEURL
+import br.com.breaktheice.data.utility.DATABASE_NAME
+import br.com.breaktheice.data.utility.WEBSERVICE_BASEURL
 import br.com.breaktheice.domain.repository.IActivityRepository
 import br.com.breaktheice.domain.usecase.*
 import br.com.breaktheice.presentation.viewmodel.MainViewModel
@@ -121,10 +121,10 @@ val breakTheIceModule: Module = module {
     }
 
     /*
-     * Interactor injection.
+     * View Model injection.
      */
-    single {
-        Interactor(
+    viewModel {
+        MainViewModel(
             callActivityFilteredUseCase = get(),
             callActivityUseCase = get(),
             deleteActivityUseCase = get(),
@@ -135,12 +135,5 @@ val breakTheIceModule: Module = module {
             updateActivityFavoriteUseCase = get(),
             updateActivityUseCase = get()
         )
-    }
-
-    /*
-     * View Model injection.
-     */
-    viewModel {
-        MainViewModel(interactor = get())
     }
 }

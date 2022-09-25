@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.util.binding
+package br.com.breaktheice.presentation.view.binding
 
 import android.view.View
 import androidx.annotation.DrawableRes
@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingAdapter
 import br.com.breaktheice.R
-import br.com.breaktheice.presentation.util.utility.getAccessibilityText
+import br.com.breaktheice.presentation.utility.getAccessibilityText
 
 /**
  * @author Raphael Santos

@@ -3,12 +3,11 @@ package br.com.breaktheice.data.repository
 import br.com.breaktheice.data.local.model.LocalActivityModel
 import br.com.breaktheice.data.local.source.LocalActivityDataSource
 import br.com.breaktheice.data.mapper.ActivityMapper
-import br.com.breaktheice.data.mapper.ListMapper
 import br.com.breaktheice.data.remote.model.RemoteActivityModel
 import br.com.breaktheice.data.remote.source.RemoteActivityDataSource
 import br.com.breaktheice.domain.entity.ActivityModel
 import br.com.breaktheice.domain.repository.IActivityRepository
-import br.com.breaktheice.domain.util.Result
+import br.com.breaktheice.domain.utility.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -57,14 +56,22 @@ class ActivityRepositoryImpl constructor(
     override suspend fun getActivities(): Result<MutableList<ActivityModel>> {
         return withContext(coroutineDispatcher) {
             val localActivities: MutableList<LocalActivityModel> = localActivityDataSource.getActivities() ?: return@withContext Result.Failure
-            Result.Success(ArrayList(ListMapper(activityMapper.localActivityToActivityMapper).map(localActivities)))
+            Result.Success(
+                localActivities
+                    .map { localActivity -> activityMapper.localActivityToActivityMapper.map(localActivity) }
+                    .toMutableList()
+            )
         }
     }
 
     override suspend fun getActivitiesByType(type: String): Result<MutableList<ActivityModel>> {
         return withContext(coroutineDispatcher) {
             val localActivities: MutableList<LocalActivityModel> = localActivityDataSource.getActivitiesByType(type) ?: return@withContext Result.Failure
-            Result.Success(ArrayList(ListMapper(activityMapper.localActivityToActivityMapper).map(localActivities)))
+            Result.Success(
+                localActivities
+                    .map { localActivity -> activityMapper.localActivityToActivityMapper.map(localActivity) }
+                    .toMutableList()
+            )
         }
     }
 

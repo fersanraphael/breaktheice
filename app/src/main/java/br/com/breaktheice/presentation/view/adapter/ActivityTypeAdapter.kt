@@ -41,7 +41,8 @@ class ActivityTypeAdapter(
     }
 
     private fun ViewHolder.onItemClick(activityType: String) {
-        itemView.findViewById<MaterialCardView>(R.id.activity_type_layout).setOnClickListener {
+        val activityCard: MaterialCardView? = itemView.findViewById(R.id.activity_type_layout)
+        activityCard?.setOnClickListener {
             onActivityClickListener.invoke(activityType)
         }
     }

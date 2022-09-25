@@ -44,10 +44,13 @@ class ActivityAdapter(
     }
 
     private fun ViewHolder.onItemClick(activityModel: ActivityModel) {
-        itemView.findViewById<MaterialCardView>(R.id.activity_layout).setOnClickListener {
+        val activityCard: MaterialCardView? = itemView.findViewById(R.id.activity_layout)
+        activityCard?.setOnClickListener {
             onActivityClickListener.invoke(activityModel)
         }
-        itemView.findViewById<AppCompatImageView>(R.id.star_image_view).setOnClickListener {
+
+        val favoriteImage: AppCompatImageView? = itemView.findViewById(R.id.star_image_view)
+        favoriteImage?.setOnClickListener {
             onActivityFavoriteClickListener.invoke(activityModel.id, !activityModel.favorite)
         }
     }

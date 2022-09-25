@@ -1,4 +1,4 @@
-package br.com.breaktheice.data.util
+package br.com.breaktheice.data.utility
 
 import org.junit.Assert.assertTrue
 import org.junit.Test

@@ -1,4 +1,4 @@
-package br.com.breaktheice.presentation.util.utility
+package br.com.breaktheice.presentation.utility
 
 import android.content.Context
 import android.content.res.Configuration
