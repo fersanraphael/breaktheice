@@ -1,6 +1,7 @@
 package br.com.breaktheice.di
 
 import androidx.room.Room
+import br.com.breaktheice.data.boundary.*
 import br.com.breaktheice.data.local.BreakTheIceDatabase
 import br.com.breaktheice.data.local.mapper.ActivityToLocalActivityMapper
 import br.com.breaktheice.data.local.mapper.LocalActivityToActivityMapper
@@ -9,10 +10,10 @@ import br.com.breaktheice.data.mapper.ActivityMapper
 import br.com.breaktheice.data.remote.mapper.ActivityToRemoteActivityMapper
 import br.com.breaktheice.data.remote.mapper.RemoteActivityToActivityMapper
 import br.com.breaktheice.data.remote.source.RemoteActivityDataSource
-import br.com.breaktheice.data.repository.ActivityRepositoryImpl
+import br.com.breaktheice.data.repository.ActivityRepository
 import br.com.breaktheice.data.utility.DATABASE_NAME
 import br.com.breaktheice.data.utility.WEBSERVICE_BASEURL
-import br.com.breaktheice.domain.repository.IActivityRepository
+import br.com.breaktheice.domain.boundary.*
 import br.com.breaktheice.domain.usecase.*
 import br.com.breaktheice.presentation.viewmodel.MainViewModel
 import okhttp3.OkHttpClient
@@ -81,11 +82,67 @@ val breakTheIceModule: Module = module {
     /*
      * Repository injection.
      */
-    factory<IActivityRepository> {
-        ActivityRepositoryImpl(
-            activityMapper = get(),
+    factory {
+        ActivityRepository(
             localActivityDataSource = get(),
             remoteActivityDataSource = get()
+        )
+    }
+
+    /*
+     * Boundary injection.
+     */
+    factory<ICallActivityBoundaryOutput> {
+        CallActivityBoundaryOutputImpl(
+            activityMapper = get(),
+            activityRepository = get()
+        )
+    }
+    factory<ICallActivityFilteredBoundaryOutput> {
+        CallActivityFilteredBoundaryOutputImpl(
+            activityMapper = get(),
+            activityRepository = get()
+        )
+    }
+    factory<IDeleteActivityBoundaryOutput> {
+        DeleteActivityBoundaryOutputImpl(
+            activityMapper = get(),
+            activityRepository = get()
+        )
+    }
+    factory<IGetActivitiesBoundaryOutput> {
+        GetActivitiesBoundaryOutputImpl(
+            activityMapper = get(),
+            activityRepository = get()
+        )
+    }
+    factory<IGetActivitiesByTypeBoundaryOutput> {
+        GetActivitiesByTypeBoundaryOutputImpl(
+            activityMapper = get(),
+            activityRepository = get()
+        )
+    }
+    factory<IGetActivityByIdBoundaryOutput> {
+        GetActivityByIdBoundaryOutputImpl(
+            activityMapper = get(),
+            activityRepository = get()
+        )
+    }
+    factory<IInsertActivityBoundaryOutput> {
+        InsertActivityBoundaryOutputImpl(
+            activityMapper = get(),
+            activityRepository = get()
+        )
+    }
+    factory<IUpdateActivityBoundaryOutput> {
+        UpdateActivityBoundaryOutputImpl(
+            activityMapper = get(),
+            activityRepository = get()
+        )
+    }
+    factory<IUpdateActivityFavoriteBoundaryOutput> {
+        UpdateActivityFavoriteBoundaryOutputImpl(
+            activityRepository = get()
         )
     }
 
@@ -93,31 +150,31 @@ val breakTheIceModule: Module = module {
      * Use Case injection.
      */
     factory {
-        CallActivityFilteredUseCase(activityRepository = get())
+        CallActivityFilteredUseCase(callActivityFilteredBoundaryOutput = get())
     }
     factory {
-        CallActivityUseCase(activityRepository = get())
+        CallActivityUseCase(callActivityBoundaryOutput = get())
     }
     factory {
-        DeleteActivityUseCase(activityRepository = get())
+        DeleteActivityUseCase(deleteActivityBoundaryOutput = get())
     }
     factory {
-        GetActivitiesByTypeUseCase(activityRepository = get())
+        GetActivitiesByTypeUseCase(getActivitiesByTypeBoundaryOutput = get())
     }
     factory {
-        GetActivitiesUseCase(activityRepository = get())
+        GetActivitiesUseCase(getActivitiesBoundaryOutput = get())
     }
     factory {
-        GetActivityByIdUseCase(activityRepository = get())
+        GetActivityByIdUseCase(getActivityByIdBoundaryOutput = get())
     }
     factory {
-        InsertActivityUseCase(activityRepository = get())
+        InsertActivityUseCase(insertActivityBoundaryOutput = get())
     }
     factory {
-        UpdateActivityFavoriteUseCase(activityRepository = get())
+        UpdateActivityFavoriteUseCase(updateActivityFavoriteBoundaryOutput = get())
     }
     factory {
-        UpdateActivityUseCase(activityRepository = get())
+        UpdateActivityUseCase(updateActivityBoundaryOutput = get())
     }
 
     /*

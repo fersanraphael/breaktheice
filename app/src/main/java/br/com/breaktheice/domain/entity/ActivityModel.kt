@@ -16,5 +16,5 @@ data class ActivityModel constructor(
 ) {
 
     val isObjectValid: Boolean
-        get() = key != null
+        get() = activity != null
 }

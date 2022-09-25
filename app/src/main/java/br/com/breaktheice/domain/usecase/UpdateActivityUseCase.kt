@@ -1,7 +1,7 @@
 package br.com.breaktheice.domain.usecase
 
+import br.com.breaktheice.domain.boundary.IUpdateActivityBoundaryOutput
 import br.com.breaktheice.domain.entity.ActivityModel
-import br.com.breaktheice.domain.repository.IActivityRepository
 import br.com.breaktheice.domain.utility.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.onStart
  * @author Raphael Santos
  */
 class UpdateActivityUseCase constructor(
-    private val activityRepository: IActivityRepository
+    private val updateActivityBoundaryOutput: IUpdateActivityBoundaryOutput
 ) {
 
     operator fun invoke(
@@ -20,7 +20,7 @@ class UpdateActivityUseCase constructor(
     ): Flow<Result<Unit>> {
         return flow {
             if (activityModel != null) {
-                emit(Result.Success(activityRepository.updateActivity(activityModel)))
+                emit(Result.Success(updateActivityBoundaryOutput(activityModel)))
             } else {
                 emit(Result.Failure)
             }

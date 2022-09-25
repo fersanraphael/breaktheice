@@ -1,6 +1,6 @@
 package br.com.breaktheice.domain.usecase
 
-import br.com.breaktheice.domain.repository.IActivityRepository
+import br.com.breaktheice.domain.boundary.IUpdateActivityFavoriteBoundaryOutput
 import br.com.breaktheice.domain.utility.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.onStart
  * @author Raphael Santos
  */
 class UpdateActivityFavoriteUseCase constructor(
-    private val activityRepository: IActivityRepository
+    private val updateActivityFavoriteBoundaryOutput: IUpdateActivityFavoriteBoundaryOutput
 ) {
 
     operator fun invoke(
@@ -20,7 +20,7 @@ class UpdateActivityFavoriteUseCase constructor(
     ): Flow<Result<Unit>> {
         return flow {
             if (id != 0) {
-                emit(Result.Success(activityRepository.updateActivityFavorite(id, favorite)))
+                emit(Result.Success(updateActivityFavoriteBoundaryOutput(id, favorite)))
             } else {
                 emit(Result.Failure)
             }

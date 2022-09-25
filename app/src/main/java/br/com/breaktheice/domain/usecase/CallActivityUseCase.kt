@@ -1,7 +1,7 @@
 package br.com.breaktheice.domain.usecase
 
+import br.com.breaktheice.domain.boundary.ICallActivityBoundaryOutput
 import br.com.breaktheice.domain.entity.ActivityModel
-import br.com.breaktheice.domain.repository.IActivityRepository
 import br.com.breaktheice.domain.utility.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -12,14 +12,15 @@ import kotlinx.coroutines.flow.onStart
  * @author Raphael Santos
  */
 class CallActivityUseCase constructor(
-    private val activityRepository: IActivityRepository
+    private val callActivityBoundaryOutput: ICallActivityBoundaryOutput
 ) {
 
     operator fun invoke(): Flow<Result<ActivityModel>> {
         return flow {
-            when (val result = activityRepository.callActivity()) {
-                is Result.Success -> {
-                    emit(Result.Success(result.value))
+            val activityModel: ActivityModel = callActivityBoundaryOutput() ?: return@flow emit(Result.Failure)
+            when (activityModel.isObjectValid) {
+                true -> {
+                    emit(Result.Success(activityModel))
                 }
                 else -> {
                     emit(Result.Failure)
