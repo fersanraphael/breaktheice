@@ -11,11 +11,19 @@ import kotlinx.coroutines.flow.onStart
 /**
  * @author Raphael Santos
  */
-class CallActivityFilteredUseCase constructor(
-    private val activityRepository: IActivityRepository
-) {
+
+interface ICallActivityFilteredUseCase {
 
     operator fun invoke(
+        options: MutableMap<String, String>
+    ): Flow<Result<ActivityModel>>
+}
+
+class CallActivityFilteredUseCaseImpl constructor(
+    private val activityRepository: IActivityRepository
+) : ICallActivityFilteredUseCase {
+
+    override operator fun invoke(
         options: MutableMap<String, String>
     ): Flow<Result<ActivityModel>> {
         return flow {

@@ -11,11 +11,19 @@ import kotlinx.coroutines.flow.onStart
 /**
  * @author Raphael Santos
  */
-class InsertActivityUseCase constructor(
-    private val activityRepository: IActivityRepository
-) {
+
+interface IInsertActivityUseCase {
 
     operator fun invoke(
+        activityModel: ActivityModel?
+    ): Flow<Result<Unit>>
+}
+
+class InsertActivityUseCaseImpl constructor(
+    private val activityRepository: IActivityRepository
+) : IInsertActivityUseCase {
+
+    override operator fun invoke(
         activityModel: ActivityModel?
     ): Flow<Result<Unit>> {
         return flow {

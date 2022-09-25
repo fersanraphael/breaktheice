@@ -11,11 +11,19 @@ import kotlinx.coroutines.flow.onStart
 /**
  * @author Raphael Santos
  */
-class DeleteActivityUseCase constructor(
-    private val activityRepository: IActivityRepository
-) {
+
+interface IDeleteActivityUseCase {
 
     operator fun invoke(
+        activityModel: ActivityModel?
+    ): Flow<Result<Unit>>
+}
+
+class DeleteActivityUseCaseImpl constructor(
+    private val activityRepository: IActivityRepository
+) : IDeleteActivityUseCase {
+
+    override operator fun invoke(
         activityModel: ActivityModel?
     ): Flow<Result<Unit>> {
         return flow {

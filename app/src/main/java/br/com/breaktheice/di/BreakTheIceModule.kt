@@ -92,32 +92,32 @@ val breakTheIceModule: Module = module {
     /*
      * Use Case injection.
      */
-    factory {
-        CallActivityFilteredUseCase(activityRepository = get())
+    factory<ICallActivityFilteredUseCase> {
+        CallActivityFilteredUseCaseImpl(activityRepository = get())
     }
-    factory {
-        CallActivityUseCase(activityRepository = get())
+    factory<ICallActivityUseCase> {
+        CallActivityUseCaseImpl(activityRepository = get())
     }
-    factory {
-        DeleteActivityUseCase(activityRepository = get())
+    factory<IDeleteActivityUseCase> {
+        DeleteActivityUseCaseImpl(activityRepository = get())
     }
-    factory {
-        GetActivitiesByTypeUseCase(activityRepository = get())
+    factory<IGetActivitiesByTypeUseCase> {
+        GetActivitiesByTypeUseCaseImpl(activityRepository = get())
     }
-    factory {
-        GetActivitiesUseCase(activityRepository = get())
+    factory<IGetActivitiesUseCase> {
+        GetActivitiesUseCaseImpl(activityRepository = get())
     }
-    factory {
-        GetActivityByIdUseCase(activityRepository = get())
+    factory<IGetActivityByIdUseCase> {
+        GetActivityByIdUseCaseImpl(activityRepository = get())
     }
-    factory {
-        InsertActivityUseCase(activityRepository = get())
+    factory<IInsertActivityUseCase> {
+        InsertActivityUseCaseImpl(activityRepository = get())
     }
-    factory {
-        UpdateActivityFavoriteUseCase(activityRepository = get())
+    factory<IUpdateActivityFavoriteUseCase> {
+        UpdateActivityFavoriteUseCaseImpl(activityRepository = get())
     }
-    factory {
-        UpdateActivityUseCase(activityRepository = get())
+    factory<IUpdateActivityUseCase> {
+        UpdateActivityUseCaseImpl(activityRepository = get())
     }
 
     /*

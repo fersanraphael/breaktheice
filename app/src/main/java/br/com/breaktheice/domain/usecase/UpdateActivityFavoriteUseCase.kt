@@ -10,11 +10,20 @@ import kotlinx.coroutines.flow.onStart
 /**
  * @author Raphael Santos
  */
-class UpdateActivityFavoriteUseCase constructor(
-    private val activityRepository: IActivityRepository
-) {
+
+interface IUpdateActivityFavoriteUseCase {
 
     operator fun invoke(
+        id: Int,
+        favorite: Boolean
+    ): Flow<Result<Unit>>
+}
+
+class UpdateActivityFavoriteUseCaseImpl constructor(
+    private val activityRepository: IActivityRepository
+) : IUpdateActivityFavoriteUseCase {
+
+    override operator fun invoke(
         id: Int,
         favorite: Boolean
     ): Flow<Result<Unit>> {

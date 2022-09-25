@@ -18,15 +18,15 @@ import kotlinx.coroutines.plus
  * @author Raphael Santos
  */
 class MainViewModel constructor(
-    private val callActivityFilteredUseCase: CallActivityFilteredUseCase,
-    private val callActivityUseCase: CallActivityUseCase,
-    private val deleteActivityUseCase: DeleteActivityUseCase,
-    private val getActivitiesUseCase: GetActivitiesUseCase,
-    private val getActivityByIdUseCase: GetActivityByIdUseCase,
-    private val getActivitiesByTypeUseCase: GetActivitiesByTypeUseCase,
-    private val insertActivityUseCase: InsertActivityUseCase,
-    private val updateActivityFavoriteUseCase: UpdateActivityFavoriteUseCase,
-    private val updateActivityUseCase: UpdateActivityUseCase
+    private val callActivityFilteredUseCase: ICallActivityFilteredUseCase,
+    private val callActivityUseCase: ICallActivityUseCase,
+    private val deleteActivityUseCase: IDeleteActivityUseCase,
+    private val getActivitiesUseCase: IGetActivitiesUseCase,
+    private val getActivityByIdUseCase: IGetActivityByIdUseCase,
+    private val getActivitiesByTypeUseCase: IGetActivitiesByTypeUseCase,
+    private val insertActivityUseCase: IInsertActivityUseCase,
+    private val updateActivityFavoriteUseCase: IUpdateActivityFavoriteUseCase,
+    private val updateActivityUseCase: IUpdateActivityUseCase
 ) : ViewModel() {
 
     private val uiScope: CoroutineScope = viewModelScope.plus(Dispatchers.Main)

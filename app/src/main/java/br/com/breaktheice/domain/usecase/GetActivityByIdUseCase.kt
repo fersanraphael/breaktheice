@@ -11,11 +11,19 @@ import kotlinx.coroutines.flow.onStart
 /**
  * @author Raphael Santos
  */
-class GetActivityByIdUseCase constructor(
-    private val activityRepository: IActivityRepository
-) {
+
+interface IGetActivityByIdUseCase {
 
     operator fun invoke(
+        id: Int
+    ): Flow<Result<ActivityModel>>
+}
+
+class GetActivityByIdUseCaseImpl constructor(
+    private val activityRepository: IActivityRepository
+) : IGetActivityByIdUseCase {
+
+    override operator fun invoke(
         id: Int
     ): Flow<Result<ActivityModel>> {
         return flow {

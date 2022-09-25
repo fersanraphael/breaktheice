@@ -11,11 +11,17 @@ import kotlinx.coroutines.flow.onStart
 /**
  * @author Raphael Santos
  */
-class CallActivityUseCase constructor(
-    private val activityRepository: IActivityRepository
-) {
 
-    operator fun invoke(): Flow<Result<ActivityModel>> {
+interface ICallActivityUseCase {
+
+    operator fun invoke(): Flow<Result<ActivityModel>>
+}
+
+class CallActivityUseCaseImpl constructor(
+    private val activityRepository: IActivityRepository
+) : ICallActivityUseCase {
+
+    override operator fun invoke(): Flow<Result<ActivityModel>> {
         return flow {
             when (val result = activityRepository.callActivity()) {
                 is Result.Success -> {
