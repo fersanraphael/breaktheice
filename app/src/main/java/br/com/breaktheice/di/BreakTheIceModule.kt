@@ -1,14 +1,12 @@
 package br.com.breaktheice.di
 
 import androidx.room.Room
-import br.com.breaktheice.data.local.BreakTheIceDatabase
-import br.com.breaktheice.data.local.mapper.ActivityToLocalActivityMapper
-import br.com.breaktheice.data.local.mapper.LocalActivityToActivityMapper
-import br.com.breaktheice.data.local.source.LocalActivityDataSource
+import br.com.breaktheice.data.BreakTheIceDatabase
+import br.com.breaktheice.data.source.LocalActivityDataSource
+import br.com.breaktheice.data.mapper.ActivityDTOToActivityModelMapper
 import br.com.breaktheice.data.mapper.ActivityMapper
-import br.com.breaktheice.data.remote.mapper.ActivityToRemoteActivityMapper
-import br.com.breaktheice.data.remote.mapper.RemoteActivityToActivityMapper
-import br.com.breaktheice.data.remote.source.RemoteActivityDataSource
+import br.com.breaktheice.data.mapper.ActivityModelToActivityDTOMapper
+import br.com.breaktheice.data.source.RemoteActivityDataSource
 import br.com.breaktheice.data.repository.ActivityRepositoryImpl
 import br.com.breaktheice.data.utility.DATABASE_NAME
 import br.com.breaktheice.data.utility.WEBSERVICE_BASEURL
@@ -61,10 +59,8 @@ val breakTheIceModule: Module = module {
      */
     single {
         ActivityMapper(
-            activityToLocalActivityMapper = ActivityToLocalActivityMapper(),
-            activityToRemoteActivityMapper = ActivityToRemoteActivityMapper(),
-            localActivityToActivityMapper = LocalActivityToActivityMapper(),
-            remoteActivityToActivityMapper = RemoteActivityToActivityMapper()
+            activityModelToActivityDTOMapper = ActivityModelToActivityDTOMapper(),
+            activityDTOToActivityModelMapper = ActivityDTOToActivityModelMapper(),
         )
     }
 

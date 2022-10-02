@@ -6,7 +6,7 @@
 
         <variable
             name="activityModel"
-            type="br.com.breaktheice.domain.entity.ActivityModel" />
+            type="br.com.breaktheice.domain.model.ActivityModel" />
 
     </data>
 

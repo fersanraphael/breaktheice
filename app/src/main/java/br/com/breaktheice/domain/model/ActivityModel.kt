@@ -1,4 +1,4 @@
-package br.com.breaktheice.domain.entity
+package br.com.breaktheice.domain.model
 
 /**
  * @author Raphael Santos

@@ -1,6 +1,6 @@
 package br.com.breaktheice.presentation.state
 
-import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.model.ActivityModel
 
 /**
  * @author Raphael Santos

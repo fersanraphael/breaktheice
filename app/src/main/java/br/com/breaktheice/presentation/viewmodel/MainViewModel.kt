@@ -2,7 +2,7 @@ package br.com.breaktheice.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.model.ActivityModel
 import br.com.breaktheice.domain.usecase.*
 import br.com.breaktheice.domain.utility.Result
 import br.com.breaktheice.presentation.state.MainUiState

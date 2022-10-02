@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import br.com.breaktheice.R
 import br.com.breaktheice.databinding.FragmentActivityHomeBinding
-import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.model.ActivityModel
 import br.com.breaktheice.presentation.navigateFromHomeToDetail
 import br.com.breaktheice.presentation.navigateFromHomeToList
 import br.com.breaktheice.presentation.state.MainUiState

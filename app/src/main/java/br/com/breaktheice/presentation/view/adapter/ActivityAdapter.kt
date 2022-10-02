@@ -6,7 +6,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.breaktheice.R
 import br.com.breaktheice.databinding.ItemActivityBinding
-import br.com.breaktheice.domain.entity.ActivityModel
+import br.com.breaktheice.domain.model.ActivityModel
 import com.google.android.material.card.MaterialCardView
 
 /**
