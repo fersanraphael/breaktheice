@@ -2,12 +2,14 @@ package br.com.breaktheice.di
 
 import androidx.room.Room
 import br.com.breaktheice.data.BreakTheIceDatabase
-import br.com.breaktheice.data.source.LocalActivityDataSource
 import br.com.breaktheice.data.mapper.ActivityDTOToActivityModelMapper
 import br.com.breaktheice.data.mapper.ActivityMapper
 import br.com.breaktheice.data.mapper.ActivityModelToActivityDTOMapper
-import br.com.breaktheice.data.source.RemoteActivityDataSource
 import br.com.breaktheice.data.repository.ActivityRepositoryImpl
+import br.com.breaktheice.data.source.IActivityDatabaseSource
+import br.com.breaktheice.data.source.IActivityWeb
+import br.com.breaktheice.data.source.LocalActivityDataSource
+import br.com.breaktheice.data.source.RemoteActivityDataSource
 import br.com.breaktheice.data.utility.DATABASE_NAME
 import br.com.breaktheice.data.utility.WEBSERVICE_BASEURL
 import br.com.breaktheice.domain.repository.IActivityRepository
@@ -67,10 +69,10 @@ val breakTheIceModule: Module = module {
     /*
      * Data Source injection.
      */
-    factory {
+    factory<IActivityDatabaseSource> {
         LocalActivityDataSource(database = get())
     }
-    factory {
+    factory<IActivityWeb> {
         RemoteActivityDataSource(retrofit = get())
     }
 

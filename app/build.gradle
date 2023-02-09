@@ -79,6 +79,7 @@ dependencies {
     testImplementation "junit:junit:$junit"
     testImplementation "org.mockito:mockito-core:$mockito_core"
     testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin"
+    androidTestImplementation "androidx.navigation:navigation-testing:$navigation"
     androidTestImplementation "androidx.test.ext:junit:$junit_ext"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }

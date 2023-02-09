@@ -1,9 +1,9 @@
 package br.com.breaktheice.data.repository
 
-import br.com.breaktheice.data.source.LocalActivityDataSource
 import br.com.breaktheice.data.mapper.ActivityMapper
 import br.com.breaktheice.data.model.ActivityDTO
-import br.com.breaktheice.data.source.RemoteActivityDataSource
+import br.com.breaktheice.data.source.IActivityDatabaseSource
+import br.com.breaktheice.data.source.IActivityWeb
 import br.com.breaktheice.domain.model.ActivityModel
 import br.com.breaktheice.domain.repository.IActivityRepository
 import br.com.breaktheice.domain.utility.Result
@@ -17,8 +17,8 @@ import retrofit2.Response
  */
 class ActivityRepositoryImpl constructor(
     private val activityMapper: ActivityMapper,
-    private val localActivityDataSource: LocalActivityDataSource,
-    private val remoteActivityDataSource: RemoteActivityDataSource,
+    private val localActivityDataSource: IActivityDatabaseSource,
+    private val remoteActivityDataSource: IActivityWeb,
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : IActivityRepository {
 

@@ -7,8 +7,8 @@ import br.com.breaktheice.domain.model.ActivityModel
  * @author Raphael Santos
  */
 data class ActivityMapper constructor(
-    val activityModelToActivityDTOMapper: ActivityModelToActivityDTOMapper,
-    val activityDTOToActivityModelMapper: ActivityDTOToActivityModelMapper
+    val activityModelToActivityDTOMapper: IMapper<ActivityModel, ActivityDTO>,
+    val activityDTOToActivityModelMapper: IMapper<ActivityDTO, ActivityModel>
 )
 
 /**
